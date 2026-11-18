@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://garagereviews.us/sitemap.xml
+Sitemap: https://garagereviews.us/sitemap-videos.xml
