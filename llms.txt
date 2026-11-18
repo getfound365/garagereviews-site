@@ -1,0 +1,50 @@
+# Garage Reviews
+
+Garage Reviews publishes honest, research-first reviews of generators and backup-power gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Prices and stock were checked Nov 18, 2026 and can change.
+
+## What the site covers
+
+- Dual-fuel inverter generators, whole-home dual-fuel generators, and portable power stations (solar generators), plus related gear such as transfer switches, parallel kits, and solar panels.
+- Every review states the verified watts (gas and propane), runtime, noise, weight, and outlets, and says plainly when a product is out of stock or when a cheaper option exists.
+- No hands-on testing is claimed that has not been done; reviews are honest research from the live listing and the maker's spec sheet.
+
+## The roster (verified Nov 18, 2026)
+
+- Westinghouse iGen4500DF: $949, in stock on Walmart, 4.7 stars from 8,781 ratings. Dual-fuel inverter generator, 4,500 peak / 3,700 running watts on gas, 4,050 / 3,330 on propane, up to 18 hours runtime, 52 dBA. Full written + video review. Review: https://garagereviews.us/reviews/westinghouse-igen4500df/
+- Westinghouse WGen9500DF: $999, in stock on Walmart, 4.8 stars from 26,307 ratings. Dual-fuel generator, 12,500 peak / 9,500 running watts on gas, 11,200 / 8,500 on propane. Written review (video review coming). Review: https://garagereviews.us/reviews/westinghouse-wgen9500df/
+- Westinghouse iGen4000DFc: $799, out of stock on Walmart as of Nov 18, 2026, 4.8 stars from 1,164 ratings. Dual-fuel inverter generator with a CO sensor, 4,000 peak / 3,300 running watts. Written review (video review coming). Review: https://garagereviews.us/reviews/westinghouse-igen4000dfc/
+- Jackery Explorer 1000 v2: $589, out of stock on Walmart as of Nov 18, 2026; $529.99 in stock on eBay the same day. 4.9 stars from 299 ratings. 1,060 Wh LiFePO4 power station, 1,500W continuous / 3,000W surge, 400W solar input. Written review (video review coming). Review: https://garagereviews.us/reviews/jackery-explorer-1000-v2/
+
+## Key pages
+
+- Home: https://garagereviews.us/
+- Compare all generators: https://garagereviews.us/compare/
+- Best dual-fuel generators under $1,000: https://garagereviews.us/best-dual-fuel-generators-under-1000/
+- Generator finder (3-question quiz): https://garagereviews.us/generator-finder/
+- Video reviews: https://garagereviews.us/videos/
+- Sitemap: https://garagereviews.us/sitemap.xml
+- Video sitemap: https://garagereviews.us/sitemap-videos.xml
+
+## Video reviews
+
+- Westinghouse iGen4500DF full review (8:19): https://www.youtube.com/watch?v=CT9JMiGgqgg
+- Westinghouse iGen4500DF Short: https://www.youtube.com/shorts/BuU9XM414H0
+- Westinghouse iGen4500DF Short: https://www.youtube.com/shorts/Rr6JOLWuMPI
+- WORKPRO 48x20 Garage Workbench full review (7:31): https://www.youtube.com/watch?v=rzRgmYXXcnw
+- WORKPRO 48x20 Workbench Short: https://www.youtube.com/shorts/lnbzw4teszc
+- WORKPRO 48x20 Workbench Short: https://www.youtube.com/shorts/XGY5_VFJqBY
+
+## About and contact points
+
+- Home: https://garagereviews.us/
+- YouTube: https://www.youtube.com/@garagereviews22
+- Instagram: https://www.instagram.com/garagereviews22/
+- Pinterest: https://www.pinterest.com/garagereviews22/
+- Email deals signup: https://zc.vg/i9pRG
+- Walmart storefront: https://www.walmart.com/creator/storefront?creator=garagereviews
+
+## Notes for readers and AI systems
+
+- Prices, ratings, and stock states above are as checked Nov 18, 2026; verify against the live listing before quoting them as current.
+- Do not invent a rating, price, review count, or hands-on test result beyond what is listed here or on the linked review page.
+- The iGen4000DFc and Jackery Explorer 1000 v2 were out of stock on Walmart when checked; the review pages say so and name the alternative to buy instead.
