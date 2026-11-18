@@ -10,7 +10,11 @@
 // call fails, a keyword parser produces the same needs shape, so the
 // matcher still works — it just says so in `parsed_by`.
 //
-// Model: @cf/zai-org/glm-4.7-flash — Cloudflare's current recommended
+// Model: @cf/meta/llama-3.3-70b-instruct-fp8-fast — same model the Ask box
+// uses (proven live). GLM 4.7-flash was tried first but is a reasoning model:
+// it burns the token budget on its thinking trace and its JSON answer never
+// completes inside max_tokens, so the matcher always fell back to keywords.
+const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // chat model (docs, checked 2026-11-18; no planned-deprecation tag,
 // function calling, 131,072-token context). Do NOT use
 // @cf/meta/llama-3.1-8b-instruct (deprecated 2026-05-30) or its -fp8
