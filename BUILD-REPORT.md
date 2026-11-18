@@ -23,6 +23,11 @@ All four seeded models were re-checked on live walmart.com listings and the figu
 | Homepage (roster hub) | `index.html` | Hero, browse by job (essentials / whole home / portable), browse by budget (under $500 / around $1,000 / over $1,000), solar battery section, latest review (iGen4500DF), short comparison table, 3-step outage-plan guide, "Always on" links |
 | Generator finder v2 | `generator-finder/index.html` | Same 3 questions as the old finder (what to power / fuel / budget), but the result shows up to 3 option cards — best match + alternatives — each with price, rating, specs, fit line, review status, and shop link where verified |
 | Compare all | `compare/index.html` | Full table: gas running/starting, propane running, type/voltage, weight, price, rating, best fit, review status/link |
+| Review: iGen4500DF | `reviews/westinghouse-igen4500df/index.html` | Full review page with embedded video (CT9JMiGgqgg), verified specs, pros/cons, FAQ, Walmart buy button. SEO: "Westinghouse iGen4500DF review" |
+| Review: WGen9500DF | `reviews/westinghouse-wgen9500df/index.html` | Full review page, no video yet ("Video review coming"), Walmart buy button |
+| Review: iGen4000DFc | `reviews/westinghouse-igen4000dfc/index.html` | Full review page, OUT OF STOCK flag prominent, no video yet, buy-the-iGen4500DF-instead button |
+| Review: Jackery Explorer 1000 v2 | `reviews/jackery-explorer-1000-v2/index.html` | Full review page, Walmart OOS + eBay $529.99 in-stock second option, no video yet |
+| Best dual-fuel under $1,000 | `best-dual-fuel-generators-under-1000/index.html` | Best-of page: the three dual-fuel models under $1,000 ranked with a verdict each + comparison table. SEO: "best dual fuel generator under $1000" |
 | Shared stylesheet | `styles.css` | Garage brand v2: charcoal #1A1A1A, orange #FF6A00, green #2EE56B, off-white #FAFAF7; FTC disclosure styling top + bottom of every page |
 | Sitemap | `sitemap.xml` | 3 URLs under https://garagereviews.us/ |
 
@@ -97,10 +102,18 @@ All four seeded models were re-checked on live walmart.com listings and the figu
 
 **Stale-figure grep (after the update):** no occurrences of 15,771, $559, 1,070 Wh, 1,024 Wh, iGen2200, 15.98, or business.walmart.com in any site file (index.html, compare/index.html, generator-finder/index.html, styles.css, sitemap.xml) — CLEAN.
 
-## Still owed (updated Nov 18, after the live re-check)
+## Nov 18 update — review pages + best-of page (WattRoster model build-out)
 
-1. **iGen4500DF video URL — DONE.** The loop published it Nov 18 and the URL was verified live: https://www.youtube.com/watch?v=CT9JMiGgqgg. Hub, finder, and compare table all link to it.
+Five new pages built Nov 18 (all figures from the verified Nov 18 live re-check + the EPN link check the same morning; no new figures invented):
+- 4 per-model review pages under `reviews/` — iGen4500DF (video embedded), WGen9500DF, iGen4000DFc (OOS flag), Jackery Explorer 1000 v2 (Walmart OOS + eBay $529.99 in-stock second option). Each has canonical URL, breadcrumb, FTC disclosure near the buy buttons, specs table, pros/cons, FAQ.
+- `best-dual-fuel-generators-under-1000/` — the three dual-fuel models under $1,000 ranked (#1 iGen4500DF, #2 WGen9500DF, #3 iGen4000DFc) with a comparison table.
+- Homepage + compare table model names now link to their review pages; the best-of page links from the homepage (Around $1,000 card + "Always on" row).
+- Sitemap now lists 8 URLs.
+- eBay link used (Jackery only): campid 5338434176 (EPN Default Campaign, 1%–4%). The WGen9500DF eBay link ($1,440.93) is NOT featured — worse than Walmart $999. No iGen2200 page — dropped from the roster (its only eBay listing is local-pickup-only).
+
+## Still owed (updated Nov 18, after the review-page build-out)
+
+1. **Video reviews for 3 models** — WGen9500DF, iGen4000DFc, Jackery Explorer 1000 v2 have no video yet; their pages say "Video review coming." The daily garage loop films them in turn.
 2. **Domain wiring** — Tyler BOUGHT garagereviews.us Nov 18 ($6.50/yr Cloudflare). Still to do: create a repo for the site, connect Cloudflare Pages, and 301-redirect granthcaldwell.com/garage/ → garagereviews.us (keep the old hub live until the redirect is in place; Pinterest pins point at the old hub).
-3. **eBay links** — the EPN task is still running; no eBay links exist yet. Once they arrive, add them as a second price option per model (do NOT invent any).
-4. **Champion 200988** — re-check Walmart presence later; if a live listing appears, add it as the direct iGen4500DF rival (it is the natural second review in that class).
-5. **Roster growth** — the daily garage loop adds one reviewed row per day; each new review gets a "Reviewed" badge + video link, and the finder grows with it. Under-$500 and over-$1,000 budget bands are empty on purpose until a model lands there. The iGen4000DFc and Jackery are out of stock — re-check their stock on the next price sweep before relying on them in a "buy now" context.
+3. **Champion 200988** — re-check Walmart presence later; if a live listing appears, add it as the direct iGen4500DF rival (it is the natural second review in that class).
+4. **Roster growth** — the daily garage loop adds one reviewed row per day; each new review gets a "Reviewed" badge + video link, and the finder grows with it. Under-$500 and over-$1,000 budget bands are empty on purpose until a model lands there. The iGen4000DFc and Jackery are out of stock — re-check their stock on the next price sweep before relying on them in a "buy now" context.
