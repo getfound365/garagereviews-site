@@ -188,3 +188,33 @@ Layout-only addition, no new retailer links: a generic `.buy-row` flex component
   no page overflow) and 1280px verified by screenshot; compare tables scroll
   inside their wrapper on mobile by design. Hero, At-a-Glance cards, buy rows,
   and generator-finder/ untouched except the stylesheet version bump.
+
+## Video embeds + full written reviews + /videos/ page (2026-11-18, ~09:05)
+- Audit: only verified live videos embedded (oEmbed 200 + titles checked).
+  iGen4500DF long-form CT9JMiGgqgg (already embedded) + Shorts BuU9XM414H0,
+  Rr6JOLWuMPI. WORKPRO long-form rzRgmYXXcnw + Shorts lnbzw4teszc, XGY5_VFJqBY
+  (no review page exists for the workbench — videos page links to YouTube).
+  WGen9500DF, iGen4000DFc, Jackery: NO videos exist yet (next loop pick Nov 19);
+  their "Video review coming" notes kept honestly, no fake embeds.
+- iGen4500DF page: "Watch the full review" heading before the existing embed;
+  new "Watch the Shorts" section with both Shorts in a .shorts-row (vertical
+  9:16 embeds, capped 340px, centered). Written sections added before Specs:
+  Who it's for / Performance in real use / Setup / How it compares — all claims
+  grounded in the verified specs already on the page (4,500/3,700W gas,
+  4,050/3,330W propane, 18h/14h runtime, 52 dBA, THD <3%, TT-30R + duplex,
+  224cc, 3.4 gal, 98 lb, 20-ft rule from the video). No hands-on claims.
+- WGen9500DF, iGen4000DFc, Jackery pages: same four written sections
+  (Who it's for / Performance in real use / What to know first / How it compares),
+  grounded only in each page's verified specs; unverified facts omitted
+  (e.g. no dBA figure for WGen9500DF, no propane watts for iGen4000DFc).
+- styles.css: .video-embed.shorts + .shorts-row rules; stylesheet ?v=4 -> ?v=5
+  on all 9 pages.
+- New /videos/ page: all 6 verified videos embedded (2 long-forms + 4 Shorts),
+  each with product name + link to its full review page (YouTube for WORKPRO),
+  plus a "More video reviews coming" note linking the three written reviews
+  that await video. Header nav gains a Videos link on all 9 pages; homepage
+  gains a Video Reviews tile (AI dusk-generator image, 400x225 data URI, 20KB).
+- Sitemap: /videos/ added (9 URLs total). No figures, prices, ratings, stock
+  states, links, canonicals, disclosures, JSON-LD, or sitemap entries changed
+  beyond the addition. Validation: all 9 pages well-formed; stale-figure grep
+  clean (one false positive: "lowest price" matching "lowes").
