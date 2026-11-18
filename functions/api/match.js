@@ -26,8 +26,6 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // Prices/stock as of Nov 18, 2026. Update the roster here AND the quiz
 // in generator-finder/index.html when the roster changes.
 
-const MODEL_ID = "@cf/zai-org/glm-4.7-flash";
-
 const ROSTER = [
   {
     id: "igen4500df",
