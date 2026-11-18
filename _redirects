@@ -1,0 +1,2 @@
+# Redirect www to apex (canonical consolidation)
+https://www.garagereviews.us/* https://garagereviews.us/:splat 301
