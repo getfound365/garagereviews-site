@@ -152,3 +152,24 @@ footer p { color: #fff; margin: .3rem 0; }
   img.thumb { width: 64px; }
   h2 { font-size: 1.3rem; }
 }
+
+/* --- 2026-11-18: mobile image containment + scene/glance components --- */
+/* Image links are block-level so a wide image can never stretch its card
+   (an inline anchor lets a natural-width image blow out the page). */
+.card > a { display: block; }
+.scene-img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: #eef0f2; }
+.glance { background: #101014; color: #f4f4f6; border-radius: 12px; padding: 1.25rem 1.35rem; margin: 1.25rem 0; }
+.glance h2 { color: #fff; margin: 0 0 .9rem; font-size: 1.15rem; letter-spacing: .04em; }
+.glance .big { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; margin-bottom: .9rem; }
+.glance .big b { display: block; font-size: 1.9rem; line-height: 1.05; color: #fff; }
+.glance .big span { font-size: .82rem; color: #b9bcc4; }
+.glance .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .9rem; }
+.glance .chip { background: #232329; border: 1px solid #3a3a42; color: #e8e8ec; border-radius: 999px; padding: .28rem .7rem; font-size: .82rem; }
+.fuelbar { margin: .5rem 0; }
+.fuelbar .fuel-label { display: flex; justify-content: space-between; font-size: .88rem; color: #d7d7dc; margin-bottom: .25rem; }
+.fuelbar .track { height: 10px; background: #26262c; border-radius: 999px; overflow: hidden; }
+.fuelbar .fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #d4a017, #f2c94c); }
+.glance .fine { font-size: .78rem; color: #9a9da6; margin: .7rem 0 0; }
+@media (max-width: 640px) {
+  .glance .big b { font-size: 1.6rem; }
+}

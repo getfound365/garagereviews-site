@@ -144,3 +144,18 @@ Look-and-images pass only — no figures, prices, ratings, stock states, links, 
 ## Nov 18 redesign v3b — 3-retailer buy-button row (Tyler steer)
 
 Layout-only addition, no new retailer links: a generic `.buy-row` flex component in styles.css holds up to 3 retailer buttons (Walmart / eBay / Home Depot or Lowe's) — buttons share the row on wide screens and stack on narrow ones; a single button still fills the row. Applied to every retailer buy-button area: homepage pick cards (5 rows incl. the Jackery Walmart+eBay pairs), each of the 4 review pages (Jackery's eBay + Walmart pair sits in one row), and the 3 ranked entries on the best-dual-fuel page. The compare table keeps its stacked text links (a button row inside the narrow Review column would hurt readability). Home Depot / Lowe's links are NOT added in this pass — their rates are being checked separately; the row is ready for the third button when they land. No figures, links, or disclosures changed. Validation: all 8 pages well-formed; stale-figure grep CLEAN (incl. no homedepot/lowes/amazon).
+
+## 2026-11-18 — mobile fix, AI hero, scene images + At-a-Glance cards
+- Mobile bug: Tyler's screenshot showed the homepage card image at natural
+  width (~1500px) with spec-big as plain text — the signature of a stale
+  cached styles.css (pre-v3) served with v3 HTML. Fix: all 8 pages now link
+  /styles.css?v=3 (cache-bust), image links are display:block, and a 640px
+  media query caps image heights as a safety net.
+- Hero: AI-generated storm-house background (original, not WattRoster's photo)
+  embedded as a data URI in the homepage inline style, with a dark gradient
+  overlay so the white headline stays legible on mobile and desktop.
+- Review pages: real product photos composited onto an AI gravel-sunset scene
+  (product pixels untouched) and embedded as data URIs; dark At-a-Glance
+  card with verified numbers only (fuel bars omitted where propane watts are
+  unverified — iGen4000DFc; Jackery gets capacity/output chips instead).
+- No prices, ratings, links, or specs changed in this pass.
