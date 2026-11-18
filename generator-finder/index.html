@@ -8,9 +8,10 @@
 <link rel="canonical" href="https://garagereviews.us/generator-finder/">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Find Your Generator — Garage Reviews", "url": "https://garagereviews.us/generator-finder/", "description": "Answer 3 questions and get up to 3 generator options that fit your outage plan and budget."}</script>
 <link rel="stylesheet" href="/styles.css?v=5">
+<link rel="stylesheet" href="/generator-finder/matcher.css">
 </head>
 <body class="garage">
-<header class="site"><a class="brand" href="/">Garage <span>Reviews</span></a><p class="tagline">Honest gear reviews. No hype.</p><nav><a href="/">Home</a><a href="/compare/">Compare All</a><a href="/videos/">Videos</a><a href="https://www.youtube.com/@garagereviews22">YouTube</a><a href="https://www.instagram.com/garagereviews22/">Instagram</a><a href="https://www.pinterest.com/garagereviews22/">Pinterest</a></nav></header>
+<header class="site"><a class="brand" href="/">Garage <span>Reviews</span></a><p class="tagline">Honest gear reviews. No hype.</p><nav><a href="/">Home</a><a href="/compare/">Compare All</a><a href="/videos/">Videos</a><a href="/ask/">Ask Garage Reviews</a><a href="https://www.youtube.com/@garagereviews22">YouTube</a><a href="https://www.instagram.com/garagereviews22/">Instagram</a><a href="https://www.pinterest.com/garagereviews22/">Pinterest</a></nav></header>
 <main>
 <h1>Find Your Generator</h1>
 <p>Three quick questions, up to three honest options. No email, no sign-up — the result is right here.</p>
@@ -40,6 +41,23 @@
 </form>
 
 <div id="result" hidden></div>
+
+<section class="matcher" aria-label="Describe it in your own words">
+<h2>Or describe it in your own words</h2>
+<p>Skip the questions — just say what you need, in plain words. We read it, match it against the same verified roster, and show you why each pick fits. No email, no sign-up.</p>
+<form id="matcher-form">
+<label for="matcher-input">What do you need to power?</label>
+<textarea id="matcher-input" name="query" maxlength="500" placeholder="backup for my sump pump, quiet, under $800"></textarea>
+<div class="matcher-examples"><span>Try one:</span>
+<button type="button" class="matcher-chip" data-query="backup for my sump pump, quiet, under $800">backup for my sump pump, quiet, under $800</button>
+<button type="button" class="matcher-chip" data-query="whole house backup, well pump and AC">whole house backup, well pump and AC</button>
+<button type="button" class="matcher-chip" data-query="solar only, no fuel, for camping">solar only, no fuel, for camping</button>
+</div>
+<button type="submit" id="matcher-submit" class="matcher-submit">Find my match</button>
+</form>
+<p id="matcher-status" class="matcher-status" aria-live="polite"></p>
+<div id="matcher-result" hidden></div>
+</section>
 
 <p>Prices checked Nov 18, 2026 and can change. Out-of-stock flags are as of Nov 18, 2026.</p>
 <p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 4 models</a></p>
@@ -161,6 +179,15 @@
     d.options.forEach(function (key, i) {
       html += optionCard(key, i === 0);
     });
+    // Feature 4 — printable outage plan for the best match. Additions only;
+    // the quiz above is untouched. No plan link when nothing fits (options []).
+    if (d.options.length) {
+      var planUrl = "/outage-plan/?product=" + encodeURIComponent(d.options[0])
+        + "&amp;use=" + encodeURIComponent(use)
+        + "&amp;fuel=" + encodeURIComponent(fuel)
+        + "&amp;budget=" + encodeURIComponent(budget);
+      html += '<p><a class="btn secondary" href="' + planUrl + '">Get your printable outage plan — ' + MODELS[d.options[0]].name.split(" — ")[0] + '<small>What to buy, what it runs, what it costs — one page, ready to print</small></a></p>';
+    }
     html += '<p class="footnote">Out-of-stock flags are as of Nov 18, 2026. <a href="/compare/">Compare all 4 models side by side</a></p>';
     result.innerHTML = html;
     result.hidden = false;
@@ -168,5 +195,6 @@
   });
 })();
 </script>
+<script src="/generator-finder/matcher.js"></script>
 </body>
 </html>

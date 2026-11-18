@@ -1,0 +1,477 @@
+// Conversational generator matcher — Pages Function for garagereviews.us
+// POST /api/match  { "query": "backup for my sump pump, quiet, under $800" }
+//   -> { needs, parsed_by: "ai" | "keywords", picks: [...], note }
+//
+// Architecture: Workers AI (env.AI) ONLY parses the visitor's plain words
+// into structured needs. Matching is DETERMINISTIC against the verified
+// roster below — the AI never invents specs, prices, or ratings, and the
+// reasons shown to the visitor are built from roster fields only.
+// If env.AI is not bound yet (Feature-1 worker owns the binding) or the AI
+// call fails, a keyword parser produces the same needs shape, so the
+// matcher still works — it just says so in `parsed_by`.
+//
+// Model: @cf/zai-org/glm-4.7-flash — Cloudflare's current recommended
+// chat model (docs, checked 2026-11-18; no planned-deprecation tag,
+// function calling, 131,072-token context). Do NOT use
+// @cf/meta/llama-3.1-8b-instruct (deprecated 2026-05-30) or its -fp8
+// variant (Cloudflare docs list planned deprecation 2026-11-20).
+//
+// Roster verified 2026-11-18 from the live review pages in this repo
+// (reviews/westinghouse-igen4500df, reviews/westinghouse-wgen9500df,
+// reviews/westinghouse-igen4000dfc, reviews/jackery-explorer-1000-v2).
+// Prices/stock as of Nov 18, 2026. Update the roster here AND the quiz
+// in generator-finder/index.html when the roster changes.
+
+const MODEL_ID = "@cf/zai-org/glm-4.7-flash";
+
+const ROSTER = [
+  {
+    id: "igen4500df",
+    name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
+    short: "iGen4500DF",
+    price: 949,
+    price_display: "$949",
+    rating: "4.7 stars from 8,781 ratings",
+    rating_value: 4.7,
+    rating_count: 8781,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 4500,
+    gas_running_w: 3700,
+    propane_peak_w: 4050,
+    propane_running_w: 3330,
+    runtime_h: "up to 18 hours on gas at 25% load, 14 hours on propane",
+    noise_dba: 52,
+    weight_lb: 98,
+    specs: "4,500 peak / 3,700 running watts on gas · 4,050 peak / 3,330 running on propane · up to 18 hours at 25% load · 52 dBA · remote start included · 98 lb",
+    fit: "Fridge, lights, furnace fan and phones in an outage — exactly what this one is built for. Dual fuel means you are not stuck if one fuel runs out.",
+    status: "reviewed",
+    video: "https://www.youtube.com/watch?v=CT9JMiGgqgg",
+    link: "https://walmrt.us/4t4whs1",
+    review_url: "/reviews/westinghouse-igen4500df/",
+  },
+  {
+    id: "wgen9500df",
+    name: "Westinghouse WGen9500DF — Dual Fuel Portable Generator",
+    short: "WGen9500DF",
+    price: 999,
+    price_display: "$999",
+    rating: "4.8 stars from 26,307 ratings",
+    rating_value: 4.8,
+    rating_count: 26307,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "dual-fuel",
+    type: "open-frame",
+    gas_peak_w: 12500,
+    gas_running_w: 9500,
+    propane_peak_w: 11200,
+    propane_running_w: 8500,
+    runtime_h: "up to 12 hours",
+    noise_dba: null, // open-frame; no dBA figure verified — never invent one
+    weight_lb: 211,
+    specs: "12,500 peak / 9,500 running watts on gas · 11,200 peak / 8,500 running on propane · up to 12 hours · 211 lb · 120/240V with transfer-switch outlet",
+    fit: "The big one — feeds a transfer switch for whole-home backup. Open-frame, so louder than an inverter, and it needs an electrician-installed connection.",
+    status: "coming",
+    video: null,
+    link: "https://walmrt.us/4kiUs3z",
+    review_url: "/reviews/westinghouse-wgen9500df/",
+  },
+  {
+    id: "igen4000dfc",
+    name: "Westinghouse iGen4000DFc — Dual Fuel Inverter Generator",
+    short: "iGen4000DFc",
+    price: 799,
+    price_display: "$799",
+    rating: "4.8 stars from 1,164 ratings",
+    rating_value: 4.8,
+    rating_count: 1164,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 4000,
+    gas_running_w: 3300,
+    propane_peak_w: null, // dual fuel confirmed; propane split not stated on the review page
+    propane_running_w: null,
+    runtime_h: "up to 7 hours on a 1.69-gal tank",
+    noise_dba: null, // no dBA figure verified — never invent one
+    weight_lb: null,
+    specs: "4,000 peak / 3,300 running watts · dual fuel · CO sensor · remote start · TT-30R RV outlet · up to 7 hours on a 1.69-gal tank",
+    fit: "The essentials pick for $150 less than the iGen4500DF — smaller tank and shorter runtime, but a CO sensor is included.",
+    status: "coming",
+    video: null,
+    link: "https://walmrt.us/4zq3W0w",
+    review_url: "/reviews/westinghouse-igen4000dfc/",
+  },
+  {
+    id: "jackery1000v2",
+    name: "Jackery Explorer 1000 v2 — Portable Power Station",
+    short: "Jackery Explorer 1000 v2",
+    price: 589,
+    price_display: "$589",
+    rating: "4.9 stars from 299 ratings",
+    rating_value: 4.9,
+    rating_count: 299,
+    stock: "out", // Walmart listing out of stock; eBay alternative below is in stock
+    stock_display: "Out of stock on Walmart",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 1060,
+    continuous_w: 1500,
+    surge_w: 3000,
+    solar_input_w: 400,
+    runtime_h: null,
+    noise_dba: 0, // silent — no fuel, no engine
+    weight_lb: 23.8,
+    specs: "1,060 Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 400W solar input · 23.8 lb · charges from the wall or sun",
+    fit: "No fuel, no fumes, safe indoors — runs a fridge for hours, not days. Add solar panels for longer outages. (Walmart titles this listing 'Jackery E1000AC Sand Gold 1060Wh' — same Explorer 1000 v2 unit.)",
+    status: "coming",
+    video: null,
+    link: "https://walmrt.us/4zsmKfO",
+    alt_link: "https://www.ebay.com/itm/840084662851?amdata=enc%3AAQALAAAAoCHNgUiiE%2FjQhlDTaMiAde8pxdFQG0HwwTGa1pSBEYrLM9tdeJbgLyJmRiOoKPhYolY0hbeDusQdPQ%2FHPrzc5KN9OHPQ2vSrkkwy1riURjIERHDjobDOvwKGM7cWZWb4Eihs%2BIDRVWsmLsXBmKcWBseQjJSD6ahBOGFMjdz2faKDOeP9z%2FeaaEesq37yxRRUtxuq9FKMZ6qzrhzMU87UcVM%3D&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+    alt_price_display: "$529.99",
+    alt_stock_display: "In stock on eBay",
+    review_url: "/reviews/jackery-explorer-1000-v2/",
+  },
+];
+
+// Effective running watts for a needs check: gas running watts for fuel
+// generators, continuous watts for the power station.
+function effectiveWatts(m) {
+  return m.type === "power-station" ? m.continuous_w : m.gas_running_w;
+}
+
+// ---------------------------------------------------------------------------
+// Needs parsing
+// ---------------------------------------------------------------------------
+
+// Deterministic keyword fallback — same shape the AI returns. Used when
+// env.AI is not bound yet or the AI call fails / returns bad JSON.
+function parseKeywords(query) {
+  const q = query.toLowerCase();
+  const needs = {
+    budget_max: null,
+    running_watts_needed: null,
+    fuel: "any", // "dual-fuel" | "solar" | "any"
+    quiet: false,
+    indoor: false,
+    use_case: "other", // "small" | "essentials" | "whole-home" | "other"
+    portable: false,
+    summary: "",
+  };
+
+  // Budget: "under $800", "below 500", "max $1000", "around $900", "budget 700".
+  const budgetRe = /(?:under|below|less than|at most|max(?:imum)?|around|about|budget(?: of)?|up to)\s*\$?\s*([\d,]{2,7})/;
+  const bm = q.match(budgetRe);
+  if (bm) needs.budget_max = parseInt(bm[1].replace(/,/g, ""), 10);
+
+  // Explicit wattage: "3000 watts", "need 5000W".
+  const wattRe = /(\d[\d,]{2,7})\s*(?:watts?|w)\b/;
+  const wm = q.match(wattRe);
+  if (wm) needs.running_watts_needed = parseInt(wm[1].replace(/,/g, ""), 10);
+
+  if (/\b(solar|battery|power station|no fuel|no gas|no fumes|indoor|inside|apartment|camping|tent)\b/.test(q)) {
+    needs.fuel = "solar";
+  } else if (/\b(propane|dual[- ]?fuel|gas)\b/.test(q)) {
+    needs.fuel = "dual-fuel";
+  }
+  if (/\b(indoor|inside|apartment|no fumes)\b/.test(q)) needs.indoor = true;
+  if (/\b(quiet|silent|low noise|not loud|noise)\b/.test(q)) needs.quiet = true;
+  if (/\b(light|lightweight|portable|carry|carryable|take (it )?with|rv|camper|camping)\b/.test(q)) needs.portable = true;
+
+  if (/\b(whole[- ]?house|whole[- ]?home|well pump|air condition|\bac\b|central air|everything at once|entire house|entire home)\b/.test(q)) {
+    needs.use_case = "whole-home";
+    if (!needs.running_watts_needed) needs.running_watts_needed = 9500;
+  } else if (/\b(sump pump|fridge|refrigerator|freezer|furnace|outage|power outage|backup|essentials|storm|hurricane)\b/.test(q)) {
+    needs.use_case = "essentials";
+    if (!needs.running_watts_needed) needs.running_watts_needed = 3300;
+  } else if (/\b(phone|laptop|lights?|small|devices?|charge)\b/.test(q)) {
+    needs.use_case = "small";
+    if (!needs.running_watts_needed) needs.running_watts_needed = 1500;
+  }
+
+  // Solar / indoor forces a power station regardless of the use-case words.
+  if (needs.fuel === "solar" || needs.indoor) {
+    if (!needs.running_watts_needed) needs.running_watts_needed = 1500;
+  }
+
+  needs.summary = summarizeNeeds(needs);
+  return needs;
+}
+
+function summarizeNeeds(n) {
+  const parts = [];
+  if (n.use_case === "whole-home") parts.push("whole-home backup");
+  else if (n.use_case === "essentials") parts.push("outage essentials backup");
+  else if (n.use_case === "small") parts.push("small loads");
+  if (n.running_watts_needed) parts.push("about " + n.running_watts_needed.toLocaleString() + " running watts");
+  if (n.budget_max) parts.push("under $" + n.budget_max.toLocaleString());
+  if (n.fuel === "solar") parts.push("solar / no fuel");
+  else if (n.fuel === "dual-fuel") parts.push("gas or propane");
+  if (n.quiet) parts.push("quiet matters");
+  if (n.indoor) parts.push("safe to run indoors");
+  if (n.portable) parts.push("light enough to carry");
+  return parts.length ? parts.join(" · ") : "a generator";
+}
+
+const PARSE_SYSTEM_PROMPT = [
+  "You parse a visitor's plain-words description of the generator they need.",
+  "Return ONLY a JSON object, no other text, with exactly these fields:",
+  '{ "budget_max": number|null, "running_watts_needed": number|null, "fuel": "dual-fuel"|"solar"|"any", "quiet": boolean, "indoor": boolean, "use_case": "small"|"essentials"|"whole-home"|"other", "portable": boolean }',
+  "Rules:",
+  '- budget_max: the most they will pay, from phrases like "under $800" (800) or "around $1000" (1000). null if no budget is given.',
+  "- running_watts_needed: running watts the job needs. Estimate from the use case when no number is given: small loads (phones, laptop, lights) 1500; outage essentials (fridge, lights, furnace fan, sump pump) 3300; whole home (well pump, AC, everything at once) 9500. Use an explicit number from the text when one is given.",
+  '- fuel: "solar" when they want solar, battery, no fuel, or indoor-safe power; "dual-fuel" when they mention gas, propane, or dual fuel; otherwise "any".',
+  '- quiet: true when they say quiet, silent, low noise, or not loud.',
+  '- indoor: true when they say indoors, inside, apartment, or no fumes.',
+  '- use_case: "small", "essentials", or "whole-home" as above; "other" if it fits none.',
+  '- portable: true when they say light, lightweight, portable, carry, RV, or camping.',
+  "Never add fields, never add explanations, never invent a product.",
+].join("\n");
+
+async function parseWithAI(env, query) {
+  if (!env.AI) return null;
+  const res = await env.AI.run(MODEL_ID, {
+    messages: [
+      { role: "system", content: PARSE_SYSTEM_PROMPT },
+      { role: "user", content: query },
+    ],
+    temperature: 0.1,
+    max_tokens: 300,
+  });
+  const text = (res && res.response ? res.response : "").trim();
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start < 0 || end <= start) return null;
+  const parsed = JSON.parse(text.slice(start, end + 1));
+  if (typeof parsed !== "object" || parsed === null) return null;
+  return {
+    budget_max: typeof parsed.budget_max === "number" && parsed.budget_max > 0 ? Math.round(parsed.budget_max) : null,
+    running_watts_needed: typeof parsed.running_watts_needed === "number" && parsed.running_watts_needed > 0 ? Math.round(parsed.running_watts_needed) : null,
+    fuel: ["dual-fuel", "solar", "any"].includes(parsed.fuel) ? parsed.fuel : "any",
+    quiet: parsed.quiet === true,
+    indoor: parsed.indoor === true,
+    use_case: ["small", "essentials", "whole-home", "other"].includes(parsed.use_case) ? parsed.use_case : "other",
+    portable: parsed.portable === true,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Deterministic matching — no AI output reaches the visitor beyond `needs`.
+// ---------------------------------------------------------------------------
+
+function matchNeeds(needs) {
+  let pool = ROSTER.slice();
+  const notes = [];
+
+  // Fuel / indoor hard filters.
+  if (needs.fuel === "solar" || needs.indoor) {
+    pool = pool.filter((m) => m.type === "power-station");
+    if (needs.indoor) notes.push("Indoor-safe means a power station — fuel generators must run outside.");
+  } else if (needs.fuel === "dual-fuel") {
+    pool = pool.filter((m) => m.fuel === "dual-fuel");
+  }
+
+  // Wattage hard filter — a pick must actually run the job.
+  const watts = needs.running_watts_needed;
+  if (watts) {
+    const fitting = pool.filter((m) => effectiveWatts(m) >= watts);
+    if (fitting.length) {
+      pool = fitting;
+    } else {
+      // Nothing in the (fuel-filtered) pool can run it. Say so plainly and
+      // show the strongest option as the honest "closest" pick.
+      const strongest = pool.slice().sort((a, b) => effectiveWatts(b) - effectiveWatts(a))[0] || null;
+      return {
+        picks: strongest ? [buildPick(strongest, needs, 0, true)] : [],
+        no_exact_fit: true,
+        note:
+          "Nothing in the roster can deliver " + watts.toLocaleString() + " running watts" +
+          (needs.fuel === "solar" || needs.indoor ? " from a solar power station" : "") +
+          ". The strongest option is shown below — it will not run the whole job at once.",
+      };
+    }
+  }
+
+  // Budget hard filter — never stretch the visitor's budget to make a sale.
+  let overBudget = false;
+  if (needs.budget_max) {
+    const affordable = pool.filter((m) => m.price <= needs.budget_max);
+    if (affordable.length) {
+      pool = affordable;
+    } else {
+      overBudget = true;
+      notes.push(
+        "Nothing in the roster is under $" + needs.budget_max.toLocaleString() +
+        " — every option below costs more than your budget. We would rather tell you that than stretch it."
+      );
+    }
+  }
+
+  // Rank the survivors: in stock first, then watts headroom, quiet, reviewed.
+  const scored = pool.map((m) => {
+    let score = 0;
+    if (m.stock === "in") score += 30;
+    else if (m.alt_link) score += 20; // buyable via the eBay alternative
+    if (watts && effectiveWatts(m) >= watts * 1.25) score += 15;
+    else if (watts) score += 10;
+    if (needs.quiet && m.noise_dba !== null && m.noise_dba <= 60) score += 20;
+    if (needs.quiet && m.type === "open-frame") score -= 20;
+    // Small loads are a power-station job (same call the 3-question quiz makes).
+    if (needs.use_case === "small" && m.type === "power-station") score += 25;
+    if (needs.portable && m.weight_lb !== null && m.weight_lb <= 100) score += 10;
+    if (needs.portable && m.weight_lb !== null && m.weight_lb <= 30) score += 10;
+    if (m.status === "reviewed") score += 10;
+    if (needs.budget_max && m.price <= needs.budget_max * 0.9) score += 5;
+    score += Math.min(m.rating_value, 5); // tiny tiebreak on rating
+    return { m, score };
+  });
+  scored.sort((a, b) => b.score - a.score);
+
+  const picks = scored.slice(0, 3).map((s, i) => buildPick(s.m, needs, i, false));
+
+  // If the best match is out of stock with no buyable alternative, point at
+  // the best in-stock option that can still do the job — even if it costs
+  // more than the budget — and say so plainly.
+  const bestBuyable = picks.length && (picks[0].in_stock);
+  if (picks.length && !bestBuyable) {
+    const shown = new Set(picks.map((p) => p.id));
+    const altPool = ROSTER.filter((m) => {
+      if (shown.has(m.id)) return false;
+      if (needs.fuel === "solar" || needs.indoor) return m.type === "power-station";
+      if (needs.fuel === "dual-fuel") return m.fuel === "dual-fuel";
+      return true;
+    }).filter((m) => !watts || effectiveWatts(m) >= watts)
+      .filter((m) => m.stock === "in" || m.alt_link);
+    if (altPool.length) {
+      altPool.sort((a, b) => a.price - b.price);
+      const alt = altPool[0];
+      const altPick = buildPick(alt, needs, picks.length, false);
+      altPick.best = false;
+      altPick.alternative = true;
+      altPick.reasons.unshift(
+        "In-stock alternative to the out-of-stock best match" +
+        (needs.budget_max && alt.price > needs.budget_max
+          ? " — $" + (alt.price - needs.budget_max).toLocaleString() + " over your budget, but buyable today"
+          : " — buyable today")
+      );
+      picks.push(altPick);
+    }
+  }
+
+  return { picks, no_exact_fit: overBudget, note: notes.join(" ") || null };
+}
+
+function buildPick(m, needs, rank, isClosest) {
+  const reasons = [];
+  if (needs.budget_max) {
+    if (m.price <= needs.budget_max) reasons.push(m.price_display + " — under your $" + needs.budget_max.toLocaleString() + " budget");
+    else reasons.push(m.price_display + " — $" + (m.price - needs.budget_max).toLocaleString() + " over your $" + needs.budget_max.toLocaleString() + " budget");
+  } else {
+    reasons.push(m.price_display);
+  }
+  if (needs.running_watts_needed) {
+    if (m.type === "power-station") {
+      reasons.push(
+        effectiveWatts(m) >= needs.running_watts_needed
+          ? m.continuous_w.toLocaleString() + "W continuous covers the " + needs.running_watts_needed.toLocaleString() + "W job (3,000W surge for motor starts)"
+          : "Only " + m.continuous_w.toLocaleString() + "W continuous — short of the " + needs.running_watts_needed.toLocaleString() + "W job"
+      );
+    } else {
+      reasons.push(
+        effectiveWatts(m) >= needs.running_watts_needed
+          ? effectiveWatts(m).toLocaleString() + " running watts covers the " + needs.running_watts_needed.toLocaleString() + "W job"
+          : "Only " + effectiveWatts(m).toLocaleString() + " running watts — short of the " + needs.running_watts_needed.toLocaleString() + "W job"
+      );
+    }
+  }
+  if (needs.quiet) {
+    if (m.noise_dba === 0) reasons.push("Silent — no engine, no noise at all");
+    else if (m.noise_dba !== null && m.noise_dba <= 60) reasons.push(m.noise_dba + " dBA — the quietest fuel generator in the roster");
+    else if (m.type === "open-frame") reasons.push("Open-frame design, so louder than an inverter — the trade-off for whole-home watts");
+  }
+  if (needs.indoor || needs.fuel === "solar") reasons.push("No fuel, no fumes — safe to run indoors");
+  if (needs.portable && m.weight_lb !== null) reasons.push(m.weight_lb + " lb — light enough to carry");
+  if (m.stock === "in") reasons.push("In stock on Walmart (checked Nov 18, 2026)");
+  else if (m.alt_link) reasons.push("Out of stock on Walmart — but in stock on eBay at " + m.alt_price_display);
+  else reasons.push("Out of stock on Walmart right now — check the listing before you buy");
+  if (m.status === "reviewed") reasons.push("Reviewed on video by Garage Reviews");
+  else reasons.push("Specs verified from the listing — video review coming");
+  if (isClosest) reasons.unshift("Closest fit in the roster — not an exact match");
+
+  return {
+    id: m.id,
+    name: m.name,
+    short: m.short,
+    price: m.price_display,
+    rating: m.rating,
+    stock: m.stock_display,
+    in_stock: m.stock === "in" || !!m.alt_link,
+    specs: m.specs,
+    fit: m.fit,
+    reasons,
+    status: m.status,
+    video: m.video,
+    link: m.link,
+    alt_link: m.alt_link || null,
+    alt_price: m.alt_price_display || null,
+    alt_stock: m.alt_stock_display || null,
+    review_url: m.review_url,
+    best: rank === 0,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Handler
+// ---------------------------------------------------------------------------
+
+export async function onRequest(context) {
+  const { request, env } = context;
+  if (request.method !== "POST") {
+    return Response.json({ error: "Use POST with {\"query\": \"...\"}." }, { status: 405 });
+  }
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return Response.json({ error: "Send a JSON body with a \"query\" field." }, { status: 400 });
+  }
+  const query = typeof body.query === "string" ? body.query.trim() : "";
+  if (!query) {
+    return Response.json({ error: "Describe what you need — for example, \"backup for my sump pump, quiet, under $800\"." }, { status: 400 });
+  }
+  if (query.length > 500) {
+    return Response.json({ error: "Keep it under 500 characters." }, { status: 400 });
+  }
+
+  // 1. Parse the words (AI when bound, keywords otherwise).
+  let needs = null;
+  let parsedBy = "keywords";
+  try {
+    needs = await parseWithAI(env, query);
+    if (needs) parsedBy = "ai";
+  } catch {
+    needs = null; // AI failed — fall through to the keyword parser.
+  }
+  if (!needs) needs = parseKeywords(query);
+  needs.summary = summarizeNeeds(needs);
+
+  // 2. Match deterministically against the verified roster.
+  const { picks, no_exact_fit, note } = matchNeeds(needs);
+
+  return Response.json(
+    {
+      query,
+      needs,
+      parsed_by: parsedBy,
+      picks,
+      no_exact_fit,
+      note,
+      checked: "Nov 18, 2026",
+    },
+    { headers: { "Cache-Control": "no-store" } }
+  );
+}

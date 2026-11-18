@@ -1,0 +1,160 @@
+/* Conversational matcher — plain-words mode for /generator-finder/.
+   Own file on purpose: styles.css is never edited by this feature.
+   Palette matches the site: navy/charcoal + gold/amber, bubbly radii
+   (22-24px), soft shadows, pill buttons — same language as styles.css?v=5. */
+
+.matcher {
+  margin: 2rem 0 0;
+  padding: 1.4rem 1.3rem 1.5rem;
+  background: linear-gradient(180deg, #22304f, #1b2a4a 60%, #16233d);
+  border: 1px solid #22304f;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(26, 26, 26, .05), 0 18px 40px rgba(26, 26, 26, .18);
+  color: #f7f4ec;
+}
+
+.matcher h2 {
+  color: #fff;
+  margin-top: 0;
+}
+
+.matcher p {
+  color: #d9dee9;
+}
+
+.matcher label {
+  display: block;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: .5rem;
+}
+
+.matcher textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 4.2rem;
+  padding: .85rem 1rem;
+  font: inherit;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  background: #fff;
+  border: 2px solid #f5b301;
+  border-radius: 22px;
+  resize: vertical;
+}
+
+.matcher textarea:focus {
+  outline: none;
+  border-color: #ffd34d;
+  box-shadow: 0 0 0 3px rgba(245, 179, 1, .45);
+}
+
+.matcher-submit {
+  display: block;
+  width: 100%;
+  padding: .9rem 1rem;
+  margin: .8rem 0 .4rem;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #ffd34d, #f5b301 55%, #e0a100);
+  border: 1px solid #c78d00;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 179, 1, .4), inset 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.matcher-submit:hover {
+  background: linear-gradient(180deg, #ffe08a, #ffd34d 60%, #f5b301);
+}
+
+.matcher-submit:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.matcher-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .6rem 0 0;
+}
+
+.matcher-examples span {
+  color: #b9c2d4;
+  font-size: .9rem;
+  align-self: center;
+}
+
+.matcher-chip {
+  font: inherit;
+  font-size: .9rem;
+  padding: .45rem .9rem;
+  color: #f7f4ec;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.matcher-chip:hover {
+  background: rgba(245, 179, 1, .22);
+  border-color: #f5b301;
+}
+
+.matcher-status {
+  margin: .8rem 0 0;
+  font-size: .95rem;
+  color: #ffd34d;
+}
+
+.matcher-readback {
+  margin: 1rem 0 0;
+  padding: .8rem 1rem;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 22px;
+  font-size: .95rem;
+  color: #f7f4ec;
+}
+
+.matcher-readback strong {
+  color: #ffd34d;
+}
+
+.matcher-note {
+  margin: 1rem 0 0;
+  padding: .8rem 1rem;
+  background: #fff;
+  border-left: 4px solid #f5b301;
+  border-radius: 22px;
+  color: #1a1a1a;
+}
+
+.matcher-reasons {
+  margin: .6rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.matcher-reasons li {
+  margin: .25rem 0;
+}
+
+.matcher-alt {
+  border-color: #f5b301;
+  box-shadow: 0 0 0 2px #f5b301 inset, 0 8px 22px rgba(245, 179, 1, .18);
+}
+
+.matcher-error {
+  margin: 1rem 0 0;
+  padding: .8rem 1rem;
+  background: #fff;
+  border-left: 4px solid #ff6a00;
+  border-radius: 22px;
+  color: #1a1a1a;
+}
+
+.matcher .option-card {
+  color: #1a1a1a;
+}

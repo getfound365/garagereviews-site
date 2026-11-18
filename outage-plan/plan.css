@@ -1,0 +1,230 @@
+/* Printable outage plan — /outage-plan/plan.css
+   Own file on purpose: styles.css is never edited by this feature.
+   Palette matches the site: navy/charcoal + gold/amber, bubbly radii
+   (22-24px), soft shadows, pill buttons — same language as styles.css?v=5. */
+
+.plan-sheet {
+  background: #fff;
+  border: 1px solid #e9e4d8;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(26, 26, 26, .05), 0 18px 40px rgba(26, 26, 26, .08);
+  padding: 1.4rem 1.4rem 1.2rem;
+  margin: 1rem 0;
+}
+
+.plan-sheet h1 {
+  margin-top: 0;
+}
+
+.plan-summary {
+  background: #f7f4ec;
+  border-left: 4px solid #f5b301;
+  border-radius: 22px;
+  padding: .8rem 1rem;
+  margin: .6rem 0 1rem;
+}
+
+.plan-section {
+  border-top: 1px solid #e9e4d8;
+  padding: 1rem 0 .4rem;
+}
+
+.plan-section:first-of-type {
+  border-top: none;
+}
+
+.plan-section h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.15rem;
+}
+
+.plan-section h2 .num {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  text-align: center;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffd34d, #f5b301 55%, #e0a100);
+  color: #1a1a1a;
+  margin-right: .4rem;
+  font-size: 1rem;
+}
+
+.plan-section p {
+  margin: .4rem 0;
+}
+
+.plan-section ul {
+  margin: .4rem 0;
+  padding-left: 1.3rem;
+}
+
+.plan-section li {
+  margin: .3rem 0;
+}
+
+.stock {
+  display: inline-block;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .15rem .7rem;
+  font-size: .9rem;
+}
+
+.stock.in {
+  background: #d9f7e3;
+  color: #14532d;
+}
+
+.stock.out {
+  background: #ffe4d6;
+  color: #7c2d12;
+}
+
+.fit {
+  border-radius: 22px;
+  padding: .8rem 1rem;
+  margin: .6rem 0;
+}
+
+.fit.ok {
+  background: #d9f7e3;
+  border-left: 4px solid #25c95a;
+}
+
+.fit.no {
+  background: #ffe4d6;
+  border-left: 4px solid #ff6a00;
+}
+
+.fit.unknown {
+  background: #f7f4ec;
+  border-left: 4px solid #f5b301;
+}
+
+.cost-over {
+  background: #ffe4d6;
+  border-left: 4px solid #ff6a00;
+  border-radius: 22px;
+  padding: .8rem 1rem;
+}
+
+.cost-ok {
+  background: #d9f7e3;
+  border-left: 4px solid #25c95a;
+  border-radius: 22px;
+  padding: .8rem 1rem;
+}
+
+.cost-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.print-btn {
+  display: block;
+  width: 100%;
+  padding: .9rem 1rem;
+  margin: 1rem 0 .4rem;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #ffd34d, #f5b301 55%, #e0a100);
+  border: 1px solid #c78d00;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 179, 1, .4), inset 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.print-btn:hover {
+  background: linear-gradient(180deg, #ffe08a, #ffd34d 60%, #f5b301);
+}
+
+.plan-empty {
+  background: #fff;
+  border: 1px solid #e9e4d8;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(26, 26, 26, .05), 0 18px 40px rgba(26, 26, 26, .08);
+  padding: 1.6rem 1.4rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.plan-empty .btn {
+  display: inline-block;
+  text-align: center;
+  padding: .9rem 1.6rem;
+  margin: .8rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #ffd34d, #f5b301 55%, #e0a100);
+  border: 1px solid #c78d00;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(245, 179, 1, .4);
+}
+
+.plan-date {
+  font-size: .9rem;
+  color: #666;
+}
+
+/* Print: one tidy page — no nav, no footer, no buttons. */
+@media print {
+  body.garage {
+    background: #fff;
+  }
+
+  header.site,
+  footer,
+  .print-btn,
+  .back-link,
+  .disclosure,
+  .disclosure-top {
+    display: none !important;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .plan-sheet {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .plan-section {
+    padding: .55rem 0 .2rem;
+  }
+
+  .plan-section h2 {
+    font-size: 1.05rem;
+  }
+
+  .fit,
+  .cost-over,
+  .cost-ok,
+  .plan-summary {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: .8rem;
+    word-break: break-all;
+  }
+}

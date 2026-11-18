@@ -1,0 +1,106 @@
+/* Ask Garage Reviews — ask/ask.css
+   Own file for the /ask/ page only (styles.css is never edited).
+   Tokens match styles.css?v=5: charcoal #1A1A1A, orange #FF6A00,
+   green #2EE56B, off-white #FAFAF7. Bubbly shapes: 22-24px radii,
+   soft shadows, pill buttons. */
+
+.ask-intro { max-width: 62ch; font-size: 1.05rem; }
+main h1 span { color: #ff6a00; }
+
+.ask-box {
+  background: #fff;
+  border: 1px solid #e9e4d8;
+  border-radius: 24px;
+  padding: 1.3rem 1.4rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 2px 8px rgba(26,26,26,.05), 0 18px 40px rgba(26,26,26,.08);
+}
+.ask-box label { font-weight: 800; font-size: 1.05rem; display: block; margin-bottom: .5rem; }
+.ask-row { display: flex; gap: .6rem; flex-wrap: wrap; }
+.ask-row input {
+  flex: 1 1 260px;
+  font: inherit;
+  font-size: 1.05rem;
+  padding: .8rem 1rem;
+  border: 1px solid #d8d2c4;
+  border-radius: 999px;
+  background: #fafaf7;
+  color: #1a1a1a;
+  min-width: 0;
+}
+.ask-row input:focus { outline: 3px solid #2ee56b; outline-offset: 1px; border-color: #ff6a00; }
+.ask-btn {
+  font: inherit;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: .8rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #e06a00;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ff7d1f, #ff6a00 55%, #f25c00);
+  color: #1a1a1a;
+  box-shadow: 0 4px 14px rgba(255,106,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.ask-btn:hover:not(:disabled) { background: linear-gradient(180deg, #54f07e, #2ee56b 60%, #25c95a); border-color: #25c95a; }
+.ask-btn:disabled { opacity: .65; cursor: wait; }
+
+.ask-examples-label { margin: 1rem 0 .4rem; font-weight: 700; color: #444; }
+.chip-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip {
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 600;
+  padding: .5rem .95rem;
+  border-radius: 999px;
+  border: 1px solid #d8d2c4;
+  background: linear-gradient(180deg, #ffffff, #f7f4ec);
+  color: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(26,26,26,.07);
+}
+.chip:hover { border-color: #ff6a00; box-shadow: 0 0 0 2px #ff6a00 inset, 0 4px 12px rgba(255,106,0,.18); }
+
+.ask-status {
+  background: #fff;
+  border: 1px solid #e9e4d8;
+  border-left: 4px solid #ff6a00;
+  border-radius: 14px;
+  padding: .8rem 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(26,26,26,.05);
+}
+
+.answer-card {
+  background: #fff;
+  border: 1px solid #e9e4d8;
+  border-radius: 24px;
+  padding: 1.3rem 1.4rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 2px 8px rgba(26,26,26,.05), 0 18px 40px rgba(26,26,26,.08);
+}
+.answer-card h2 { margin-top: 0; }
+.answer-card > p:first-of-type { font-size: 1.08rem; }
+.answer-sources h3 { margin-bottom: .3rem; font-size: 1rem; }
+.answer-sources ol { margin: .2rem 0; padding-left: 1.3rem; }
+.answer-sources li { margin: .3rem 0; }
+.answer-sources a { color: #1a1a1a; font-weight: 600; }
+.answer-sources a:hover { color: #ff6a00; }
+.answer-note { font-size: .85rem; color: #555; margin-bottom: 0; }
+
+.idk-card {
+  background: #fff3e0;
+  border: 1px solid #e9e4d8;
+  border-left: 4px solid #ff6a00;
+  border-radius: 22px;
+  padding: 1.2rem 1.3rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 2px 8px rgba(26,26,26,.05), 0 18px 40px rgba(26,26,26,.08);
+}
+.idk-card h2 { margin-top: 0; }
+.idk-card p:last-child { margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .ask-box, .answer-card, .idk-card { padding: 1rem; border-radius: 22px; }
+  .ask-row input { flex-basis: 100%; }
+  .ask-btn { width: 100%; }
+}
