@@ -117,3 +117,26 @@ Five new pages built Nov 18 (all figures from the verified Nov 18 live re-check 
 2. **Domain wiring** — Tyler BOUGHT garagereviews.us Nov 18 ($6.50/yr Cloudflare). Still to do: create a repo for the site, connect Cloudflare Pages, and 301-redirect granthcaldwell.com/garage/ → garagereviews.us (keep the old hub live until the redirect is in place; Pinterest pins point at the old hub).
 3. **Champion 200988** — re-check Walmart presence later; if a live listing appears, add it as the direct iGen4500DF rival (it is the natural second review in that class).
 4. **Roster growth** — the daily garage loop adds one reviewed row per day; each new review gets a "Reviewed" badge + video link, and the finder grows with it. Under-$500 and over-$1,000 budget bands are empty on purpose until a model lands there. The iGen4000DFc and Jackery are out of stock — re-check their stock on the next price sweep before relying on them in a "buy now" context.
+
+## Nov 18 redesign v3 — cleaner, glossier look + real product photos (WattRoster style)
+
+Look-and-images pass only — no figures, prices, ratings, stock states, links, canonicals, disclosures, JSON-LD, or sitemap entries changed. generator-finder/ untouched.
+
+**Design system (generic, reusable — not generator-specific in structure):** the components are named for any product category, so the next category reuses them without a rebuild: `.product-img` (image panel on cards), `.product-hero` (image + key facts on review/ranked pages), `.spec-big` (headline value + label stats), `.spec-list` (short bullets), `.thumb` (compare-table thumbnails), `.video-embed`, and the softened quiz pieces (`fieldset`, `.option-card`, `.quiz-submit`).
+- Soft 1px borders + layered shadows replace the heavy 2px black card borders; cards lift slightly on hover.
+- Page background is a subtle soft gradient (white → off-white → pale warm gray), fixed.
+- Glossy touches: gradient primary buttons/badges (orange, green), soft shadows, inset top highlights.
+- More whitespace, larger price/spec type; h2/h3 no longer all-caps (h1 and the header brand lockup stay uppercase).
+- Mobile: product hero stacks to one column, spec numbers shrink, thumbs shrink.
+
+**Product photos (all REAL, visually verified as the correct model; no AI images):**
+- iGen4500DF — https://i.ebayimg.com/images/g/p0MAAOSwozNm2Lta/s-l1600.jpg (1500×1207, side view, "iGen4500DF DUAL FUEL" legible). Hotlinked; preflighted 200 with a garagereviews.us referer.
+- WGen9500DF — https://generatorbible.com/wp-content/uploads/Westinghouse-WGen9500DF-1.jpg (1200×864, panel reads "WGen9500DF", 9500/12500 + 8500/11200). Hotlinked; preflighted 200.
+- iGen4000DFc — https://westinghouse.com/cdn/shop/files/iGen4000DFc-HEROR_2130e00a-60ec-4aba-99c6-dbf4476d7735_1440x.jpg?v=1739908137 (1440×1440, manufacturer's own CDN hero, side reads "iGen4000DFc Dual Fuel", CO sensor visible). Hotlinked; preflighted 200.
+- Jackery Explorer 1000 v2 — https://de.jackery.com/cdn/shop/files/Explorer1000v2TragbarePowerstation_6.png?v=1722245525&width=650 (650×433, manufacturer's own CDN, "Jackery Explorer 1000" badge; verified clean on a white background). Hotlinked; preflighted 200. (A closer 768×768 retailer shot was verified too but not used — its host filename contains "1070wh", which would read as the stale figure.)
+- Hosting route: hotlink (no binaries in the repo — the github push-files CLI is text-only, so no image files were pushed). Each URL was fetched with a cross-origin referer and visually inspected before use. If any host later blocks hotlinking, the fallback is to upload the same verified files via the GitHub web UI.
+- Walmart's own listing pages block direct fetches (bot check), so images came from the manufacturer's CDN (2 models) and retailer/review-site product photos (2 models) — never from a different model, never AI-generated.
+
+**Where photos appear:** homepage pick cards (job bands + solar card + latest review) and short-list table; compare-table rows; each review page's product hero; each ranked entry on the best-dual-fuel page + its side-by-side table.
+
+**Validation (after the redesign):** all 8 HTML pages well-formed (python html.parser); stale-figure grep CLEAN (15,771, $559, 1,070, 1,024, iGen2200, 15.98, business.walmart.com, amazon); eBay links unchanged (homepage 2, compare 1, Jackery review 1, everywhere else 0); iGen4000DFc OUT OF STOCK flag + "Buy the iGen4500DF instead" button intact; iGen4500DF video embed intact (class-based now, same video).
