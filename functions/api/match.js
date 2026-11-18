@@ -242,7 +242,17 @@ async function parseWithAI(env, query) {
     temperature: 0.1,
     max_tokens: 300,
   });
-  const text = (res && res.response ? res.response : "").trim();
+  // GLM 4.7 is a reasoning model: its answer lands in the reasoning fields
+  // with message.content null, not in res.response. Read every plausible
+  // slot so a valid JSON answer is never missed.
+  const msg = res && res.choices && res.choices[0] && res.choices[0].message;
+  const text = (
+    (res && typeof res.response === "string" && res.response) ||
+    (msg && typeof msg.content === "string" && msg.content) ||
+    (msg && typeof msg.reasoning_content === "string" && msg.reasoning_content) ||
+    (msg && typeof msg.reasoning === "string" && msg.reasoning) ||
+    ""
+  ).trim();
   const start = text.indexOf("{");
   const end = text.lastIndexOf("}");
   if (start < 0 || end <= start) return null;
