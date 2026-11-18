@@ -48,6 +48,13 @@ h3 { margin-bottom: .3rem; font-weight: 700; letter-spacing: -.01em; }
 .watch-video { display: inline-block; background: linear-gradient(180deg, #ff7d1f, #ff6a00 55%, #f25c00); color: #1a1a1a; font-weight: 800; text-decoration: none; padding: .7rem 1.1rem; border-radius: 10px; margin: .4rem 0; box-shadow: 0 4px 14px rgba(255,106,0,.35), inset 0 1px 0 rgba(255,255,255,.35); }
 .back-link { display: inline-block; margin-top: 1rem; }
 
+/* Buy-button row: holds up to 3 retailer buttons cleanly. Generic and
+   reusable — the same row carries Walmart / eBay / Home Depot / Lowe's
+   wherever a product is available at each. Buttons share the row on wide
+   screens and stack on narrow ones; a single button still fills the row. */
+.buy-row { display: flex; flex-wrap: wrap; gap: .6rem; margin: .7rem 0; }
+.buy-row .btn { flex: 1 1 170px; margin: 0; text-align: center; padding: .8rem .7rem; font-size: 1rem; }
+
 /* Verdict badges — glossy */
 .verdict { display: inline-block; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: .18rem .65rem; margin-right: .5rem; vertical-align: middle; box-shadow: 0 1px 4px rgba(26,26,26,.14), inset 0 1px 0 rgba(255,255,255,.4); }
 .verdict.buy { background: linear-gradient(180deg, #54f07e, #2ee56b 60%, #25c95a); color: #1a1a1a; }
