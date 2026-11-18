@@ -159,3 +159,32 @@ Layout-only addition, no new retailer links: a generic `.buy-row` flex component
   card with verified numbers only (fuel bars omitted where propane watts are
   unverified — iGen4000DFc; Jackery gets capacity/output chips instead).
 - No prices, ratings, links, or specs changed in this pass.
+
+## 2026-11-18 — homepage rebuild: vision section, category tiles, in-scene images, bubbly shapes
+
+- Vision section under the hero ("How Garage Reviews works") + 4 trust points
+  (real prices checked live, a video review for every pick, no hype / no paid
+  placements, honest about what we haven't done). No new claims — all from
+  existing brand language; affiliate disclosure not duplicated.
+- Category tiles ("Browse by category"): Generators (live, links to /compare/),
+  Tools, Hunting, Health, Sauna, Cold Plunges (coming-soon, no links, gold
+  "Coming soon" badge), Guides & tools (links to /generator-finder/). Each tile
+  has a small AI scene image (400x225, q60, embedded as data URI). No empty
+  category pages created, no dead links.
+- In-scene product images everywhere: homepage cards + short-list thumbs,
+  compare thumbs, best-of heroes + thumbs now use the existing scene composites
+  (real product photo composited onto the AI gravel-sunset scene) as data URIs
+  — 480px for cards/heroes, 160px for thumbs. No white-background product shots
+  left on those pages; no external image hosts left on index/compare/best-of.
+  Product pixels untouched — composites reused, not regenerated.
+- Bubbly Web3 shapes (Tyler steer): pill buttons (hero CTAs, buy buttons,
+  watch-video, secondary buttons, quiz submit), 22-24px radii on cards/hero/
+  tiles, softer diffused shadows. Palette unchanged.
+- styles.css?v=3 -> ?v=4 on all 8 pages.
+- Homepage now 384KB total including all data URIs (under the 500KB aim).
+- Validation: all 8 pages well-formed (python html.parser); visible-text diff
+  vs live shows ZERO removals and only the 30 added vision/tile lines;
+  stale-figure grep clean; headless-Chromium render at 390px (docScrollW 375,
+  no page overflow) and 1280px verified by screenshot; compare tables scroll
+  inside their wrapper on mobile by design. Hero, At-a-Glance cards, buy rows,
+  and generator-finder/ untouched except the stylesheet version bump.
