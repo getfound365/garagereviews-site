@@ -1,0 +1,106 @@
+# Garage Reviews — garagereviews.us — Build Report
+
+**Built:** Nov 18, 2026 (local only — NOT deployed, no repo exists yet)
+**Location:** `~/workspace/garagereviews-site/`
+**Domain:** garagereviews.us — BOUGHT by Tyler Nov 18, 2026 ($6.50/yr Cloudflare). Site not wired to it yet.
+**Model:** Wattroster-style roster hub + finder with up to 3 options + full comparison table, video reviews included. Walmart links only — no Amazon anywhere (Tyler's rule after the KDP termination).
+
+## Nov 18 update — live re-check applied (~05:49–05:53, browser)
+
+All four seeded models were re-checked on live walmart.com listings and the figures below replaced the search-crawl figures. Roster is now **4 models** (was 5). What changed:
+- **WGen9500DF:** rating corrected to 4.8 stars / **26,307** ratings (the build's 15,771 was stale — never publish it). In stock, $999. Affiliate link https://walmrt.us/4kiUs3z (2%, $19.98/sale), listing 566066875.
+- **iGen4000DFc:** rating now verified, 4.8 stars / **1,164** ratings. **OUT OF STOCK** — flagged on every page. Regular walmart.com listing confirmed (listing 5315492644), replacing the business.walmart.com link. Affiliate link https://walmrt.us/4zq3W0w. Commission rate was NOT displayed for this listing — $15.98 (2% of $799) is arithmetic only, never presented as a verified figure.
+- **iGen2200: REMOVED from the roster entirely.** No live Walmart listing exists, no verifiable price, no link. Removed from homepage, compare table, and finder MODELS. Finder branches that offered it now offer what remains or honestly state nothing fits (under-$500 now returns 0 options).
+- **Jackery Explorer 1000 v2: KEPT** — Tyler's decision Nov 18 (declined the in-stock HomePower 1000 v2 swap, $549, listing 21351753268, link https://walmrt.us/4zUu5Wo — recorded here only, NOT on the site). Corrected to **$589.00** on Walmart (not $559), **OUT OF STOCK**, 4.9 stars / 299 ratings, capacity **1,060 Wh** (not 1,070, not 1,024), 23.8 lb. Affiliate link https://walmrt.us/4zsmKfO (2%, $11.78). Walmart titles the listing "Jackery E1000AC Sand Gold 1060Wh" — the unit photo and reviews confirm it is the Explorer 1000 v2; the naming is noted on the site.
+- **iGen4500DF:** unchanged ($949, 4.7/8,781, link 4t4whs1). **Video review is LIVE and verified:** https://www.youtube.com/watch?v=CT9JMiGgqgg — the loop published it Nov 18 and the URL was confirmed against the live video page (title, description, and affiliate link all match). The channel-link TODO is gone.
+- No eBay links on the site — the EPN task is still running; none exist yet and none were invented.
+- New `.oos` badge in styles.css for out-of-stock flags.
+
+## Pages built
+
+| Page | File | What it does |
+|---|---|---|
+| Homepage (roster hub) | `index.html` | Hero, browse by job (essentials / whole home / portable), browse by budget (under $500 / around $1,000 / over $1,000), solar battery section, latest review (iGen4500DF), short comparison table, 3-step outage-plan guide, "Always on" links |
+| Generator finder v2 | `generator-finder/index.html` | Same 3 questions as the old finder (what to power / fuel / budget), but the result shows up to 3 option cards — best match + alternatives — each with price, rating, specs, fit line, review status, and shop link where verified |
+| Compare all | `compare/index.html` | Full table: gas running/starting, propane running, type/voltage, weight, price, rating, best fit, review status/link |
+| Shared stylesheet | `styles.css` | Garage brand v2: charcoal #1A1A1A, orange #FF6A00, green #2EE56B, off-white #FAFAF7; FTC disclosure styling top + bottom of every page |
+| Sitemap | `sitemap.xml` | 3 URLs under https://garagereviews.us/ |
+
+## Roster — verified data (Nov 18, 2026)
+
+**Verification status (updated Nov 18 ~05:53):** the live-browser re-check is DONE — all four seeded models were verified on live walmart.com listings Nov 18 ~05:49–05:53. The figures below are the verified ones. The original caveat (bot-check blocked the text crawler) applied only to the first build; it no longer applies.
+
+### 1. Westinghouse iGen4500DF — REVIEWED ✅
+- **Price:** $949.00, in stock, free shipping, arrives Sat Nov 21
+- **Rating:** 4.7 stars / 8,781 ratings / 8,741 reviews, 79% 5-star
+- **Specs:** gas 4,500 peak / 3,700 running W; propane 4,050 peak / 3,330 running W; 224cc; 3.4-gal tank; up to 18h gas at 25% load (14h propane); 52 dBA; <3% THD; electric push-button + remote start (109 yd) + recoil; TT-30R 30A RV, 5-20R duplex, dual USB; 98 lb
+- **Source:** Walmart listing 299247705, verified live by parent via browser Nov 18 ~05:31 CST (and Nov 17 evening run). Specs from listing spec block + Westinghouse spec sheet.
+- **Affiliate link:** https://walmrt.us/4t4whs1 (2%, $18.98/sale) — generated Nov 18 ~05:29 in Creator
+- **Video review:** LIVE and verified Nov 18: https://www.youtube.com/watch?v=CT9JMiGgqgg ("Westinghouse iGen4500DF: Is the $949 Dual-Fuel Inverter Generator Worth It?"). Hub, finder, and compare table all link to the video.
+
+### 2. Westinghouse WGen9500DF — Review coming
+- **Price:** $999.00
+- **Rating:** 4.8 stars / 26,307 ratings (25,911 reviews) — the first build's 15,771 was stale; corrected by the live re-check.
+- **Specs:** gas 12,500 peak / 9,500 running W; propane 11,200 peak / 8,500 running W; 457cc; 6.6-gal tank; up to 12h; 211 lb; 120/240V; L14-30R transfer-switch outlet; remote start — specs confirmed on the live listing.
+- **Source:** Walmart listing 566066875, verified live Nov 18 ~05:49–05:53.
+- **Stock:** In stock. Free shipping, arrives Sat Nov 21. Sold and shipped by Westinghouse Outdoor Power.
+- **Affiliate link:** https://walmrt.us/4kiUs3z (2%, $19.98/sale) — generated in Creator Nov 18.
+- **Best fit:** whole home via transfer switch.
+
+### 3. Westinghouse iGen4000DFc — Review coming
+- **Price:** $799.00
+- **Rating:** 4.8 stars / 1,164 ratings (1,149 reviews) — verified by the live re-check; was unknown in the first build.
+- **Specs:** 4,000 peak / 3,300 running W; dual fuel; CO sensor; remote start; TT-30R RV outlet; up to 7h on a 1.69-gal tank
+- **Source:** regular walmart.com listing 5315492644 (identity confirmed by the product image showing "iGen4000DFc" and a review naming it), verified live Nov 18 ~05:49–05:53. Replaces the business.walmart.com link used in the first build.
+- **Stock:** OUT OF STOCK (no Add to cart — "Shop similar" only). Flagged on every page.
+- **Affiliate link:** https://walmrt.us/4zq3W0w — generated in Creator Nov 18 despite the item being out of stock. Commission rate NOT displayed for this listing (its card did not appear in Creator Products search, apparently because it is out of stock); $15.98 is 2% arithmetic only, never presented as verified.
+- **Best fit:** essentials, CO sensor included — $150 less than the iGen4500DF.
+
+### 4. Westinghouse iGen2200 — REMOVED Nov 18
+- **Reason:** no live walmart.com listing exists. Walmart search returned only a non-Westinghouse BE 2800/2200W generator; Creator Products search (68 results) contains only parts/filters/conversion kits for the iGen2200, no generator. No verifiable price, no rating, no link — so it is off the roster entirely (homepage, compare table, finder MODELS and finder logic). Under-$500 branches now honestly return no options.
+- **Old figures (do NOT reuse):** MSRP $579 on westinghouse.com (out of stock there); 2,200 peak / 1,800 running W; 52 dBA; 46 lb — maker/review-site figures only, never verified against a Walmart listing.
+
+### 5. Jackery Explorer 1000 v2 — Review coming (solar) — KEPT per Tyler's decision Nov 18
+- **Price:** $589.00 on Walmart (not the $559 Jackery.com price)
+- **Rating:** 4.9 stars / 299 ratings (297 reviews) — verified by the live re-check.
+- **Specs:** 1,060 Wh LiFePO4 battery (not 1,070, not 1,024 — the live listing's own figure); 1,500W continuous / 3,000W surge; 400W solar input; 23.8 lb; charges from wall or sun
+- **Source:** Walmart listing 19996171850, verified live Nov 18 ~05:49–05:53. Walmart titles it "Jackery E1000AC Sand Gold 1060Wh" — the unit photo and imported jackery.com reviews confirm it is the Explorer 1000 v2; the naming is noted on the site.
+- **Stock:** OUT OF STOCK (no Add to cart — "Shop similar" only). Flagged on every page.
+- **Affiliate link:** https://walmrt.us/4zsmKfO (2%, $11.78/sale) — generated in Creator Nov 18.
+- **Decision note:** the in-stock Jackery HomePower 1000 v2 ($549, 1,024 Wh, listing 21351753268, link https://walmrt.us/4zUu5Wo) was offered as a swap and DECLINED by Tyler Nov 18 — keep the Explorer 1000 v2. The HomePower link is recorded here only and is NOT on the site.
+- **Best fit:** quiet indoor-safe backup.
+
+### Researched but EXCLUDED (not in the roster)
+- **Champion 200988** (4,500W dual fuel inverter): specs verified from the manufacturer (4,500 peak / 3,500 running gas; 4,500 / 3,150 propane; 61 dBA; 14h gas / 21h propane at 25%; 99.2 lb) — but NO live Walmart listing or current price could be confirmed anywhere (Ordinary Prepper, Nov 1, 2026, also could not verify a price). Excluded per the "only models with a live Walmart listing" rule.
+- **Westinghouse iGen12000DFc** (12,000 peak / 9,000 running, $1,899, listing 5255290485): search crawl showed OUT OF STOCK. Excluded — roster lists buyable models only.
+
+## Tests run (Nov 18, 2026)
+
+**Finder JS — node, real script extracted from the file (`/tmp/test-finder-v2.js`): 48/48 PASS (re-run after the Nov 18 live re-check update)**
+- Unanswered → "Answer all 3 questions first" (0 cards)
+- essentials / gas / around $1,000 → 3 options, best match iGen4500DF
+- essentials / either / over $1,000 → 3 options, best match iGen4500DF
+- essentials / gas / under $500 → "Under $500 — nothing fits yet", 0 options (was 2 before the iGen2200 removal)
+- small / gas / under $500 → "Small loads — one honest option", 1 option (Jackery, flagged out of stock)
+- small / solar / around $1,000 → 1 option (Jackery)
+- essentials / solar / around $1,000 → 1 option (Jackery)
+- whole / gas / over $1,000 → "Whole-home backup", 2 options, best match WGen9500DF
+- whole / either / around $1,000 → 2 options, best match WGen9500DF
+- Content checks: $949, 4.7 stars / 8,781 ratings, walmrt.us/4t4whs1, youtube.com/watch?v=CT9JMiGgqgg, "Review coming", $799, $999, "Best match:", 4.8 stars from 26,307 ratings, walmrt.us/4kiUs3z, walmrt.us/4zq3W0w, 4.8 stars from 1,164 ratings, "Out of stock", "In stock" all present in the essentials result; solar result contains $589, 1,060 Wh, walmrt.us/4zsmKfO, 4.9 stars from 299 ratings, "Out of stock"; under-$500 result states honestly that nothing fits.
+- Stale-figure checks: no rendered result contains 15,771, 1,070, $559, iGen2200, 15.98, or 1,024.
+
+**HTML validation (Python html.parser):** all 3 pages well-formed, no unclosed/unmatched tags (re-checked after the update).
+
+**Internal links:** all resolve to files in the site (/, /compare/, /generator-finder/, /styles.css).
+
+**External-link audit:** only garagereviews.us, walmart.com, walmrt.us, youtube.com, instagram.com, pinterest.com, sweatyyetisauna.com, zc.vg. **No Amazon links anywhere** (grep-verified across all site files). No eBay links — none exist yet.
+
+**Stale-figure grep (after the update):** no occurrences of 15,771, $559, 1,070 Wh, 1,024 Wh, iGen2200, 15.98, or business.walmart.com in any site file (index.html, compare/index.html, generator-finder/index.html, styles.css, sitemap.xml) — CLEAN.
+
+## Still owed (updated Nov 18, after the live re-check)
+
+1. **iGen4500DF video URL — DONE.** The loop published it Nov 18 and the URL was verified live: https://www.youtube.com/watch?v=CT9JMiGgqgg. Hub, finder, and compare table all link to it.
+2. **Domain wiring** — Tyler BOUGHT garagereviews.us Nov 18 ($6.50/yr Cloudflare). Still to do: create a repo for the site, connect Cloudflare Pages, and 301-redirect granthcaldwell.com/garage/ → garagereviews.us (keep the old hub live until the redirect is in place; Pinterest pins point at the old hub).
+3. **eBay links** — the EPN task is still running; no eBay links exist yet. Once they arrive, add them as a second price option per model (do NOT invent any).
+4. **Champion 200988** — re-check Walmart presence later; if a live listing appears, add it as the direct iGen4500DF rival (it is the natural second review in that class).
+5. **Roster growth** — the daily garage loop adds one reviewed row per day; each new review gets a "Reviewed" badge + video link, and the finder grows with it. Under-$500 and over-$1,000 budget bands are empty on purpose until a model lands there. The iGen4000DFc and Jackery are out of stock — re-check their stock on the next price sweep before relying on them in a "buy now" context.

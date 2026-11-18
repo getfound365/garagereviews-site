@@ -1,0 +1,99 @@
+/* Garage Reviews — garagereviews.us
+   Brand (BRAND-GUIDE.md v2): charcoal #1A1A1A, vivid orange #FF6A00,
+   vivid green #2EE56B, off-white #FAFAF7. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #fafaf7; color: #1a1a1a; line-height: 1.55; }
+a { color: #1a1a1a; }
+
+/* Header */
+header.site { background: #1a1a1a; border-bottom: 4px solid #ff6a00; padding: 1.1rem 1.25rem; }
+header.site a.brand { color: #fff; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 1.35rem; text-decoration: none; }
+header.site a.brand span { color: #ff6a00; }
+header.site .tagline { color: #2ee56b; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; margin: .2rem 0 0; }
+header.site nav { margin-top: .6rem; }
+header.site nav a { color: #fff; margin-right: 1.1rem; text-decoration: none; font-weight: 600; }
+header.site nav a:hover { color: #2ee56b; }
+
+/* Layout */
+main { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+h1 { text-transform: uppercase; letter-spacing: .02em; font-weight: 800; line-height: 1.15; }
+h2 { text-transform: uppercase; letter-spacing: .02em; font-weight: 800; margin-top: 1.8rem; }
+h3 { margin-bottom: .3rem; }
+
+/* Disclosure */
+.disclosure-top { font-size: .9rem; color: #1a1a1a; background: #fff; border-left: 4px solid #ff6a00; padding: .7rem .9rem; margin: 1rem 0 0; }
+.disclosure { font-size: .85rem; color: #555; margin-top: 1.8rem; }
+
+/* Hero */
+.hero { background: #1a1a1a; color: #fff; border-radius: 12px; padding: 1.6rem 1.4rem; margin-top: 1.2rem; }
+.hero h1 { color: #fff; margin: 0 0 .5rem; }
+.hero h1 span { color: #ff6a00; }
+.hero p { color: #e8e8e8; margin: .4rem 0 1rem; }
+.hero .cta-row { display: flex; flex-wrap: wrap; gap: .6rem; }
+.hero .cta { display: inline-block; background: #ff6a00; color: #1a1a1a; font-weight: 800; text-decoration: none; padding: .7rem 1.1rem; border-radius: 8px; }
+.hero .cta.secondary { background: #fff; color: #1a1a1a; }
+
+/* Buttons + links */
+.btn { display: block; text-align: left; padding: .9rem 1rem; font-size: 1.05rem; margin: .6rem 0; background: #1a1a1a; color: #fff; border-radius: 8px; border: 2px solid #1a1a1a; text-decoration: none; }
+.btn:hover { background: #000; }
+.btn .price { color: #ff6a00; font-weight: 800; }
+.btn small { display: block; font-weight: 400; font-size: .85rem; opacity: .85; margin-top: .2rem; color: #fff; }
+.btn.secondary { display: block; text-align: center; padding: .8rem 1rem; margin: .6rem 0; background: #fff; color: #1a1a1a; border: 2px solid #1a1a1a; }
+.btn.secondary:hover { background: #1a1a1a; color: #fff; }
+.watch-video { display: inline-block; background: #ff6a00; color: #1a1a1a; font-weight: 800; text-decoration: none; padding: .7rem 1.1rem; border-radius: 8px; margin: .4rem 0; }
+.back-link { display: inline-block; margin-top: 1rem; }
+
+/* Verdict badges */
+.verdict { display: inline-block; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: .15rem .6rem; margin-right: .5rem; vertical-align: middle; }
+.verdict.buy { background: #2ee56b; color: #1a1a1a; }
+.verdict.skip { background: #ff6a00; color: #1a1a1a; }
+.verdict.watch { background: #fff; color: #1a1a1a; border: 1px solid #1a1a1a; }
+.verdict.reviewed { background: #2ee56b; color: #1a1a1a; }
+.verdict.coming { background: #fff; color: #1a1a1a; border: 1px solid #1a1a1a; }
+.oos { display: inline-block; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: .15rem .6rem; margin-right: .5rem; vertical-align: middle; background: #ff6a00; color: #1a1a1a; }
+
+/* Cards (job bands, budget bands, roster) */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .8rem; margin: .8rem 0; }
+.card { background: #fff; border: 2px solid #1a1a1a; border-radius: 8px; padding: 1rem; }
+.card h3 { margin-top: 0; text-transform: uppercase; letter-spacing: .02em; }
+.card p { margin: .4rem 0; }
+.card .price { color: #ff6a00; font-weight: 800; }
+.card .meta { font-size: .9rem; color: #444; }
+.card .actions { margin-top: .7rem; }
+.card .actions a { display: inline-block; margin: .2rem .4rem .2rem 0; }
+.note { font-size: .95rem; background: #fff; border: 1px solid #1a1a1a; border-radius: 8px; padding: .7rem .9rem; }
+.sd-note { background: #fff3e0; border-left: 4px solid #ff6a00; padding: .7rem .9rem; margin: .8rem 0; font-size: .95rem; }
+.footnote { font-size: .85rem; color: #555; }
+
+/* Comparison table */
+.table-wrap { overflow-x: auto; margin: .8rem 0; }
+table.compare { border-collapse: collapse; width: 100%; background: #fff; font-size: .95rem; }
+table.compare th, table.compare td { border: 1px solid #1a1a1a; padding: .55rem .6rem; text-align: left; vertical-align: top; }
+table.compare th { background: #1a1a1a; color: #fff; text-transform: uppercase; font-size: .8rem; letter-spacing: .04em; }
+table.compare tr:nth-child(even) td { background: #f2f0ea; }
+table.compare .price { color: #ff6a00; font-weight: 800; white-space: nowrap; }
+
+/* Steps */
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li { counter-increment: step; background: #fff; border: 2px solid #1a1a1a; border-radius: 8px; padding: .9rem 1rem .9rem 3.2rem; margin: .6rem 0; position: relative; }
+.steps li::before { content: counter(step, decimal-leading-zero); position: absolute; left: .9rem; top: .8rem; font-weight: 800; font-size: 1.2rem; color: #ff6a00; }
+.steps li h3 { margin-top: 0; }
+
+/* Quiz */
+.quiz-note { font-size: .95rem; background: #fff; border: 1px solid #1a1a1a; border-radius: 8px; padding: .7rem .9rem; }
+fieldset { border: 2px solid #1a1a1a; border-radius: 8px; padding: .9rem 1rem; margin: 1rem 0; background: #fff; }
+legend { font-weight: 800; text-transform: uppercase; letter-spacing: .02em; padding: 0 .4rem; }
+label { display: block; padding: .45rem 0; font-size: 1.05rem; cursor: pointer; }
+input[type="radio"] { margin-right: .5rem; accent-color: #ff6a00; }
+button.quiz-submit { display: block; width: 100%; padding: .9rem 1rem; font-size: 1.1rem; font-weight: 800; background: #ff6a00; color: #1a1a1a; border: 2px solid #1a1a1a; border-radius: 8px; cursor: pointer; margin: .8rem 0; }
+button.quiz-submit:hover { background: #2ee56b; }
+#result { border: 2px solid #1a1a1a; border-radius: 8px; padding: 1rem; background: #fff; margin: 1rem 0; }
+#result h2 { margin-top: 0; }
+.option-card { border: 2px solid #1a1a1a; border-radius: 8px; padding: 1rem; margin: .8rem 0; background: #fff; }
+.option-card.best { border-color: #ff6a00; box-shadow: 0 0 0 2px #ff6a00 inset; }
+.option-card h3 { margin-top: 0; }
+
+/* Footer */
+footer { background: #1a1a1a; color: #fff; border-top: 4px solid #ff6a00; padding: 1.2rem 1.25rem; }
+footer a { color: #2ee56b; }
+footer p { color: #fff; margin: .3rem 0; }

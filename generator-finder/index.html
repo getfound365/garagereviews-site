@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find Your Generator — Garage Reviews</title>
+<meta name="description" content="Answer 3 questions and get up to 3 generator options that fit your outage plan and budget — with the video review where one exists, and an honest 'review coming' where it doesn't.">
+<link rel="canonical" href="https://garagereviews.us/generator-finder/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Find Your Generator — Garage Reviews", "url": "https://garagereviews.us/generator-finder/", "description": "Answer 3 questions and get up to 3 generator options that fit your outage plan and budget."}</script>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="garage">
+<header class="site"><a class="brand" href="/">Garage <span>Reviews</span></a><p class="tagline">Honest gear reviews. No hype.</p><nav><a href="/">Home</a><a href="/compare/">Compare All</a><a href="https://www.youtube.com/@garagereviews22">YouTube</a><a href="https://www.instagram.com/garagereviews22/">Instagram</a><a href="https://www.pinterest.com/garagereviews22/">Pinterest</a></nav></header>
+<main>
+<h1>Find Your Generator</h1>
+<p>Three quick questions, up to three honest options. No email, no sign-up — the result is right here.</p>
+<p class="disclosure-top">Links on this page are paid links. If you buy through them, Garage Reviews may earn a commission at no extra cost to you.</p>
+<p class="quiz-note">Four generators in the roster so far — one reviewed on video, three more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
+
+<form id="quiz">
+<fieldset>
+<legend>1. What do you need to power?</legend>
+<label><input type="radio" name="use" value="small" required> Just the small stuff — phones, laptop, a few lights</label>
+<label><input type="radio" name="use" value="essentials"> The essentials in an outage — fridge, lights, furnace fan, phones</label>
+<label><input type="radio" name="use" value="whole"> The whole house — well pump, AC, everything at once</label>
+</fieldset>
+<fieldset>
+<legend>2. Gas, propane, or no fuel at all?</legend>
+<label><input type="radio" name="fuel" value="gas" required> Gas or propane is fine</label>
+<label><input type="radio" name="fuel" value="solar"> Solar only — quiet, no fuel, safe indoors</label>
+<label><input type="radio" name="fuel" value="either"> Either — whatever fits the job</label>
+</fieldset>
+<fieldset>
+<legend>3. What's your budget?</legend>
+<label><input type="radio" name="budget" value="under500" required> Under $500</label>
+<label><input type="radio" name="budget" value="around1000"> Around $1,000</label>
+<label><input type="radio" name="budget" value="over1000"> Over $1,000</label>
+</fieldset>
+<button type="submit" class="quiz-submit">Show my options</button>
+</form>
+
+<div id="result" hidden></div>
+
+<p>Prices checked Nov 18, 2026 and can change. Out-of-stock flags are as of Nov 18, 2026.</p>
+<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 4 models</a></p>
+
+<p class="disclosure">As a Walmart Creator, Garage Reviews earns from qualifying purchases made through these links, at no extra cost to you. We never claim hands-on testing we haven't done — every pick is honest research, and the video says plainly when to skip one.</p>
+</main>
+<footer><p>Garage Reviews — honest research, real prices, no fluff.</p><p><a href="https://www.youtube.com/@garagereviews22">YouTube</a> <a href="https://www.instagram.com/garagereviews22/">Instagram</a> <a href="https://www.pinterest.com/garagereviews22/">Pinterest</a></p></footer>
+<script>
+(function () {
+  var form = document.getElementById("quiz");
+  var result = document.getElementById("result");
+
+  // Roster, Nov 18, 2026. Only iGen4500DF is reviewed (video live, verified Nov 18).
+  // Every other model: specs verified from the live listing, labeled "Review coming".
+  // One roster model removed Nov 18 — no live Walmart listing existed for it. Stock flags as of Nov 18, 2026.
+  var MODELS = {
+    igen4500df: {
+      name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
+      price: "$949",
+      rating: "4.7 stars from 8,781 ratings",
+      specs: "4,500 peak / 3,700 running watts on gas · 4,050 peak / 3,330 running on propane · up to 18 hours at 25% load · 52 dBA · remote start included · 98 lb",
+      fit: "Fridge, lights, furnace fan and phones in an outage — exactly what this one is built for. Dual fuel means you are not stuck if one fuel runs out.",
+      status: "reviewed",
+      stock: "In stock",
+      video: "https://www.youtube.com/watch?v=CT9JMiGgqgg",  // review published Nov 18, 2026, verified live
+      link: "https://walmrt.us/4t4whs1"
+    },
+    wgen9500df: {
+      name: "Westinghouse WGen9500DF — Dual Fuel Portable Generator",
+      price: "$999",
+      rating: "4.8 stars from 26,307 ratings",
+      specs: "12,500 peak / 9,500 running watts on gas · 11,200 peak / 8,500 running on propane · up to 12 hours · 211 lb · 120/240V with transfer-switch outlet",
+      fit: "The big one — feeds a transfer switch for whole-home backup. Open-frame, so louder than an inverter, and it needs an electrician-installed connection.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/4kiUs3z"
+    },
+    igen4000dfc: {
+      name: "Westinghouse iGen4000DFc — Dual Fuel Inverter Generator",
+      price: "$799",
+      rating: "4.8 stars from 1,164 ratings",
+      specs: "4,000 peak / 3,300 running watts · dual fuel · CO sensor · remote start · TT-30R RV outlet · up to 7 hours on a 1.69-gal tank",
+      fit: "The essentials pick for $150 less than the iGen4500DF — smaller tank and shorter runtime, but a CO sensor is included.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://walmrt.us/4zq3W0w"
+    },
+    jackery1000v2: {
+      name: "Jackery Explorer 1000 v2 — Portable Power Station",
+      price: "$589",
+      rating: "4.9 stars from 299 ratings",
+      specs: "1,060 Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 400W solar input · 23.8 lb · charges from the wall or sun",
+      fit: "No fuel, no fumes, safe indoors — runs a fridge for hours, not days. Add solar panels for longer outages. (Walmart titles this listing 'Jackery E1000AC Sand Gold 1060Wh' — same Explorer 1000 v2 unit.)",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://walmrt.us/4zsmKfO"
+    }
+  };
+
+  function picked(name) {
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : null;
+  }
+
+  function decide(use, fuel, budget) {
+    if (fuel === "solar") {
+      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. This is the one in the roster so far.", options: ["jackery1000v2"] };
+    }
+    if (use === "small") {
+      return { heading: "Small loads — one honest option", intro: "Phones, a laptop and a few lights is a small-load job. The one portable option in the roster is a power station — quiet, no fuel, safe indoors. It is out of stock on Walmart right now, so check the listing before you buy.", options: ["jackery1000v2"] };
+    }
+    if (use === "whole") {
+      return { heading: "Whole-home backup — the big one first", intro: "A whole house — well pump, AC and everything at once — needs a transfer switch installed by an electrician, and more watts than one portable inverter carries. The first option is built for that job; the second covers the essentials if the whole house is more than you need.", options: ["wgen9500df", "igen4500df"] };
+    }
+    if (budget === "under500") {
+      return { heading: "Under $500 — nothing fits yet", intro: "Nothing in the roster is under $500 today, and we will not stretch your budget to make a sale. The closest is the Jackery Explorer 1000 v2 at $589 — and it is out of stock on Walmart right now. Check back as the roster grows.", options: [] };
+    }
+    return { heading: "Your options for the essentials", intro: "Three in the roster fit an outage-essentials job around $1,000. The first is the one we have reviewed on video; the other two are specs verified from the listing, reviews coming.", options: ["igen4500df", "igen4000dfc", "wgen9500df"] };
+  }
+
+  function optionCard(key, isBest) {
+    var m = MODELS[key];
+    var badge = m.status === "reviewed"
+      ? '<span class="verdict reviewed">Reviewed</span>'
+      : '<span class="verdict coming">Review coming — specs verified from the listing</span>';
+    var html = '<div class="option-card' + (isBest ? " best" : "") + '">'
+      + "<h3>" + (isBest ? "Best match: " : "") + m.name + "</h3>"
+      + "<p>" + badge + "</p>"
+      + "<p><strong>" + m.price + "</strong> &middot; " + m.rating + "</p>"
+      + (m.stock ? '<p class="meta">' + (m.stock === "Out of stock" ? '<span class="oos">Out of stock</span>' : m.stock) + ' — checked Nov 18, 2026</p>' : "")
+      + "<p>" + m.specs + ".</p>"
+      + "<p>" + m.fit + "</p>";
+    if (m.link) {
+      html += '<p><a class="btn" href="' + m.link + '">Shop the ' + m.name.split(" — ")[0] + ' — <span class="price">' + m.price + '</span><small>Prices checked Nov 18, 2026 and can change</small></a></p>';
+    } else {
+      html += '<p class="meta">Shop link coming — affiliate link is generated once the listing is re-checked in the Creator dashboard.</p>';
+    }
+    if (m.video) {
+      html += '<p><a class="watch-video" href="' + m.video + '">&#9654; Watch the full review</a></p>';
+    }
+    return html + "</div>";
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var use = picked("use");
+    var fuel = picked("fuel");
+    var budget = picked("budget");
+    if (!use || !fuel || !budget) {
+      result.hidden = false;
+      result.innerHTML = "<h2>Answer all 3 questions first</h2><p>Pick one answer for each question, then tap &#8220;Show my options&#8221; again.</p>";
+      return;
+    }
+    var d = decide(use, fuel, budget);
+    var html = "<h2>" + d.heading + "</h2><p>" + d.intro + "</p>";
+    d.options.forEach(function (key, i) {
+      html += optionCard(key, i === 0);
+    });
+    html += '<p class="footnote">Out-of-stock flags are as of Nov 18, 2026. <a href="/compare/">Compare all 4 models side by side</a></p>';
+    result.innerHTML = html;
+    result.hidden = false;
+    result.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+})();
+</script>
+</body>
+</html>
