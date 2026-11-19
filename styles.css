@@ -249,6 +249,12 @@ a.tile:focus-visible { outline: 3px solid #d4a017; outline-offset: 2px; }
 .buy-row .btn.oos .price { color: #5a6470; }
 .buy-note { font-size: .85rem; color: #5a6470; margin: .3rem 0 .8rem; }
 
+/* Logo buy buttons: retailer logo on a white chip, then price, then a
+   shipping + reviews line. Reusable for every retailer button. */
+.buy-row .btn .buy-logo-wrap { display: block; background: #fff; border-radius: 8px; padding: .45rem .7rem; margin: 0 auto .45rem; max-width: 190px; }
+.buy-row .btn .buy-logo { display: block; height: 24px; width: auto; max-width: 100%; margin: 0 auto; }
+.buy-row .btn .price { display: block; font-size: 1.3rem; margin: .1rem 0; }
+
 /* Comparable-product cards on review pages. */
 .compare-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .8rem; margin: .9rem 0; }
 .compare-card { background: linear-gradient(180deg, #ffffff, #f8f8f7); border: 1px solid #e2e2df; border-radius: 16px; padding: .9rem 1rem; box-shadow: 0 1px 4px rgba(35,40,46,.04); }
