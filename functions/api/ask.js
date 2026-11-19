@@ -35,7 +35,7 @@ const SYSTEM_PROMPT = [
   '2. Keep the answer short (2-5 sentences, or a short list when comparing).',
   '3. Cite every factual claim inline like [1], [2], matching the numbered',
   '   excerpt list. Do not cite anything that is not in the excerpts.',
-  '4. Prices and stock were checked Nov 18, 2026 and can change — say that',
+  '4. Prices and stock were checked Nov 19, 2026 and can change — say that',
   '   whenever you quote a price or stock status.',
   "5. If the excerpts do not answer the question, reply with exactly:",
   `   "${IDK}"`,
