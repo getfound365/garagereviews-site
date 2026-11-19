@@ -7,7 +7,7 @@
 <meta name="description" content="Answer 3 questions and get up to 3 generator options that fit your outage plan and budget — with the video review where one exists, and an honest 'review coming' where it doesn't.">
 <link rel="canonical" href="https://garagereviews.us/generator-finder/">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Find Your Generator — Garage Reviews", "url": "https://garagereviews.us/generator-finder/", "description": "Answer 3 questions and get up to 3 generator options that fit your outage plan and budget."}</script>
-<link rel="stylesheet" href="/styles.css?v=5">
+<link rel="stylesheet" href="/styles.css?v=7">
 <link rel="stylesheet" href="/generator-finder/matcher.css">
 </head>
 <body class="garage">
@@ -16,7 +16,7 @@
 <h1>Find Your Generator</h1>
 <p>Three quick questions, up to three honest options. No email, no sign-up — the result is right here.</p>
 <p class="disclosure-top">Links on this page are paid links. If you buy through them, Garage Reviews may earn a commission at no extra cost to you.</p>
-<p class="quiz-note">Four generators in the roster so far — one reviewed on video, three more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
+<p class="quiz-note">Thirteen generators in the roster so far — one reviewed on video, twelve more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
 
 <form id="quiz">
 <fieldset>
@@ -59,8 +59,8 @@
 <div id="matcher-result" hidden></div>
 </section>
 
-<p>Prices checked Nov 18, 2026 and can change. Out-of-stock flags are as of Nov 18, 2026.</p>
-<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 4 models</a></p>
+<p>Prices checked Nov 19, 2026 and can change. Out-of-stock flags are as of Nov 19, 2026.</p>
+<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 13 models</a></p>
 
 <p class="disclosure">As a Walmart Creator, Garage Reviews earns from qualifying purchases made through these links, at no extra cost to you. We never claim hands-on testing we haven't done — every pick is honest research, and the video says plainly when to skip one.</p>
 </main>
@@ -70,14 +70,16 @@
   var form = document.getElementById("quiz");
   var result = document.getElementById("result");
 
-  // Roster, Nov 18, 2026. Only iGen4500DF is reviewed (video live, verified Nov 18).
+  // Roster, Nov 19, 2026. Only iGen4500DF is reviewed (video live, verified Nov 18).
   // Every other model: specs verified from the live listing, labeled "Review coming".
-  // One roster model removed Nov 18 — no live Walmart listing existed for it. Stock flags as of Nov 18, 2026.
+  // One roster model removed Nov 18 — no live Walmart listing existed for it. Stock flags as of Nov 19, 2026.
+  // Nov 19: +9 models (wgen3600c, igen2500, g12kbn, delta3classical1000, gxs4300i, ai4000s,
+  // wen4750w, g1200sg, wendf472) — all verified from the live review pages that day.
   var MODELS = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
       price: "$949",
-      rating: "4.7 stars from 8,781 ratings",
+      rating: "4.7 stars from 8,821 ratings",
       specs: "4,500 peak / 3,700 running watts on gas · 4,050 peak / 3,330 running on propane · up to 18 hours at 25% load · 52 dBA · remote start included · 98 lb",
       fit: "Fridge, lights, furnace fan and phones in an outage — exactly what this one is built for. Dual fuel means you are not stuck if one fuel runs out.",
       status: "reviewed",
@@ -88,7 +90,7 @@
     wgen9500df: {
       name: "Westinghouse WGen9500DF — Dual Fuel Portable Generator",
       price: "$999",
-      rating: "4.8 stars from 26,307 ratings",
+      rating: "4.8 stars from 26,328 ratings",
       specs: "12,500 peak / 9,500 running watts on gas · 11,200 peak / 8,500 running on propane · up to 12 hours · 211 lb · 120/240V with transfer-switch outlet",
       fit: "The big one — feeds a transfer switch for whole-home backup. Open-frame, so louder than an inverter, and it needs an electrician-installed connection.",
       status: "coming",
@@ -99,7 +101,7 @@
     igen4000dfc: {
       name: "Westinghouse iGen4000DFc — Dual Fuel Inverter Generator",
       price: "$799",
-      rating: "4.8 stars from 1,164 ratings",
+      rating: "4.8 stars from 1,170 ratings",
       specs: "4,000 peak / 3,300 running watts · dual fuel · CO sensor · remote start · TT-30R RV outlet · up to 7 hours on a 1.69-gal tank",
       fit: "The essentials pick for $150 less than the iGen4500DF — smaller tank and shorter runtime, but a CO sensor is included.",
       status: "coming",
@@ -117,6 +119,105 @@
       stock: "Out of stock",
       video: null,
       link: "https://walmrt.us/4zsmKfO"
+    },
+    wgen3600c: {
+      name: "Westinghouse WGen3600c — Portable Generator",
+      price: "$399",
+      rating: "4.8 stars from 4,857 ratings",
+      specs: "4,650 peak / 3,600 running watts · gas-only open-frame · 4-gal tank · TT-30R + L5-30R RV outlets · CO sensor",
+      fit: "The budget essentials pick — 3,600 running watts with a CO sensor at $399 (down from $499). Open-frame, so louder than an inverter; run it outdoors, away from the house.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/4kqHwsn"
+    },
+    igen2500: {
+      name: "Westinghouse iGen2500 — Inverter Generator",
+      price: "$450",
+      rating: "4.7 stars from 6,300 ratings",
+      specs: "2,500 peak / 2,200 running watts · gas inverter · 52 dBA · 47.4 lb · parallel-ready · CO shutdown · clean power (≤3% THD)",
+      fit: "The quiet, light inverter for small loads and campgrounds — 52 dBA and 47.4 lb with the deepest review pool in this batch. Out of stock at Walmart right now, so check the listing before you buy.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://walmrt.us/4zuNPz0"
+    },
+    g12kbn: {
+      name: "Pulsar G12KBN — Dual Fuel Portable Generator",
+      price: "$739",
+      rating: "4.3 stars from 587 ratings",
+      specs: "12,000 peak / 9,500 running watts on gas · 10,800 peak / 8,550 running on propane · 50-amp outlet · 74 dB · 209–214 lb",
+      fit: "Whole-home watts on a dual-fuel budget — 9,500 running watts and a 50-amp outlet for under $1,000. Open-frame and loud (74 dB), very heavy, and no CO shutoff — run it well away from the house.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/4kpDiRS"
+    },
+    delta3classical1000: {
+      name: "EcoFlow DELTA 3 Classical 1000 — Portable Power Station",
+      price: "$462",
+      rating: "4.5 stars from 2,229 ratings",
+      specs: "1,024 Wh LiFePO4 battery · 1,800W continuous / 3,600W surge · 500W solar input · 26.7 lb · 0–80% charge in about 45 minutes",
+      fit: "No fuel, no fumes, safe indoors — 1,800W of clean power in a 26.7 lb box, at $462 (down from $699). Runs a fridge for hours, not days; add solar panels for longer outages.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/4Cahpwj"
+    },
+    gxs4300i: {
+      name: "A-iPower GXS4300i — Inverter Generator",
+      price: "$499.99",
+      rating: "4.9 stars from 70 ratings",
+      specs: "4,300 peak / 3,450 running watts · gas inverter · CO sensor · electric start · 48.9 lb · up to 9.5 hours at 25% load",
+      fit: "A mid-size inverter with a CO sensor and electric start at $499.99 (down from $599.99) — but the noise figure is disputed (62 dB spec sheet vs 52 dBA listing), so do not buy it for quiet campground use on the claim alone. Thin review pool: 70 ratings.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/3VG15CZ"
+    },
+    ai4000s: {
+      name: "Aceup Energy AI4000S — Inverter Generator",
+      price: "$368.88",
+      rating: "4.3 stars from 169 ratings",
+      specs: "4,000 peak / 3,200 running watts (manual states 3,400) · gas inverter · CO sensor · 50.7 lb · up to 8.5 hours at 25% load",
+      fit: "The cheapest in-stock inverter in this batch at $368.88 (down from $599.99) — 3,200 running watts with a CO sensor. Note the running-watts conflict: the listing says 3,200, the manual says 3,400; we use the listing figure.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/3WL1Lr2"
+    },
+    wen4750w: {
+      name: "WEN 4750W Generator 56475 — Portable Generator",
+      price: "$525",
+      rating: "4.3 stars from 137 ratings",
+      specs: "4,750 peak / 3,750 running watts · gas open-frame · electric start · RV-ready",
+      fit: "Electric-start open-frame power for the essentials at $525 — RV-ready, but loud and heavy like every open-frame unit; run it outdoors, away from the house.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/4ADV3l0"
+    },
+    g1200sg: {
+      name: "Pulsar G1200SG — Portable Generator",
+      price: "$149",
+      rating: "4.0 stars from 321 ratings",
+      specs: "1,200 peak / 900 running watts · 2-stroke gas — 40:1 gas/oil mix · ~40 lb · 1-gal tank · recoil start",
+      fit: "The cheapest generator in this batch at $149 (down from $179) — a light 2-stroke for the smallest loads only, and it needs a 40:1 gas/oil mix. Out of stock at Walmart right now.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://walmrt.us/3V5eJz8"
+    },
+    wendf472: {
+      name: "WEN DF472 — Dual Fuel Portable Generator",
+      price: "$499.52",
+      rating: "4.3 stars from 9 ratings",
+      specs: "4,750 peak / 3,800 running watts on gas · 4,350 peak / 3,500 running on propane · 120/240V · 103.2 lb · recoil start only · no CO sensor listed",
+      fit: "Dual fuel and 240V for the essentials at $499.52 — but recoil start only, no CO sensor listed, and a thin review pool (9 ratings), so the 4.3-star average is early, not proven.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://walmrt.us/4tadlYD"
     }
   };
 
@@ -127,18 +228,18 @@
 
   function decide(use, fuel, budget) {
     if (fuel === "solar") {
-      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. This is the one in the roster so far.", options: ["jackery1000v2"] };
+      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Two in the roster now — the first is in stock; the second is out of stock on Walmart right now, so check the listing before you buy.", options: ["delta3classical1000", "jackery1000v2"] };
     }
     if (use === "small") {
-      return { heading: "Small loads — one honest option", intro: "Phones, a laptop and a few lights is a small-load job. The one portable option in the roster is a power station — quiet, no fuel, safe indoors. It is out of stock on Walmart right now, so check the listing before you buy.", options: ["jackery1000v2"] };
+      return { heading: "Small loads — two honest options", intro: "Phones, a laptop and a few lights is a small-load job. A power station is the quiet, no-fuel, indoor-safe way to run them — the first option below is in stock; the second is out of stock on Walmart right now, so check the listing before you buy.", options: ["delta3classical1000", "jackery1000v2"] };
     }
     if (use === "whole") {
-      return { heading: "Whole-home backup — the big one first", intro: "A whole house — well pump, AC and everything at once — needs a transfer switch installed by an electrician, and more watts than one portable inverter carries. The first option is built for that job; the second covers the essentials if the whole house is more than you need.", options: ["wgen9500df", "igen4500df"] };
+      return { heading: "Whole-home backup — the big ones first", intro: "A whole house — well pump, AC and everything at once — needs a transfer switch installed by an electrician, and more watts than one portable inverter carries. The first two options are built for that job; the third covers the essentials if the whole house is more than you need.", options: ["wgen9500df", "g12kbn", "igen4500df"] };
     }
     if (budget === "under500") {
-      return { heading: "Under $500 — nothing fits yet", intro: "Nothing in the roster is under $500 today, and we will not stretch your budget to make a sale. The closest is the Jackery Explorer 1000 v2 at $589 — and it is out of stock on Walmart right now. Check back as the roster grows.", options: [] };
+      return { heading: "Under $500 — three that fit", intro: "Three in-stock options under $500 fit an outage-essentials job — 3,200 to 3,600 running watts, all with specs verified from the listing. The first is the strongest on watts and review depth.", options: ["wgen3600c", "gxs4300i", "ai4000s"] };
     }
-    return { heading: "Your options for the essentials", intro: "Three in the roster fit an outage-essentials job around $1,000. The first is the one we have reviewed on video; the other two are specs verified from the listing, reviews coming.", options: ["igen4500df", "igen4000dfc", "wgen9500df"] };
+    return { heading: "Your options for the essentials", intro: "Three in the roster fit an outage-essentials job around $1,000. The first is the one we have reviewed on video; the other two are specs verified from the listing, reviews coming.", options: ["igen4500df", "g12kbn", "wgen9500df"] };
   }
 
   function optionCard(key, isBest) {
@@ -150,11 +251,11 @@
       + "<h3>" + (isBest ? "Best match: " : "") + m.name + "</h3>"
       + "<p>" + badge + "</p>"
       + "<p><strong>" + m.price + "</strong> &middot; " + m.rating + "</p>"
-      + (m.stock ? '<p class="meta">' + (m.stock === "Out of stock" ? '<span class="oos">Out of stock</span>' : m.stock) + ' — checked Nov 18, 2026</p>' : "")
+      + (m.stock ? '<p class="meta">' + (m.stock === "Out of stock" ? '<span class="oos">Out of stock</span>' : m.stock) + ' — checked Nov 19, 2026</p>' : "")
       + "<p>" + m.specs + ".</p>"
       + "<p>" + m.fit + "</p>";
     if (m.link) {
-      html += '<p><a class="btn" href="' + m.link + '">Shop the ' + m.name.split(" — ")[0] + ' — <span class="price">' + m.price + '</span><small>Prices checked Nov 18, 2026 and can change</small></a></p>';
+      html += '<p><a class="btn" href="' + m.link + '">Shop the ' + m.name.split(" — ")[0] + ' — <span class="price">' + m.price + '</span><small>Prices checked Nov 19, 2026 and can change</small></a></p>';
     } else {
       html += '<p class="meta">Shop link coming — affiliate link is generated once the listing is re-checked in the Creator dashboard.</p>';
     }
@@ -188,7 +289,7 @@
         + "&amp;budget=" + encodeURIComponent(budget);
       html += '<p><a class="btn secondary" href="' + planUrl + '">Get your printable outage plan — ' + MODELS[d.options[0]].name.split(" — ")[0] + '<small>What to buy, what it runs, what it costs — one page, ready to print</small></a></p>';
     }
-    html += '<p class="footnote">Out-of-stock flags are as of Nov 18, 2026. <a href="/compare/">Compare all 4 models side by side</a></p>';
+    html += '<p class="footnote">Out-of-stock flags are as of Nov 19, 2026. <a href="/compare/">Compare all 13 models side by side</a></p>';
     result.innerHTML = html;
     result.hidden = false;
     result.scrollIntoView({ behavior: "smooth", block: "start" });

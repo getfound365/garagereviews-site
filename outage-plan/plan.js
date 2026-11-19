@@ -12,6 +12,11 @@
   // generator-finder/index.html and functions/api/match.js.
   // Fields left null are UNVERIFIED — never guess them (e.g. WGen9500DF
   // noise, iGen4000DFc propane watts). The renderer omits nulls.
+  // Nov 19, 2026: +10 models from the day's verified review pages
+  // (wgen3600c, igen2500, g12kbn, delta3classical1000, gxs4300i, ai4000s,
+  // wen4750w, reliance310crk, g1200sg, wendf472). Prices/stock as of
+  // Nov 19, 2026. reliance310crk is a manual transfer switch kit, not a
+  // generator — it renders through the transfer-switch branch below.
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -31,7 +36,7 @@
       name: "Westinghouse WGen9500DF — Dual Fuel Portable Generator",
       short: "WGen9500DF",
       price: 999, priceDisplay: "$999",
-      rating: "4.8 stars from 26,307 ratings",
+      rating: "4.8 stars from 26,328 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: 9500, gasPeakW: 12500,
       propaneRunningW: 8500, propanePeakW: 11200,
@@ -69,6 +74,148 @@
       altLink: "https://www.ebay.com/itm/840084662851",
       altPriceDisplay: "$529.99", altStock: "In stock on eBay",
       reviewUrl: "/reviews/jackery-explorer-1000-v2/"
+    },
+    wgen3600c: {
+      name: "Westinghouse WGen3600c — Portable Generator",
+      short: "WGen3600c",
+      price: 399, priceDisplay: "$399",
+      rating: "4.8 stars from 4,857 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3600, gasPeakW: 4650,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: null,
+      noiseDba: null, weightLb: null,
+      specs: "4,650 peak / 3,600 running watts · gas-only open-frame · 4-gal tank · TT-30R + L5-30R RV outlets · CO sensor",
+      link: "https://walmrt.us/4kqHwsn",
+      reviewUrl: "/reviews/westinghouse-wgen3600c/"
+    },
+    igen2500: {
+      name: "Westinghouse iGen2500 — Inverter Generator",
+      short: "iGen2500",
+      price: 450, priceDisplay: "$450",
+      rating: "4.7 stars from 6,300 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 2200, gasPeakW: 2500,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: null,
+      noiseDba: 52, weightLb: 47.4,
+      specs: "2,500 peak / 2,200 running watts · gas inverter · 52 dBA · 47.4 lb · parallel-ready · CO shutdown · clean power (≤3% THD)",
+      link: "https://walmrt.us/4zuNPz0",
+      reviewUrl: "/reviews/westinghouse-igen2500/"
+    },
+    g12kbn: {
+      name: "Pulsar G12KBN — Dual Fuel Portable Generator",
+      short: "G12KBN",
+      price: 739, priceDisplay: "$739",
+      rating: "4.3 stars from 587 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 9500, gasPeakW: 12000,
+      propaneRunningW: 8550, propanePeakW: 10800,
+      runtime: null,
+      noiseDba: 74, weightLb: 209, // compare table: 209–214 lb, sources disagree
+      specs: "12,000 peak / 9,500 running watts on gas · 10,800 peak / 8,550 running on propane · 50-amp outlet · 74 dB · 209–214 lb",
+      link: "https://walmrt.us/4kpDiRS",
+      reviewUrl: "/reviews/pulsar-g12kbn/"
+    },
+    delta3classical1000: {
+      name: "EcoFlow DELTA 3 Classical 1000 — Portable Power Station",
+      short: "DELTA 3 Classical 1000",
+      price: 462, priceDisplay: "$462",
+      rating: "4.5 stars from 2,229 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 1800, surgeW: 3600, batteryWh: 1024,
+      runtime: null,
+      noiseDba: 0, weightLb: 26.7,
+      specs: "1,024 Wh LiFePO4 battery · 1,800W continuous / 3,600W surge · 500W solar input · 26.7 lb · 0–80% charge in about 45 minutes",
+      link: "https://walmrt.us/4Cahpwj",
+      reviewUrl: "/reviews/ecoflow-delta-3-classical-1000/"
+    },
+    gxs4300i: {
+      name: "A-iPower GXS4300i — Inverter Generator",
+      short: "GXS4300i",
+      price: 499.99, priceDisplay: "$499.99",
+      rating: "4.9 stars from 70 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3450, gasPeakW: 4300,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: "up to 9.5 hours at 25% load",
+      noiseDba: null, // DISPUTED: 62 dB per A-iPower spec sheet vs 52 dBA advertised on Walmart
+      weightLb: 48.9,
+      specs: "4,300 peak / 3,450 running watts · gas inverter · CO sensor · electric start · 48.9 lb · up to 9.5 hours at 25% load",
+      link: "https://walmrt.us/3VG15CZ",
+      reviewUrl: "/reviews/a-ipower-gxs4300i/"
+    },
+    ai4000s: {
+      name: "Aceup Energy AI4000S — Inverter Generator",
+      short: "AI4000S",
+      price: 368.88, priceDisplay: "$368.88",
+      rating: "4.3 stars from 169 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3200, gasPeakW: 4000, // listing states 3,200 running watts; manual states 3,400
+      propaneRunningW: null, propanePeakW: null,
+      runtime: "up to 8.5 hours at 25% load",
+      noiseDba: null, weightLb: 50.7,
+      specs: "4,000 peak / 3,200 running watts (manual states 3,400) · gas inverter · CO sensor · 50.7 lb · up to 8.5 hours at 25% load",
+      link: "https://walmrt.us/3WL1Lr2",
+      reviewUrl: "/reviews/aceup-energy-ai4000s/"
+    },
+    wen4750w: {
+      name: "WEN 4750W Generator 56475 — Portable Generator",
+      short: "4750W 56475",
+      price: 525, priceDisplay: "$525",
+      rating: "4.3 stars from 137 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3750, gasPeakW: 4750,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: null,
+      noiseDba: null, weightLb: null,
+      specs: "4,750 peak / 3,750 running watts · gas open-frame · electric start · RV-ready",
+      link: "https://walmrt.us/4ADV3l0",
+      reviewUrl: "/reviews/wen-4750w-56475/"
+    },
+    reliance310crk: {
+      name: "Reliance Controls 310CRK — Manual Transfer Switch Kit",
+      short: "310CRK",
+      type: "transfer-switch",
+      price: 491.71, priceDisplay: "$491.71",
+      rating: "4.8 stars from 132 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: null, gasPeakW: null,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: null,
+      noiseDba: null, weightLb: null,
+      specs: "10-circuit manual transfer switch kit · 30-amp · 7,500W max · connects a portable generator to home circuits",
+      link: "https://walmrt.us/4AFHn9e",
+      reviewUrl: "/reviews/reliance-controls-310crk/"
+    },
+    g1200sg: {
+      name: "Pulsar G1200SG — Portable Generator",
+      short: "G1200SG",
+      price: 149, priceDisplay: "$149",
+      rating: "4.0 stars from 321 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 900, gasPeakW: 1200,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: null, // runtime conflicts across sources (5 vs 8.5 hours)
+      noiseDba: null, // noise conflicts across sources (65 vs 78 dB for sibling models)
+      weightLb: 40, // ~40 lb per the manual
+      specs: "1,200 peak / 900 running watts · 2-stroke gas — 40:1 gas/oil mix · ~40 lb · 1-gal tank · recoil start",
+      link: "https://walmrt.us/3V5eJz8",
+      reviewUrl: "/reviews/pulsar-g1200sg/"
+    },
+    wendf472: {
+      name: "WEN DF472 — Dual Fuel Portable Generator",
+      short: "DF472",
+      price: 499.52, priceDisplay: "$499.52",
+      rating: "4.3 stars from 9 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3800, gasPeakW: 4750,
+      propaneRunningW: 3500, propanePeakW: 4350,
+      runtime: "~11 hours on gasoline at 50% load",
+      noiseDba: null, weightLb: 103.2,
+      specs: "4,750 peak / 3,800 running watts on gas · 4,350 peak / 3,500 running on propane · 120/240V · 103.2 lb · recoil start only · no CO sensor listed",
+      link: "https://walmrt.us/4tadlYD",
+      reviewUrl: "/reviews/wen-df472/"
     }
   };
 
@@ -188,7 +335,7 @@
     $("buy-rating").textContent = m.rating;
     $("buy-specs").textContent = m.specs + ".";
     var stockEl = $("buy-stock");
-    stockEl.textContent = m.stock + " — checked Nov 18, 2026";
+    stockEl.textContent = m.stock + " — checked Nov 19, 2026";
     stockEl.className = m.inStock ? "stock in" : "stock out";
     $("buy-link").href = m.link;
     $("buy-link").textContent = "Shop the " + m.short + " — " + m.priceDisplay;
@@ -196,7 +343,7 @@
     if (m.altLink) {
       alt.hidden = false;
       $("buy-alt-link").href = m.altLink;
-      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 18, 2026)";
+      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 19, 2026)";
     } else {
       alt.hidden = true;
     }
@@ -219,12 +366,18 @@
       runsEl.innerHTML = "<li>Your loads, as described — see “what you asked for” above.</li>";
     }
     var fitEl = $("runs-fit");
-    if (jobWatts) {
+    if (m.type === "transfer-switch") {
+      // A transfer switch generates no power — it safely connects a
+      // portable generator (up to 7,500W) to 10 home circuits. Never run
+      // the watts fit check on it: effectiveWatts is null here by design.
+      fitEl.className = "fit unknown";
+      fitEl.innerHTML = "<strong>This is a transfer switch, not a generator.</strong> It does not generate power — it safely connects a portable generator (up to 7,500W) to 10 home circuits. Pair it with a generator from the roster; the switch alone runs nothing.";
+    } else if (jobWatts) {
       if (runW >= jobWatts) {
         fitEl.className = "fit ok";
         fitEl.innerHTML = "<strong>It fits.</strong> This job needs about " + fmt(jobWatts) +
           " running watts (estimate) and the " + esc(m.short) + " delivers " + fmt(runW) +
-          (isStation ? "W continuous (3,000W surge for motor starts)" : " running watts on gas") +
+          (isStation ? "W continuous (" + fmt(m.surgeW) + "W surge for motor starts)" : " running watts on gas") +
           " — enough to run these loads together.";
       } else {
         fitEl.className = "fit no";
@@ -241,7 +394,9 @@
       fitEl.textContent = "No wattage estimate for this job — add up the running watts on your appliances' labels and compare with the " +
         fmt(runW) + (isStation ? "W continuous" : " running watts on gas") + " this unit delivers.";
     }
-    if (isStation) {
+    if (m.type === "transfer-switch") {
+      $("runs-note").textContent = "A transfer switch does not generate power — pair it with a portable generator (up to 7,500W) and have it installed by a licensed electrician.";
+    } else if (isStation) {
       $("runs-note").textContent = "A power station runs a fridge for hours, not days — recharge it from the wall or a solar panel between uses.";
     } else if (m.runtime) {
       $("runs-note").textContent = "Runtime: " + m.runtime + ".";
@@ -263,16 +418,23 @@
       costNote.className = "";
       costNote.textContent = "No budget was given with this plan.";
     }
-    $("cost-extra").textContent = "That is the unit only. Fuel, extension cords, and — for whole-home use — an electrician-installed transfer switch are extra and are not priced here.";
+    $("cost-extra").textContent = m.type === "transfer-switch"
+      ? "That is the switch kit only. A generator to feed it, and electrician installation, are extra and are not priced here."
+      : "That is the unit only. Fuel, extension cords, and — for whole-home use — an electrician-installed transfer switch are extra and are not priced here.";
 
     // 4. SAFETY BASICS — from the review pages (iGen4500DF review,
     // WGen9500DF review, homepage outage guide).
     var safetyEl = $("safety-list");
-    if (isStation) {
+    if (m.type === "transfer-switch") {
+      safetyEl.innerHTML =
+        "<li><strong>Have it installed by a licensed electrician.</strong> A transfer switch is wired into your home's panel — this is not a DIY job.</li>" +
+        "<li><strong>Never backfeed.</strong> Never plug a generator into a wall outlet to feed the house. A transfer switch is the safe way to power home circuits from a generator.</li>" +
+        "<li><strong>Stay under 7,500W.</strong> The switch is rated for 30 amps / 7,500W max — do not feed it with a larger generator.</li>";
+    } else if (isStation) {
       safetyEl.innerHTML =
         "<li><strong>No fuel, no fumes — safe indoors.</strong> This is a battery power station, not an engine. There is no exhaust and no carbon-monoxide risk.</li>" +
         "<li><strong>Never backfeed.</strong> Never plug it into a wall outlet to feed the house — use its outlets for your appliances directly.</li>" +
-        "<li><strong>Do not overload it.</strong> Stay under 1,500W continuous (3,000W surge for motor starts).</li>";
+        "<li><strong>Do not overload it.</strong> Stay under " + fmt(m.continuousW) + "W continuous (" + fmt(m.surgeW) + "W surge for motor starts).</li>";
     } else {
       safetyEl.innerHTML =
         "<li><strong>Run it outdoors, at least 20 feet from the house,</strong> exhaust pointing away — never in a garage or under a porch roof. Carbon monoxide is odorless and kills every storm season.</li>" +
@@ -280,7 +442,7 @@
         "<li><strong>Let it cool before refueling.</strong> Never refuel a hot generator — shut it down, wait for it to cool, then fill the tank.</li>";
     }
 
-    $("plan-date").textContent = "Prices and stock checked Nov 18, 2026 — re-check the listing before you buy; prices can change.";
+    $("plan-date").textContent = "Prices and stock checked Nov 19, 2026 — re-check the listing before you buy; prices can change.";
   }
 
   var printBtn = $("print-btn");
@@ -299,7 +461,9 @@
 //                 &fuel=<dual-fuel|solar|any>&budget_max=<number>
 //                 &watts=<number>&q=<visitor's plain words>
 // Either style works; the plan page normalises them. `product` must be a
-// roster id (igen4500df, wgen9500df, igen4000dfc, jackery1000v2) —
+// roster id (igen4500df, wgen9500df, igen4000dfc, jackery1000v2, wgen3600c,
+// igen2500, g12kbn, delta3classical1000, gxs4300i, ai4000s, wen4750w,
+// reliance310crk, g1200sg, wendf472) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------
