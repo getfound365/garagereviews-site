@@ -128,7 +128,7 @@
 
 
 
-<link rel="stylesheet" href="/styles.css?v=9" />
+<link rel="stylesheet" href="/styles.css?v=10" />
 <style>
 
   button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
@@ -297,7 +297,44 @@
     .head-row { padding: 12px 0; }
     nav.main-nav a { padding: 9px 9px; font-size: 13.5px; }
     section.block { padding-top: 36px; }
+    .wizard-options { grid-template-columns: 1fr 1fr; }
+    .wizard-opt { font-size: 15px; padding: 14px 10px; min-height: 56px; }
+    .head-row .site-search { flex: 1 1 100%; max-width: none; order: 3; }
   }
+
+  /* ---------- AI wizard (in hero) ---------- */
+  .head-row .site-search { flex: 1 1 240px; max-width: 340px; }
+  .wizard { background: #141416; border-top: 1px solid var(--line); padding: clamp(20px, 4vw, 32px); }
+  .wizard-head h2 { font-family: "Archivo Black", sans-serif; text-transform: uppercase; font-size: clamp(21px, 3.4vw, 28px); margin: 0 0 6px; line-height: 1.05; }
+  .wizard-head h2 span { color: var(--yellow); }
+  .wizard-head p { margin: 0 0 18px; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
+  .wizard-step-label { font-weight: 800; text-transform: uppercase; letter-spacing: .05em; font-size: 13px; color: var(--yellow); margin: 0 0 12px; }
+  .wizard-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .wizard-opt { appearance: none; cursor: pointer; background: #0b0b0c; border: 1.5px solid #3a3b3e; color: #f5f5f2; border-radius: 12px; padding: 16px 12px; font-family: inherit; font-weight: 800; font-size: 16px; text-align: center; min-height: 60px; }
+  .wizard-opt:hover { border-color: var(--yellow); color: var(--yellow); }
+  .wizard-opt.selected { background: var(--yellow); border-color: var(--yellow); color: #111; }
+  .wizard-group-label { font-weight: 800; font-size: 15px; margin: 18px 0 10px; }
+  .wizard-group-label:first-child { margin-top: 0; }
+  .wizard-nav { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .wizard-back { appearance: none; cursor: pointer; background: transparent; border: 1.5px solid #3a3b3e; color: #e8e8e2; border-radius: 10px; padding: 12px 18px; font-weight: 800; font-size: 14.5px; font-family: inherit; min-height: 48px; }
+  .wizard-back:hover { border-color: var(--yellow); color: var(--yellow); }
+  .wizard-submit { appearance: none; cursor: pointer; background: var(--yellow); border: 1.5px solid var(--yellow); color: #111; border-radius: 10px; padding: 12px 22px; font-weight: 900; text-transform: uppercase; letter-spacing: .03em; font-size: 15px; font-family: inherit; min-height: 48px; }
+  .wizard-submit:disabled { opacity: .45; cursor: default; }
+  .wizard-results h3 { font-size: 19px; margin: 0 0 4px; }
+  .wizard-note { color: var(--muted); font-size: 15px; line-height: 1.55; margin: 0 0 16px; }
+  .wizard-note b { color: #f5f5f2; }
+  .wizard-note a { color: var(--yellow); font-weight: 700; }
+  .wiz-card { background: #0b0b0c; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 12px; }
+  .wiz-card h3 { font-size: 19px; margin: 0 0 6px; line-height: 1.25; }
+  .wiz-card .wiz-best { color: var(--yellow); text-transform: uppercase; font-size: 12.5px; letter-spacing: .06em; font-weight: 900; margin: 0 0 4px; }
+  .wiz-card p { margin: 0 0 8px; font-size: 15px; line-height: 1.5; color: #dcdcd4; }
+  .wiz-card p.meta { color: var(--muted); font-size: 13.5px; text-transform: uppercase; letter-spacing: .04em; font-weight: 700; }
+  .wiz-card ul { margin: 0 0 12px; padding-left: 18px; color: #dcdcd4; font-size: 14.5px; line-height: 1.55; }
+  .wiz-card .buy-row { margin: 12px 0; }
+  .wiz-card .read-review { font-weight: 800; color: var(--yellow); }
+  .wizard-ask { margin: 16px 0 0; color: var(--muted); font-size: 15px; }
+  .wizard-ask a { color: var(--yellow); font-weight: 800; }
+  .wizard-loading { color: var(--muted); font-size: 15.5px; padding: 8px 0; }
 
 </style>
 <style>
@@ -327,6 +364,11 @@ footer nav a { color: inherit; }
       <a href="#faq">FAQ</a>
       <a class="yt" href="https://www.youtube.com/@garagereviews22" target="_blank" rel="noopener">▶ YouTube</a>
     </nav>
+    <div class="site-search" role="search">
+      <label class="sr-only" for="site-search-input">Search reviews</label>
+      <input id="site-search-input" type="search" placeholder="Search reviews…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="site-search-list" aria-autocomplete="list">
+      <div class="site-search-list" id="site-search-list" role="listbox" hidden></div>
+    </div>
   </div>
 </header>
 
@@ -378,6 +420,27 @@ footer nav a { color: inherit; }
             <svg viewBox="0 0 24 24" aria-hidden="true" id="heroToggleIcon"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
           </button>
         </div>
+      </div>
+      <!-- AI WIZARD — 3-tap finder, in the hero -->
+      <div class="wizard" id="wizard">
+        <div class="wizard-head">
+          <h2>Find your gear in <span>3 taps</span></h2>
+          <p>Answer three quick questions — we match you to the reviews that fit. No email, no sign-up.</p>
+        </div>
+        <div class="wizard-body" id="wizardBody">
+          <p class="wizard-step-label" id="wizardStepLabel">Step 1 of 3 — What are you shopping for?</p>
+          <div class="wizard-options" id="wizardOptions" role="group" aria-label="Category">
+            <button type="button" class="wizard-opt" data-group="cat" data-key="Generators">Generators</button>
+            <button type="button" class="wizard-opt" data-group="cat" data-key="Tools">Tools</button>
+            <button type="button" class="wizard-opt" data-group="cat" data-key="Hunting">Hunting</button>
+            <button type="button" class="wizard-opt" data-group="cat" data-key="Health &amp; Wellness">Health &amp; Wellness</button>
+            <button type="button" class="wizard-opt" data-group="cat" data-key="Sauna">Sauna</button>
+            <button type="button" class="wizard-opt" data-group="cat" data-key="Cold Plunges">Cold Plunges</button>
+          </div>
+          <div class="wizard-nav" id="wizardNav"></div>
+        </div>
+        <div class="wizard-results" id="wizardResults" hidden></div>
+        <p class="wizard-ask">Or <a href="/ask/">ask anything about generators &rarr;</a></p>
       </div>
     </section>
 
@@ -783,5 +846,336 @@ footer nav a { color: inherit; }
   })();
 </script>
 <script src="/ebay-live.js" defer></script>
+<script>
+// AI wizard — 3-tap finder in the homepage hero (garagereviews.us).
+// Step 1 is a category picker (Generators, Tools, Hunting, Health &
+// Wellness, Sauna, Cold Plunges). Steps 2-3 adapt to the category:
+// Generators calls POST /api/match with a query built from the answers
+// (the matcher is deterministic — the AI only parses words, matching is
+// against the verified roster, so prices/specs are never invented).
+// Tools and Hunting filter a small client-side index built from the
+// review pages' own JSON-LD. Health & Wellness, Sauna and Cold Plunges
+// have no review pages yet, so the wizard says so honestly instead of
+// inventing products. Buy buttons reuse the review pages' logo-button
+// pattern (Walmart first, eBay second where the page has one; no button
+// at all when nothing is buyable).
+(function () {
+  "use strict";
+
+  var body = document.getElementById("wizardBody");
+  var resultsEl = document.getElementById("wizardResults");
+  var labelEl = document.getElementById("wizardStepLabel");
+  var optionsEl = document.getElementById("wizardOptions");
+  var navEl = document.getElementById("wizardNav");
+  if (!body || !resultsEl || !labelEl || !optionsEl || !navEl) return;
+
+  var EMPTY_CATS = ["Health & Wellness", "Sauna", "Cold Plunges"];
+  var STEP1_HTML = optionsEl.innerHTML;
+
+  var state = { cat: null, use: null, watts: null, budget: null };
+  var step = 1;
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  // --- Generators: answers -> /api/match query words ---------------------
+  // Phrasing is deliberate: the matcher's keyword parser reads a budget
+  // from "under $800" and watts from "3300 watts" (digits directly before
+  // the word "watts"). "camping" is avoided in the RV phrase because the
+  // parser reads it as solar-only.
+  var GEN_USE = {
+    home: { label: "Home backup", phrase: "home backup for fridge and lights during a power outage" },
+    rv: { label: "RV & camping", phrase: "portable generator for my RV, quiet and lightweight" },
+    jobsite: { label: "Jobsite & tools", phrase: "generator to run power tools on a jobsite" },
+    tailgate: { label: "Tailgating & outdoor", phrase: "portable power for tailgating, small loads" },
+    portable: { label: "Portable power", phrase: "portable power station, no fuel, safe indoors" }
+  };
+  var WATTS = {
+    u2000: { label: "Under 2,000W", phrase: "need 1500 watts" },
+    mid: { label: "2,000–4,500W", phrase: "need 3300 watts" },
+    o4500: { label: "Over 4,500W", phrase: "need 9500 watts" },
+    unsure: { label: "Not sure", phrase: "" }
+  };
+  var BUDGET_GEN = {
+    u500: { label: "Under $500", phrase: "under $500" },
+    mid: { label: "$500–$1,000", phrase: "under $1000" },
+    o1000: { label: "Over $1,000", phrase: "" },
+    nolimit: { label: "No limit", phrase: "" }
+  };
+
+  // --- Tools / Hunting: "what it's for" -> review-page slugs ------------
+  var USE_OTHER = {
+    Tools: [
+      { key: "storage", label: "Tool storage", slugs: ["hart-52-tool-chest", "hart-72-tool-chest"] },
+      { key: "workbench", label: "Workbench", slugs: ["workpro-48-workbench"] },
+      { key: "transfer", label: "Transfer switch", slugs: ["reliance-controls-310crk"] }
+    ],
+    Hunting: [
+      { key: "camera", label: "Trail camera", slugs: ["moultrie-edge-3"] },
+      { key: "crossbow", label: "Crossbow", slugs: ["barnett-demun-tri-strike"] }
+    ]
+  };
+  var BUDGET_OTHER = {
+    u150: { label: "Under $150", test: function (p) { return p.priceNum <= 150; } },
+    mid: { label: "$150–$500", test: function (p) { return p.priceNum > 150 && p.priceNum <= 500; } },
+    o500: { label: "Over $500", test: function (p) { return p.priceNum > 500; } },
+    nolimit: { label: "No limit", test: function () { return true; } }
+  };
+
+  // Client-side index for Tools + Hunting results, built from the review
+  // pages' own JSON-LD and buy buttons (verified Nov 19, 2026). The eBay
+  // price is the page's static figure; ebay-live.js updates live prices
+  // on the review pages themselves.
+  var WIZ_INDEX = {
+    "hart-52-tool-chest": { name: "HART 52-Inch 6-Drawer Tool Chest", price: "$448.81", priceNum: 448.81, url: "/reviews/hart-52-tool-chest/", wm: "https://walmrt.us/4iuoMac", eb: null, ebId: null, ebPrice: null, stock: "In stock" },
+    "hart-72-tool-chest": { name: "HART 72-Inch 15-Drawer Mobile Workbench", price: "$1,498", priceNum: 1498, url: "/reviews/hart-72-tool-chest/", wm: "https://walmrt.us/4iZAfyv", eb: null, ebId: null, ebPrice: null, stock: "In stock" },
+    "workpro-48-workbench": { name: "WORKPRO 48\" x 20\" Garage Workbench", price: "$112.99", priceNum: 112.99, url: "/reviews/workpro-48-workbench/", wm: "https://walmrt.us/4eJwzyB", eb: null, ebId: null, ebPrice: null, stock: "In stock" },
+    "reliance-controls-310crk": { name: "Reliance Controls 310CRK", price: "$491.71", priceNum: 491.71, url: "/reviews/reliance-controls-310crk/", wm: "https://walmrt.us/4AFHn9e", eb: "https://www.ebay.com/itm/336662232018?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1", ebId: "336662232018", ebPrice: "$453.99", stock: "In stock" },
+    "moultrie-edge-3": { name: "Moultrie Edge 3", price: "$99", priceNum: 99, url: "/reviews/moultrie-edge-3/", wm: "https://walmrt.us/4evEIXe", eb: null, ebId: null, ebPrice: null, stock: "Limited stock" },
+    "barnett-demun-tri-strike": { name: "Barnett Demun Tri Strike", price: "$103.13", priceNum: 103.13, url: "/reviews/barnett-demun-tri-strike/", wm: "https://walmrt.us/48VeJVO", eb: null, ebId: null, ebPrice: null, stock: "In stock" }
+  };
+
+  // --- Rendering ----------------------------------------------------------
+  function optBtn(group, key, label) {
+    var selected = state[group] === key ? " selected" : "";
+    return '<button type="button" class="wizard-opt' + selected + '" data-group="' + esc(group) + '" data-key="' + esc(key) + '">' + esc(label) + "</button>";
+  }
+
+  function grid(list, group) {
+    return '<div class="wizard-options">' + list.map(function (o) {
+      return optBtn(group, o.key, o.label);
+    }).join("") + "</div>";
+  }
+
+  function renderNav(showBack, showSubmit, submitDisabled) {
+    var html = "";
+    if (showBack) html += '<button type="button" class="wizard-back" id="wizardBack">&larr; Back</button>';
+    if (showSubmit) html += '<button type="button" class="wizard-submit" id="wizardSubmit"' + (submitDisabled ? " disabled" : "") + ">See my matches</button>";
+    navEl.innerHTML = html;
+    var back = document.getElementById("wizardBack");
+    if (back) back.addEventListener("click", goBack);
+    var sub = document.getElementById("wizardSubmit");
+    if (sub) sub.addEventListener("click", showResults);
+  }
+
+  function showStep(n, labelText) {
+    step = n;
+    labelEl.textContent = labelText;
+    body.hidden = false;
+    resultsEl.hidden = true;
+    resultsEl.innerHTML = "";
+  }
+
+  function goStep1() {
+    state = { cat: null, use: null, watts: null, budget: null };
+    showStep(1, "Step 1 of 3 — What are you shopping for?");
+    optionsEl.innerHTML = STEP1_HTML;
+    renderNav(false, false, false);
+  }
+
+  function goStep2() {
+    showStep(2, "Step 2 of 3 — " + (state.cat === "Generators" ? "What do you need to power?" : "What do you need it for?"));
+    var list;
+    if (state.cat === "Generators") {
+      list = Object.keys(GEN_USE).map(function (k) { return { key: k, label: GEN_USE[k].label }; });
+    } else {
+      list = USE_OTHER[state.cat].map(function (u) { return { key: u.key, label: u.label }; });
+    }
+    optionsEl.innerHTML = grid(list, "use");
+    renderNav(true, false, false);
+  }
+
+  function goStep3() {
+    showStep(3, "Step 3 of 3 — " + (state.cat === "Generators" ? "Power & budget" : "Budget"));
+    var html = "";
+    if (state.cat === "Generators") {
+      html += '<p class="wizard-group-label">How much power?</p>' + grid(
+        Object.keys(WATTS).map(function (k) { return { key: k, label: WATTS[k].label }; }), "watts");
+      html += '<p class="wizard-group-label">Budget?</p>' + grid(
+        Object.keys(BUDGET_GEN).map(function (k) { return { key: k, label: BUDGET_GEN[k].label }; }), "budget");
+    } else {
+      html += grid(
+        Object.keys(BUDGET_OTHER).map(function (k) { return { key: k, label: BUDGET_OTHER[k].label }; }), "budget");
+    }
+    optionsEl.innerHTML = html;
+    renderNav(true, true, !canSubmit());
+  }
+
+  function canSubmit() {
+    if (state.cat === "Generators") return !!(state.watts && state.budget);
+    return !!state.budget;
+  }
+
+  function goBack() {
+    if (step === 3) goStep2();
+    else if (step === 2) goStep1();
+  }
+
+  function refreshSubmit() {
+    var sub = document.getElementById("wizardSubmit");
+    if (sub) sub.disabled = !canSubmit();
+  }
+
+  // --- Results ------------------------------------------------------------
+  function buyButtons(wmLink, wmPrice, wmStock, ebLink, ebId, ebPrice, ebStock) {
+    var html = "";
+    if (wmLink) {
+      html += '<a class="btn buy-walmart" href="' + esc(wmLink) + '"><span class="buy-logo-wrap"><img class="buy-logo" src="/assets/logos/walmart.svg" alt="Walmart" width="126" height="24"></span><span class="price">' + esc(wmPrice) + "</span><small>" + esc(wmStock) + "</small></a>";
+    }
+    if (ebLink) {
+      html += '<a class="btn buy-ebay" href="' + esc(ebLink) + '"><span class="buy-logo-wrap"><img class="buy-logo" src="/assets/logos/ebay.svg" alt="eBay" width="60" height="24"></span><span class="price"' + (ebId ? ' data-ebay-price="' + esc(ebId) + '"' : "") + ">" + esc(ebPrice) + "</span><small>" + esc(ebStock || "See listing") + "</small></a>";
+    }
+    return html ? '<div class="buy-row">' + html + "</div>" : "";
+  }
+
+  function matchCard(p) {
+    var heading = p.alternative ? "In-stock alternative" : (p.best ? "Best match" : "Also worth a look");
+    var html = '<article class="wiz-card"><p class="wiz-best">' + esc(heading) + "</p>"
+      + "<h3>" + esc(p.name) + "</h3>"
+      + "<p><strong>" + esc(p.price) + "</strong> &middot; " + esc(p.rating) + "</p>"
+      + '<p class="meta">' + esc(p.stock) + " — checked Nov 19, 2026</p>"
+      + "<p>" + esc(p.specs) + ".</p>"
+      + "<p>" + esc(p.fit) + "</p>";
+    if (p.reasons && p.reasons.length) {
+      html += "<ul>" + p.reasons.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul>";
+    }
+    var wmPrice = p.price;
+    var wmStock = p.stock;
+    var showWm = p.stock === "In stock";
+    var ebId = null;
+    if (p.alt_link) {
+      var m = p.alt_link.match(/\/itm\/(\d+)/);
+      if (m) ebId = m[1];
+    }
+    html += buyButtons(showWm ? p.link : null, wmPrice, wmStock, p.alt_link || null, ebId, p.alt_price || null, p.alt_stock || null);
+    if (!showWm && !p.alt_link) {
+      html += '<p class="meta">No buy button here — nothing buyable right now. Read the review for the latest stock check.</p>';
+    }
+    html += '<p><a class="read-review" href="' + esc(p.review_url) + '">Read the full ' + esc(p.short) + ' review &rarr;</a></p></article>';
+    return html;
+  }
+
+  function localCard(item) {
+    var html = '<article class="wiz-card"><p class="wiz-best">Match</p>'
+      + "<h3>" + esc(item.name) + "</h3>"
+      + "<p><strong>" + esc(item.price) + "</strong></p>"
+      + '<p class="meta">' + esc(item.stock) + "</p>"
+      + buyButtons(item.wm, item.price, item.stock, item.eb, item.ebId, item.ebPrice, item.eb ? "See listing" : null)
+      + '<p><a class="read-review" href="' + esc(item.url) + '">Read the full review &rarr;</a></p></article>';
+    return html;
+  }
+
+  function resultsShell(inner, note) {
+    var html = '<div class="wizard-results-inner">' + (note ? '<p class="wizard-note">' + note + "</p>" : "") + inner
+      + '<p class="wizard-note">Prices from our review pages, checked Nov 19, 2026 — they can change; check the listing before you buy.</p>'
+      + '<button type="button" class="wizard-back" id="wizardStartOver">Start over</button></div>';
+    body.hidden = true;
+    resultsEl.innerHTML = html;
+    resultsEl.hidden = false;
+    document.getElementById("wizardStartOver").addEventListener("click", goStep1);
+    resultsEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function emptyCategory(cat) {
+    body.hidden = true;
+    resultsEl.innerHTML = '<div class="wizard-results-inner">'
+      + "<h3>No reviews in " + esc(cat) + " yet</h3>"
+      + '<p class="wizard-note">We&rsquo;re testing gear in this category now — nothing to match you to yet, and we&rsquo;d rather say so than guess. Browse the <a href="#reviews">latest reviews</a> below, or check back soon.</p>'
+      + '<button type="button" class="wizard-back" id="wizardStartOver">Start over</button></div>';
+    resultsEl.hidden = false;
+    document.getElementById("wizardStartOver").addEventListener("click", goStep1);
+    resultsEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function showResults() {
+    if (!canSubmit()) return;
+    body.hidden = true;
+    resultsEl.hidden = false;
+    resultsEl.innerHTML = '<p class="wizard-loading">Matching your answers against our verified reviews…</p>';
+
+    if (state.cat === "Generators") {
+      var parts = [GEN_USE[state.use].phrase, WATTS[state.watts].phrase, BUDGET_GEN[state.budget].phrase]
+        .filter(function (x) { return x; });
+      var query = parts.join(", ");
+      fetch("/api/match", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ query: query })
+      })
+        .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (out) {
+          if (!out.ok || !out.data.picks) {
+            resultsEl.innerHTML = '<p class="wizard-note">Could not reach the matcher — try the <a href="/generator-finder/">3-question Generator Finder</a> or <a href="/ask/">Ask Garage AI</a> instead.</p><button type="button" class="wizard-back" id="wizardStartOver">Start over</button>';
+            document.getElementById("wizardStartOver").addEventListener("click", goStep1);
+            return;
+          }
+          var d = out.data;
+          var note = "";
+          if (d.needs && d.needs.summary) note += "We read that as: <b>" + esc(d.needs.summary) + "</b>. ";
+          if (d.note) note += esc(d.note);
+          var inner = "";
+          if (!d.picks.length) {
+            inner = '<p class="wizard-note">Nothing in the roster fits that job yet — check back as we review more, one video a day.</p>';
+          } else {
+            inner = d.picks.map(matchCard).join("");
+          }
+          resultsShell(inner, note || null);
+        })
+        .catch(function () {
+          resultsEl.innerHTML = '<p class="wizard-note">Could not reach the matcher — check your connection and try again, or use the <a href="/generator-finder/">3-question Generator Finder</a> or <a href="/ask/">Ask Garage AI</a>.</p><button type="button" class="wizard-back" id="wizardStartOver">Start over</button>';
+          document.getElementById("wizardStartOver").addEventListener("click", goStep1);
+        });
+      return;
+    }
+
+    // Tools / Hunting: client-side filter over the category's review pages.
+    var useEntry = USE_OTHER[state.cat].filter(function (u) { return u.key === state.use; })[0];
+    var items = useEntry.slugs.map(function (s) { return WIZ_INDEX[s]; }).filter(Boolean);
+    var test = BUDGET_OTHER[state.budget].test;
+    var filtered = items.filter(test);
+    var note = null;
+    if (!filtered.length) {
+      note = "Nothing for " + esc(useEntry.label.toLowerCase()) + " is " + esc(BUDGET_OTHER[state.budget].label.toLowerCase()) + " — here are the " + esc(useEntry.label.toLowerCase()) + " reviews we have.";
+      filtered = items;
+    }
+    filtered.sort(function (a, b) { return a.priceNum - b.priceNum; });
+    resultsShell(filtered.map(localCard).join(""), note);
+  }
+
+  // --- Events ---------------------------------------------------------------
+  optionsEl.addEventListener("click", function (e) {
+    var btn = e.target.closest(".wizard-opt");
+    if (!btn) return;
+    var group = btn.getAttribute("data-group");
+    var key = btn.getAttribute("data-key");
+    if (!group || !key) return;
+    state[group] = key;
+    optionsEl.querySelectorAll('.wizard-opt[data-group="' + group + '"]').forEach(function (b) {
+      b.classList.toggle("selected", b === btn);
+    });
+    if (group === "cat") {
+      if (EMPTY_CATS.indexOf(key) !== -1) {
+        emptyCategory(key);
+      } else {
+        goStep2();
+      }
+    } else if (group === "use") {
+      goStep3();
+    } else {
+      refreshSubmit();
+    }
+  });
+
+  renderNav(false, false, false);
+})();
+
+</script>
+<script src="/site-search.js" defer></script>
 </body>
 </html>
