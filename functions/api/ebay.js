@@ -25,15 +25,18 @@
 // If the credentials are not set, the function returns the fallback shape
 // — the site keeps showing its verified static figures and nothing breaks.
 //
-// Allowlist: ONLY the Jackery Explorer 1000 v2 listing (item 840084662851)
-// is wired. There are no suitable eBay listings for the iGen4500DF or the
-// iGen4000DFc — do not add an item here without a live, verified listing.
+// Allowlist: every eBay listing linked from the site (8 items, verified
+// 2026-11-19). There are no suitable eBay listings for the iGen4500DF or
+// the iGen4000DFc — do not add an item here without a live, verified
+// listing. Tyler's rule (2026-11-19): eBay figures come from this API,
+// dates are watched, and no listing is added unless it can be updated
+// easily daily — the daily deal watcher re-checks every entry here.
 // The buy_url returned is the existing EPN tracked link, never eBay's raw
 // itemWebUrl, so affiliate tracking is preserved.
 //
 // Free tier: the Browse API is free — 5,000 calls/day per application by
 // default (eBay API call-limits docs). No paid tier, no billing. With the
-// 15-minute edge cache and one listing, normal traffic uses a handful of
+// 15-minute edge cache and eight listings, normal traffic uses a handful of
 // calls a day. If eBay ever gates production Browse access behind an
 // application review for this account, the function keeps returning the
 // fallback shape and the site stays correct.
@@ -64,7 +67,8 @@ const BROWSE_ROOT = "https://api.ebay.com/buy/browse/v1";
 const TOKEN_SCOPE = "https://api.ebay.com/oauth/api_scope";
 
 // One entry per live eBay listing on the site. price_display / in_stock
-// are the last VERIFIED static figures (Nov 18, 2026) — used ONLY as the
+// are the last VERIFIED static figures (Jackery Nov 18, the other seven
+// Nov 19, 2026) — used ONLY as the
 // fallback when the API cannot be reached. Update them when the deal
 // watcher confirms a real change.
 const ALLOWLIST = {
@@ -74,6 +78,55 @@ const ALLOWLIST = {
     in_stock: true,
     buy_url:
       "https://www.ebay.com/itm/840084662851?amdata=enc%3AAQALAAAAoCHNgUiiE%2FjQhlDTaMiAde8pxdFQG0HwwTGa1pSBEYrLM9tdeJbgLyJmRiOoKPhYolY0hbeDusQdPQ%2FHPrzc5KN9OHPQ2vSrkkwy1riURjIERHDjobDOvwKGM7cWZWb4Eihs%2BIDRVWsmLsXBmKcWBseQjJSD6ahBOGFMjdz2faKDOeP9z%2FeaaEesq37yxRRUtxuq9FKMZ6qzrhzMU87UcVM%3D&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "336903887877": {
+    name: "Westinghouse iGen2800 (iGen2500 page buyable option)",
+    price_display: "$344.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/336903887877?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "146761185248": {
+    name: "Pulsar G12KBN",
+    price_display: "$929.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/146761185248?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "137928316231": {
+    name: "EcoFlow DELTA 3 Classical 1000",
+    price_display: "$425.00",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/137928316231?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "336700335243": {
+    name: "Aceup Energy AI4000S",
+    price_display: "$379.90",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/336700335243?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "227577563937": {
+    name: "WEN 4750W Generator 56475",
+    price_display: "$375.00",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/227577563937?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "336662232018": {
+    name: "Reliance Controls 310CRK",
+    price_display: "$453.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/336662232018?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "355913039258": {
+    name: "Pulsar G1200SG",
+    price_display: "$179.00",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/355913039258?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
 };
 
