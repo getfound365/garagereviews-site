@@ -1,10 +1,11 @@
 # Garage Reviews
 
-Garage Reviews publishes honest, research-first reviews of generators and backup-power gear, plus workbenches, hunting gear, and other garage gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Prices and stock were checked Nov 18–20, 2026 and can change.
+Garage Reviews publishes honest, research-first reviews of generators and backup-power gear, plus workbenches, hunting gear, and other garage gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Sweaty Yeti sauna links go direct to the maker (affiliate link, coupon getfound3655 for 5% off) — Garage Reviews earns a flat $1,500 per sauna sale. Prices and stock were checked Nov 18–20, 2026 and can change.
 
 ## What the site covers
 
 - Dual-fuel inverter generators, whole-home dual-fuel generators, and portable power stations (solar generators), plus related gear such as transfer switches, parallel kits, and solar panels.
+- Outdoor saunas and cold plunges (Sweaty Yeti) — factory-built modular sauna cabins, model comparisons, and the sauna-vs-cold-plunge contrast therapy routine.
 - Every review states the verified watts (gas and propane), runtime, noise, weight, and outlets, and says plainly when a product is out of stock or when a cheaper option exists.
 - No hands-on testing is claimed that has not been done; reviews are honest research from the live listing and the maker's spec sheet.
 
@@ -42,6 +43,9 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - Westinghouse iGen5000c: $899, in stock on Walmart, 4.7 stars from 7,533 ratings. Gas inverter generator, 5,000 peak / 3,900 running watts, CO sensor, remote start, 52 dBA. Written review (video review coming). Review: https://garagereviews.us/reviews/westinghouse-igen5000c/
 - DuroMax XP13000HX: $1,399, out of stock on Walmart as of Nov 20, 2026, 4.8 stars from 1,463 ratings. Dual-fuel generator, 13,000 peak / 10,500 running watts on gas, 12,500 / 10,000 on propane, CO Alert, 500cc, 5-year warranty. Written review (video review coming). Review: https://garagereviews.us/reviews/duromax-xp13000hx/
 - Westinghouse iGen5000: $849, in stock on Walmart, 4.7 stars from 16,250 ratings (family aggregate across the iGen5000 line). Gas inverter generator, 5,000 peak / 3,900 running watts, electric + remote start, no CO sensor. Written review (video review coming). Review: https://garagereviews.us/reviews/westinghouse-igen5000/
+- Sweaty Yeti Sauna: $29,700, built to order (60–90 day factory build), sold direct from the maker. 4–6 person cedar sauna, 8′ × 9′, 240V/50A, HUUM Steel heater. No ratings exist (sold direct). Written review (video review coming). Review: https://garagereviews.us/reviews/sweaty-yeti-sauna/
+- Sweaty Yeti Sauna Models Compared: all 8 live models, $29,700 (Sauna) to $55,200 (Sauna Plus Barrel Plunge), with seats, what's inside, and who each is for. Prices verified Nov 20, 2026 on the live shop. Review: https://garagereviews.us/reviews/sweaty-yeti-sauna-models/
+- Sweaty Yeti Sauna vs Cold Plunge: the contrast therapy routine (sauna 160–195°F, shower 50–60°F, plunge 39–55°F) and the Sauna Plunge $51,700 combo vs buying the halves separately. Review: https://garagereviews.us/reviews/sweaty-yeti-sauna-vs-cold-plunge/
 
 ## Key pages
 

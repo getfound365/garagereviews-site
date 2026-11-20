@@ -1,6 +1,6 @@
 // Site search for garagereviews.us — shared by the homepage and all review pages.
 // Client-side product index built from the review pages' own JSON-LD
-// (names, categories, verified prices as of Nov 19, 2026). No prices are
+// (names, categories, verified prices as of Nov 19–20, 2026). No prices are
 // invented: a product with no verified price shows no price at all.
 // As you type, a dropdown lists matching products — name (brand + model
 // first), category, and price. Click a row (or arrow keys + Enter) to open
@@ -30,7 +30,10 @@
     { name: "Moultrie Edge 3", url: "/reviews/moultrie-edge-3/", cat: "Hunting", price: "$99" },
     { name: "Walsunny 12x20 Steel-Roof Carport", url: "/reviews/walsunny-12x20-carport/", cat: "Yard Equipment", price: "$519.99" },
     { name: "Patiowell 10x10 Metal Shed", url: "/reviews/patiowell-10x10-shed/", cat: "Yard Equipment", price: "$389.99" },
-    { name: "EasyHawk 14x12 Steel Shed", url: "/reviews/easyhawk-shed/", cat: "Yard Equipment", price: "$450" }
+    { name: "EasyHawk 14x12 Steel Shed", url: "/reviews/easyhawk-shed/", cat: "Yard Equipment", price: "$450" },
+    { name: "Sweaty Yeti Sauna", url: "/reviews/sweaty-yeti-sauna/", cat: "Sauna", price: "$29,700" },
+    { name: "Sweaty Yeti Sauna Models Compared", url: "/reviews/sweaty-yeti-sauna-models/", cat: "Sauna", price: "From $29,700" },
+    { name: "Sweaty Yeti Sauna vs Cold Plunge", url: "/reviews/sweaty-yeti-sauna-vs-cold-plunge/", cat: "Sauna", price: "$51,700" }
   ];
 
   var MAX_RESULTS = 7;
