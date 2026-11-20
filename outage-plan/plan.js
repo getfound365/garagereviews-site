@@ -17,6 +17,12 @@
   // wen4750w, reliance310crk, g1200sg, wendf472). Prices/stock as of
   // Nov 19, 2026. reliance310crk is a manual transfer switch kit, not a
   // generator — it renders through the transfer-switch branch below.
+  // Nov 20, 2026: +10 models from the day's verified review pages
+  // (wgen9500dfc, champion201319, river2pro, jackery300v2, jackery300lifepo4,
+  // igen12000dfc, igen2800dfc, igen5000c, xp13000hx, igen5000). Prices/stock
+  // as of Nov 20, 2026. Also reconciled to the live site: wen4750w +
+  // wendf472 flipped to out of stock, g1200sg back in stock, 310CRK
+  // $491.71 -> $453.99 (all verified on the live site Nov 20, 2026).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -164,7 +170,7 @@
       short: "4750W 56475",
       price: 525, priceDisplay: "$525",
       rating: "4.3 stars from 137 ratings",
-      stock: "In stock", inStock: true,
+      stock: "Out of stock", inStock: false,
       gasRunningW: 3750, gasPeakW: 4750,
       propaneRunningW: null, propanePeakW: null,
       runtime: null,
@@ -177,7 +183,7 @@
       name: "Reliance Controls 310CRK — Manual Transfer Switch Kit",
       short: "310CRK",
       type: "transfer-switch",
-      price: 491.71, priceDisplay: "$491.71",
+      price: 453.99, priceDisplay: "$453.99",
       rating: "4.8 stars from 132 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: null, gasPeakW: null,
@@ -193,7 +199,7 @@
       short: "G1200SG",
       price: 149, priceDisplay: "$149",
       rating: "4.0 stars from 321 ratings",
-      stock: "Out of stock", inStock: false,
+      stock: "In stock", inStock: true,
       gasRunningW: 900, gasPeakW: 1200,
       propaneRunningW: null, propanePeakW: null,
       runtime: null, // runtime conflicts across sources (5 vs 8.5 hours)
@@ -208,7 +214,7 @@
       short: "DF472",
       price: 499.52, priceDisplay: "$499.52",
       rating: "4.3 stars from 9 ratings",
-      stock: "In stock", inStock: true,
+      stock: "Out of stock", inStock: false,
       gasRunningW: 3800, gasPeakW: 4750,
       propaneRunningW: 3500, propanePeakW: 4350,
       runtime: "~11 hours on gasoline at 50% load",
@@ -216,6 +222,144 @@
       specs: "4,750 peak / 3,800 running watts on gas · 4,350 peak / 3,500 running on propane · 120/240V · 103.2 lb · recoil start only · no CO sensor listed",
       link: "https://walmrt.us/4tadlYD",
       reviewUrl: "/reviews/wen-df472/"
+    },
+    wgen9500dfc: {
+      name: "Westinghouse WGen9500DFc — Dual Fuel Portable Generator",
+      short: "WGen9500DFc",
+      price: 1049, priceDisplay: "$1,049",
+      rating: "4.82 stars from 24,633 ratings", // BV product-specific count; PDP count (~48,176) is family-wide
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 9500, gasPeakW: 12500,
+      propaneRunningW: 8500, propanePeakW: 11200,
+      runtime: "up to 12 hours on gas at 25% load",
+      noiseDba: 74, weightLb: 212,
+      specs: "12,500 peak / 9,500 running watts on gas · 11,200 peak / 8,500 running on propane · up to 12 hours at 25% load · 74 dBA · CO sensor · transfer-switch ready · 212 lb",
+      link: "https://www.walmart.com/ip/Westinghouse-12-500-Peak-Watt-Dual-Fuel-Portable-Generator-Gas-Propane-Transfer-Switch-Ready-CO-Sensor/205592694",
+      reviewUrl: "/reviews/westinghouse-wgen9500dfc/"
+    },
+    champion201319: {
+      name: "Champion 201319 4500W Dual Fuel Inverter — Portable Inverter Generator",
+      short: "Champion 201319",
+      price: 999, priceDisplay: "$999",
+      rating: "4.8 stars from 200 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3500, gasPeakW: 4500,
+      propaneRunningW: 3150, propanePeakW: 4500,
+      runtime: "up to 14 hours on gas at 25% load, 21 hours on propane",
+      noiseDba: 61, weightLb: null, // weight not published on the sources checked
+      specs: "4,500 peak / 3,500 running watts on gas · 4,500 peak / 3,150 running on propane · up to 14 hours on gas at 25% load · 61 dBA · CO Shield · TT-30R RV outlet · <3% THD",
+      link: "https://www.walmart.com/ip/Champion-4500-Watt-Electric-Start-Dual-Fuel-RV-Ready-Portable-Inverter-Generator-with-Quiet-Technology-and-CO-Shield/5292447369",
+      reviewUrl: "/reviews/champion-201319-4500w-dual-fuel-inverter/"
+    },
+    river2pro: {
+      name: "EcoFlow RIVER 2 Pro — Portable Power Station",
+      short: "RIVER 2 Pro",
+      price: 349, priceDisplay: "$349",
+      rating: "4.5 stars from 790 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 800, surgeW: 1600, batteryWh: 716, // Walmart RIVER 2 Pro 700 variant; standard version is 768Wh
+      runtime: null,
+      noiseDba: 0, weightLb: 18.2,
+      specs: "716Wh LiFePO4 battery (Walmart RIVER 2 Pro 700 variant; standard version is 768Wh) · 800W continuous / 1,600W surge · 18.2 lb · 0–100% in about 70 minutes",
+      link: "https://www.walmart.com/ip/EF-EcoFlow-Portable-Power-Station-RIVER-2-Pro-700-716Wh-LFP-Battery-1600W-Solar-Generator-for-Outdoor-Home-Use/3285267150",
+      reviewUrl: "/reviews/ecoflow-river-2-pro/"
+    },
+    jackery300v2: {
+      name: "Jackery Explorer 300 v2 Auto Kit — Portable Power Station",
+      short: "Jackery Explorer 300 v2",
+      price: 198, priceDisplay: "$198",
+      rating: "4.4 stars from 274 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 300, surgeW: 600, batteryWh: 288,
+      runtime: null,
+      noiseDba: 0, weightLb: 8.1,
+      specs: "288Wh LiFePO4 battery · 300W continuous / 600W surge · 8.1 lb · includes 12V auto-charging cable · charges from the wall, car, or sun",
+      link: "https://www.walmart.com/ip/Jackery-Explorer-300v2-Auto-Kit-Portable-Power-Station-with-12V-Battery-Charging-Cable/19346557265",
+      reviewUrl: "/reviews/jackery-explorer-300-v2-auto-kit/"
+    },
+    jackery300lifepo4: {
+      name: "Jackery Explorer 300 LiFePO4 — Portable Power Station",
+      short: "Jackery Explorer 300 LiFePO4",
+      price: 309, priceDisplay: "$309",
+      rating: "4.6 stars from 110 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 300, surgeW: null, batteryWh: 292, // surge watts not verified; Walmart titles it "E300New 290Wh" (rounding)
+      runtime: null,
+      noiseDba: 0, weightLb: 7.5,
+      specs: "292Wh LiFePO4 battery · 300W continuous · 7.5 lb · 4,000+ cycles to 70% · 100W USB-C PD · 5-year warranty",
+      link: "https://www.walmart.com/ip/Jackery-E300New-290Wh-Portable-Power-Station-with-5m-Extension-Cord-300W-LiFePO4-Battery-for-Camping-Travel-Backup/17514002741",
+      reviewUrl: "/reviews/jackery-explorer-300-lifepo4/"
+    },
+    igen12000dfc: {
+      name: "Westinghouse iGen12000DFc — Dual Fuel Inverter Generator",
+      short: "iGen12000DFc",
+      price: 1899, priceDisplay: "$1,899",
+      rating: "4.8 stars from 2,293 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 9000, gasPeakW: 12000,
+      propaneRunningW: 8100, propanePeakW: 11000,
+      runtime: "up to 19 hours on gas at 25% load, 9 hours on propane",
+      noiseDba: 64, weightLb: 189,
+      specs: "12,000 peak / 9,000 running watts on gas · 11,000 peak / 8,100 running on propane · up to 19 hours at 25% load · 64 dBA · remote start · CO sensor · 50A outlet · 189 lb",
+      link: "https://www.walmart.com/ip/Westinghouse-11-000-Peak-Watt-Portable-Inverter-Generator-Dual-Fuel-Remote-Start-with-CO-Sensor/5255290485",
+      reviewUrl: "/reviews/westinghouse-igen12000dfc/"
+    },
+    igen2800dfc: {
+      name: "Westinghouse iGen2800DFc — Dual Fuel Inverter Generator",
+      short: "iGen2800DFc",
+      price: 549, priceDisplay: "$549",
+      rating: "4.7 stars from 5,346 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 2200, gasPeakW: 2800,
+      propaneRunningW: 1980, propanePeakW: 2520,
+      runtime: "up to 12 hours on gas at 25% load",
+      noiseDba: null, // CONTESTED: 52 dBA marketing vs 62 dBA at 25% load in one spec table
+      weightLb: 45.4,
+      specs: "2,800 peak / 2,200 running watts on gas · 2,520 peak / 1,980 running on propane · up to 12 hours at 25% load · CO sensor · TT-30R RV outlet · 45.4 lb · recoil start only",
+      link: "https://www.walmart.com/ip/Westinghouse-2800-Peak-Watt-Portable-Gas-Propane-Powered-Inverter-Generator-Dual-Fuel-Parallel-Capable-with-CO-Sensor/18953253301",
+      reviewUrl: "/reviews/westinghouse-igen2800dfc/"
+    },
+    igen5000c: {
+      name: "Westinghouse iGen5000c — Gas Inverter Generator",
+      short: "iGen5000c",
+      price: 899, priceDisplay: "$899",
+      rating: "4.7 stars from 7,533 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 3900, gasPeakW: 5000,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: "up to 18 hours at 25% load, 15 hours at 50% load",
+      noiseDba: 52, weightLb: 105.8,
+      specs: "5,000 peak / 3,900 running watts · gas inverter · CO sensor · up to 18 hours at 25% load · 52 dBA · 105.8 lb · TT-30R RV outlet",
+      link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gasoline-Powered-Portable-Inverter-Generator-with-CO-Sensor/329397713",
+      reviewUrl: "/reviews/westinghouse-igen5000c/"
+    },
+    xp13000hx: {
+      name: "DuroMax XP13000HX — Dual Fuel Portable Generator",
+      short: "XP13000HX",
+      price: 1399, priceDisplay: "$1,399",
+      rating: "4.8 stars from 1,463 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 10500, gasPeakW: 13000,
+      propaneRunningW: 10000, propanePeakW: 12500,
+      runtime: "up to 17 hours on gas at 25% load, 13 hours on propane",
+      noiseDba: 74, weightLb: 240,
+      specs: "13,000 peak / 10,500 running watts on gas · 12,500 peak / 10,000 running on propane · up to 17 hours at 25% load · 74 dB · CO Alert · 240 lb",
+      link: "https://www.walmart.com/ip/DuroMax-XP13000HX-13-000-Watt-Portable-Dual-Fuel-Gas-Propane-CO-Alert-Generator/783922308",
+      reviewUrl: "/reviews/duromax-xp13000hx/"
+    },
+    igen5000: {
+      name: "Westinghouse iGen5000 — Gas Inverter Generator",
+      short: "iGen5000",
+      price: 849, priceDisplay: "$849",
+      rating: "4.7 stars from 16,250 ratings", // PDP count is a variant-family aggregate; BV is 7,819
+      stock: "In stock", inStock: true,
+      gasRunningW: 3900, gasPeakW: 5000,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: "up to 18 hours at 25% load, 15 hours at 50% load",
+      noiseDba: 52, weightLb: 104.7,
+      specs: "5,000 peak / 3,900 running watts · gas inverter · up to 18 hours at 25% load · 52 dBA · 104.7 lb · TT-30R RV outlet · no CO sensor",
+      link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gas-Powered-Portable-Inverter-Generator-with-Electric-Start/132513179",
+      reviewUrl: "/reviews/westinghouse-igen5000/"
     }
   };
 
@@ -335,7 +479,7 @@
     $("buy-rating").textContent = m.rating;
     $("buy-specs").textContent = m.specs + ".";
     var stockEl = $("buy-stock");
-    stockEl.textContent = m.stock + " — checked Nov 19, 2026";
+    stockEl.textContent = m.stock + " — checked Nov 20, 2026";
     stockEl.className = m.inStock ? "stock in" : "stock out";
     $("buy-link").href = m.link;
     $("buy-link").textContent = "Shop the " + m.short + " — " + m.priceDisplay;
@@ -343,7 +487,7 @@
     if (m.altLink) {
       alt.hidden = false;
       $("buy-alt-link").href = m.altLink;
-      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 19, 2026)";
+      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 20, 2026)";
     } else {
       alt.hidden = true;
     }
@@ -377,7 +521,7 @@
         fitEl.className = "fit ok";
         fitEl.innerHTML = "<strong>It fits.</strong> This job needs about " + fmt(jobWatts) +
           " running watts (estimate) and the " + esc(m.short) + " delivers " + fmt(runW) +
-          (isStation ? "W continuous (" + fmt(m.surgeW) + "W surge for motor starts)" : " running watts on gas") +
+          (isStation ? "W continuous" + (m.surgeW ? " (" + fmt(m.surgeW) + "W surge for motor starts)" : "") : " running watts on gas") +
           " — enough to run these loads together.";
       } else {
         fitEl.className = "fit no";
@@ -434,7 +578,7 @@
       safetyEl.innerHTML =
         "<li><strong>No fuel, no fumes — safe indoors.</strong> This is a battery power station, not an engine. There is no exhaust and no carbon-monoxide risk.</li>" +
         "<li><strong>Never backfeed.</strong> Never plug it into a wall outlet to feed the house — use its outlets for your appliances directly.</li>" +
-        "<li><strong>Do not overload it.</strong> Stay under " + fmt(m.continuousW) + "W continuous (" + fmt(m.surgeW) + "W surge for motor starts).</li>";
+        "<li><strong>Do not overload it.</strong> Stay under " + fmt(m.continuousW) + "W continuous" + (m.surgeW ? " (" + fmt(m.surgeW) + "W surge for motor starts)" : "") + ".</li>";
     } else {
       safetyEl.innerHTML =
         "<li><strong>Run it outdoors, at least 20 feet from the house,</strong> exhaust pointing away — never in a garage or under a porch roof. Carbon monoxide is odorless and kills every storm season.</li>" +
@@ -442,7 +586,7 @@
         "<li><strong>Let it cool before refueling.</strong> Never refuel a hot generator — shut it down, wait for it to cool, then fill the tank.</li>";
     }
 
-    $("plan-date").textContent = "Prices and stock checked Nov 19, 2026 — re-check the listing before you buy; prices can change.";
+    $("plan-date").textContent = "Prices and stock checked Nov 20, 2026 — re-check the listing before you buy; prices can change.";
   }
 
   var printBtn = $("print-btn");
@@ -463,7 +607,9 @@
 // Either style works; the plan page normalises them. `product` must be a
 // roster id (igen4500df, wgen9500df, igen4000dfc, jackery1000v2, wgen3600c,
 // igen2500, g12kbn, delta3classical1000, gxs4300i, ai4000s, wen4750w,
-// reliance310crk, g1200sg, wendf472) —
+// reliance310crk, g1200sg, wendf472, wgen9500dfc, champion201319, river2pro,
+// jackery300v2, jackery300lifepo4, igen12000dfc, igen2800dfc, igen5000c,
+// xp13000hx, igen5000) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------

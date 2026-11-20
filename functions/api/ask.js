@@ -1,7 +1,7 @@
 // Ask Garage Reviews — Pages Function (POST /api/ask).
 //
 // RAG over the site's own verified content only. Retrieval runs against the
-// bundled knowledge base (ask/kb.json: 73 chunks from the 7 live pages,
+// bundled knowledge base (ask/kb.json: 484 chunks from the 27 live pages,
 // embedded with @cf/baai/bge-base-en-v1.5) with in-memory cosine similarity.
 // If a VECTORIZE binding is ever attached (index garage-reviews-kb, same
 // model/dimensions), retrieval prefers it and falls back to the bundle.
@@ -35,7 +35,7 @@ const SYSTEM_PROMPT = [
   '2. Keep the answer short (2-5 sentences, or a short list when comparing).',
   '3. Cite every factual claim inline like [1], [2], matching the numbered',
   '   excerpt list. Do not cite anything that is not in the excerpts.',
-  '4. Prices and stock were checked Nov 19, 2026 and can change — say that',
+  '4. Prices and stock were checked Nov 20, 2026 and can change — say that',
   '   whenever you quote a price or stock status.',
   "5. If the excerpts do not answer the question, reply with exactly:",
   `   "${IDK}"`,
