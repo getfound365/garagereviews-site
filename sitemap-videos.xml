@@ -302,6 +302,7 @@
       <video:description>Short: two Moultrie Edge 3 cameras for $99 — or wait?</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/2F1R7kl1xws</video:player_loc>
       <video:publication_date>2026-11-18</video:publication_date>
+    </video:video>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/-pXuX_ZzCX0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Walsunny 12x20 Steel Carport: Is the $520 Galvanized Carport Worth It?</video:title>
@@ -406,7 +407,6 @@
       <video:description>Short: buy the EasyHawk 14x12 shed — or skip it? The $500 price in the title is stale; the shed is $450 now.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/kKxRM5QVHC0</video:player_loc>
       <video:publication_date>2026-11-18</video:publication_date>
-    </video:video>
     </video:video>
   </url>
 </urlset>
