@@ -59,7 +59,7 @@
 <div id="matcher-result" hidden></div>
 </section>
 
-<p>Prices checked Nov 20, 2026 and can change. Out-of-stock flags are as of Nov 20, 2026.</p>
+<p>Prices checked Nov 21, 2026 and can change. Out-of-stock flags are as of Nov 21, 2026.</p>
 <p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 23 models</a></p>
 
 <p class="disclosure">As a Walmart Creator, Garage Reviews earns from qualifying purchases made through these links, at no extra cost to you. We never claim hands-on testing we haven't done — every pick is honest research, and the video says plainly when to skip one.</p>
@@ -250,9 +250,9 @@
       price: "$349",
       rating: "4.5 stars from 790 ratings",
       specs: "716Wh LiFePO4 battery (Walmart RIVER 2 Pro 700 variant; standard version is 768Wh) · 800W continuous / 1,600W surge · 18.2 lb · 0–100% in about 70 minutes",
-      fit: "No fuel, no fumes, safe indoors — 800W of clean power in an 18.2 lb box at $349 (down from $549 in the Black Friday sale). Runs a fridge for hours, not days; add solar panels for longer outages.",
+      fit: "No fuel, no fumes, safe indoors — 800W of clean power in an 18.2 lb box at $349 (down from $549 in the Black Friday sale). Runs a fridge for hours, not days; add solar panels for longer outages. Out of stock at Walmart right now, so check the listing before you buy.",
       status: "coming",
-      stock: "In stock",
+      stock: "Out of stock",
       video: null,
       link: "https://www.walmart.com/ip/EF-EcoFlow-Portable-Power-Station-RIVER-2-Pro-700-716Wh-LFP-Battery-1600W-Solar-Generator-for-Outdoor-Home-Use/3285267150"
     },
@@ -261,7 +261,7 @@
       price: "$198",
       rating: "4.4 stars from 274 ratings",
       specs: "288Wh LiFePO4 battery · 300W continuous / 600W surge · 8.1 lb · includes 12V auto-charging cable · charges from the wall, car, or sun",
-      fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. Only 4 left at Walmart, and the standalone unit is sold out at Jackery direct.",
+      fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. The standalone unit is sold out at Jackery direct.",
       status: "coming",
       stock: "In stock",
       video: null,
@@ -342,10 +342,10 @@
 
   function decide(use, fuel, budget) {
     if (fuel === "solar") {
-      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Four in the roster now — the three below are in stock; the Jackery Explorer 1000 v2 is out of stock on Walmart right now, so check the listing before you buy.", options: ["river2pro", "delta3classical1000", "jackery300v2"] };
+      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Four in the roster now — two of the three below are in stock; the RIVER 2 Pro is out of stock at Walmart as of Nov 21, 2026, and the Jackery Explorer 1000 v2 is out of stock too, so check the listing before you buy.", options: ["river2pro", "delta3classical1000", "jackery300v2"] };
     }
     if (use === "small") {
-      return { heading: "Small loads — three honest options", intro: "Phones, a laptop and a few lights is a small-load job. A power station is the quiet, no-fuel, indoor-safe way to run them — the three below are all in stock, lightest first.", options: ["jackery300v2", "jackery300lifepo4", "river2pro"] };
+      return { heading: "Small loads — three honest options", intro: "Phones, a laptop and a few lights is a small-load job. A power station is the quiet, no-fuel, indoor-safe way to run them — two of the three below are in stock, lightest first — the RIVER 2 Pro is out of stock at Walmart as of Nov 21, 2026.", options: ["jackery300v2", "jackery300lifepo4", "river2pro"] };
     }
     if (use === "whole") {
       return { heading: "Whole-home backup — the big ones first", intro: "A whole house — well pump, AC and everything at once — needs a transfer switch installed by an electrician, and more watts than one portable inverter carries. The first two options are built for that job; the third covers the essentials if the whole house is more than you need.", options: ["wgen9500df", "g12kbn", "igen4500df"] };
@@ -365,11 +365,11 @@
       + "<h3>" + (isBest ? "Best match: " : "") + m.name + "</h3>"
       + "<p>" + badge + "</p>"
       + "<p><strong>" + m.price + "</strong> &middot; " + m.rating + "</p>"
-      + (m.stock ? '<p class="meta">' + (m.stock === "Out of stock" ? '<span class="oos">Out of stock</span>' : m.stock) + ' — checked Nov 20, 2026</p>' : "")
+      + (m.stock ? '<p class="meta">' + (m.stock === "Out of stock" ? '<span class="oos">Out of stock</span>' : m.stock) + ' — checked Nov 21, 2026</p>' : "")
       + "<p>" + m.specs + ".</p>"
       + "<p>" + m.fit + "</p>";
     if (m.link) {
-      html += '<p><a class="btn" href="' + m.link + '">Shop the ' + m.name.split(" — ")[0] + ' — <span class="price">' + m.price + '</span><small>Prices checked Nov 20, 2026 and can change</small></a></p>';
+      html += '<p><a class="btn" href="' + m.link + '">Shop the ' + m.name.split(" — ")[0] + ' — <span class="price">' + m.price + '</span><small>Prices checked Nov 21, 2026 and can change</small></a></p>';
     } else {
       html += '<p class="meta">Shop link coming — affiliate link is generated once the listing is re-checked in the Creator dashboard.</p>';
     }

@@ -23,6 +23,8 @@
   // as of Nov 20, 2026. Also reconciled to the live site: wen4750w +
   // wendf472 flipped to out of stock, g1200sg back in stock, 310CRK
   // $491.71 -> $453.99 (all verified on the live site Nov 20, 2026).
+  // Nov 21, 2026: 310CRK $453.99 -> $479 (Walmart), eBay listing sold out;
+  // river2pro out of stock (verified live Nov 21, 2026).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -183,7 +185,7 @@
       name: "Reliance Controls 310CRK — Manual Transfer Switch Kit",
       short: "310CRK",
       type: "transfer-switch",
-      price: 453.99, priceDisplay: "$453.99",
+      price: 479, priceDisplay: "$479",
       rating: "4.8 stars from 132 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: null, gasPeakW: null,
@@ -256,7 +258,7 @@
       short: "RIVER 2 Pro",
       price: 349, priceDisplay: "$349",
       rating: "4.5 stars from 790 ratings",
-      stock: "In stock", inStock: true,
+      stock: "Out of stock", inStock: false,
       continuousW: 800, surgeW: 1600, batteryWh: 716, // Walmart RIVER 2 Pro 700 variant; standard version is 768Wh
       runtime: null,
       noiseDba: 0, weightLb: 18.2,

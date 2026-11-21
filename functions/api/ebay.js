@@ -68,7 +68,7 @@ const TOKEN_SCOPE = "https://api.ebay.com/oauth/api_scope";
 
 // One entry per live eBay listing on the site. price_display / in_stock
 // are the last VERIFIED static figures (Jackery Nov 18, the other seven
-// Nov 19, 2026) — used ONLY as the
+// Nov 19, 2026; 310CRK sold out Nov 21, 2026) — used ONLY as the
 // fallback when the API cannot be reached. Update them when the deal
 // watcher confirms a real change.
 const ALLOWLIST = {
@@ -117,7 +117,7 @@ const ALLOWLIST = {
   "336662232018": {
     name: "Reliance Controls 310CRK",
     price_display: "$453.99",
-    in_stock: true,
+    in_stock: false,
     buy_url:
       "https://www.ebay.com/itm/336662232018?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },

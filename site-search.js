@@ -22,7 +22,7 @@
     { name: "Aceup Energy AI4000S", url: "/reviews/aceup-energy-ai4000s/", cat: "Generators", price: "$368.88" },
     { name: "WEN 4750W Generator 56475", url: "/reviews/wen-4750w-56475/", cat: "Generators", price: "$525" },
     { name: "WEN DF472", url: "/reviews/wen-df472/", cat: "Generators", price: "$499.52" },
-    { name: "Reliance Controls 310CRK", url: "/reviews/reliance-controls-310crk/", cat: "Tools", price: "$491.71" },
+    { name: "Reliance Controls 310CRK", url: "/reviews/reliance-controls-310crk/", cat: "Tools", price: "$479" },
     { name: "HART 52-Inch 6-Drawer Tool Chest", url: "/reviews/hart-52-tool-chest/", cat: "Tools", price: "$448.81" },
     { name: "HART 72-Inch 15-Drawer Mobile Workbench", url: "/reviews/hart-72-tool-chest/", cat: "Tools", price: "$1,498" },
     { name: "WORKPRO 48\" x 20\" Garage Workbench", url: "/reviews/workpro-48-workbench/", cat: "Workbenches", price: "$112.99" },

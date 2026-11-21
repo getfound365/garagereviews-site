@@ -34,6 +34,7 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // as of Nov 20, 2026. Also reconciled to the live finder: DELTA 3 $462 ->
 // $438.90, wen4750w + wendf472 flipped to out of stock, g1200sg back in
 // stock (all verified on the live site Nov 20, 2026).
+// Nov 21, 2026: river2pro flipped to out of stock (verified live Nov 21, 2026).
 
 const ROSTER = [
   {
@@ -453,8 +454,8 @@ const ROSTER = [
     rating: "4.5 stars from 790 ratings",
     rating_value: 4.5,
     rating_count: 790,
-    stock: "in",
-    stock_display: "In stock",
+    stock: "out",
+    stock_display: "Out of stock",
     fuel: "solar",
     type: "power-station",
     battery_wh: 716, // Walmart unit is the RIVER 2 Pro 700 (716Wh) variant; the standard RIVER 2 Pro is 768Wh
@@ -465,7 +466,7 @@ const ROSTER = [
     noise_dba: 0, // silent — no fuel, no engine
     weight_lb: 18.2,
     specs: "716Wh LiFePO4 battery (Walmart RIVER 2 Pro 700 variant; standard version is 768Wh) · 800W continuous / 1,600W surge · 18.2 lb · 0–100% in about 70 minutes",
-    fit: "No fuel, no fumes, safe indoors — 800W of clean power in an 18.2 lb box at $349 (down from $549 in the Black Friday sale). Runs a fridge for hours, not days; add solar panels for longer outages.",
+    fit: "No fuel, no fumes, safe indoors — 800W of clean power in an 18.2 lb box at $349 (down from $549 in the Black Friday sale). Runs a fridge for hours, not days; add solar panels for longer outages. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
     link: "https://www.walmart.com/ip/EF-EcoFlow-Portable-Power-Station-RIVER-2-Pro-700-716Wh-LFP-Battery-1600W-Solar-Generator-for-Outdoor-Home-Use/3285267150",
@@ -492,7 +493,7 @@ const ROSTER = [
     noise_dba: 0, // silent — no fuel, no engine
     weight_lb: 8.1,
     specs: "288Wh LiFePO4 battery · 300W continuous / 600W surge · 8.1 lb · includes 12V auto-charging cable · charges from the wall, car, or sun",
-    fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. Only 4 left at Walmart, and the standalone unit is sold out at Jackery direct.",
+    fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. The standalone unit is sold out at Jackery direct.",
     status: "coming",
     video: null,
     link: "https://www.walmart.com/ip/Jackery-Explorer-300v2-Auto-Kit-Portable-Power-Station-with-12V-Battery-Charging-Cable/19346557265",
