@@ -35,6 +35,14 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // $438.90, wen4750w + wendf472 flipped to out of stock, g1200sg back in
 // stock (all verified on the live site Nov 20, 2026).
 // Nov 21, 2026: river2pro flipped to out of stock (verified live Nov 21, 2026).
+// Nov 21, 2026: +5 models from the day's verified review pages
+// (anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix, wen-56360i,
+// jackery-explorer-1000-plus-restored). Prices/stock as of Nov 21, 2026.
+// Surge watts on the Anker C1000X Gen 2 are CONTESTED on the listing
+// (2,400W marketing copy vs 3,000W spec table) — surge_w is null and the
+// fit copy says so; the 2,000W continuous figure is the agreed number.
+// The Jackery 1000 Plus bundle is a RESTORED unit of a DISCONTINUED model
+// (replaced Sept 2026) — stated in its fit copy.
 
 const ROSTER = [
   {
@@ -661,6 +669,141 @@ const ROSTER = [
     link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gas-Powered-Portable-Inverter-Generator-with-Electric-Start/132513179",
     review_url: "/reviews/westinghouse-igen5000/",
   },
+  {
+    id: "anker-solix-c1000x-gen2",
+    name: "Anker SOLIX C1000X Gen 2 — Portable Power Station",
+    short: "SOLIX C1000X Gen 2",
+    price: 499.99,
+    price_display: "$499.99",
+    rating: "4.5 stars from 55 ratings",
+    rating_value: 4.5,
+    rating_count: 55,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 1024,
+    continuous_w: 2000,
+    surge_w: null, // CONTESTED: 2,400W in the marketing copy vs 3,000W in the spec table — never pick one
+    solar_input_w: null, // solar input not verified on the sources checked — never invent one
+    runtime_h: null,
+    noise_dba: 0, // silent — no fuel, no engine
+    weight_lb: 27.12,
+    specs: "1,024Wh LiFePO4 battery · 2,000W continuous · 49-minute recharge · 4,000+ cycles · 27.12 lb · charges from the wall or sun",
+    fit: "No fuel, no fumes, safe indoors — 2,000W of clean power in a 27.12 lb box at $499.99 (down from $799.99). Runs a fridge for hours, not days; add solar panels for longer outages. Surge watts are contested on the listing (2,400W marketing copy vs 3,000W spec table) — we use the 2,000W continuous figure, which both sources agree on.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/17775762177",
+    review_url: "/reviews/anker-solix-c1000x-gen-2/",
+  },
+  {
+    id: "wen-df680ix",
+    name: "WEN DF680iX — Dual Fuel Inverter Generator",
+    short: "DF680iX",
+    price: 798,
+    price_display: "$798",
+    rating: "4.1 stars from 55 ratings",
+    rating_value: 4.1,
+    rating_count: 55,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 6800,
+    gas_running_w: 5100,
+    propane_peak_w: 6000,
+    propane_running_w: 4500,
+    runtime_h: "up to 6.1 hours at half load on gas, 9 hours on propane",
+    noise_dba: 64,
+    weight_lb: 94.8, // spec table also lists 99.2 lb in one place — roster uses 94.8 lb from the listing
+    specs: "6,800 peak / 5,100 running watts on gas · 6,000 peak / 4,500 running on propane · 224cc · 64 dB · 94.8 lb · electric start with recoil backup · up to 6.1 hours at half load",
+    fit: "Dual-fuel inverter watts for the essentials — 5,100 running watts on gas at $798. Start method is contested on the listing (electric start with recoil backup in the title vs 'Pull Cord Start' in the spec table) — confirm it with WEN before you buy for someone who cannot pull-start a generator. Out of stock at Walmart right now, so check the listing before you buy.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/15322924646",
+    review_url: "/reviews/wen-df680ix/",
+  },
+  {
+    id: "wen-df480ix",
+    name: "WEN DF480iX — Dual Fuel Inverter Generator",
+    short: "DF480iX",
+    price: 647,
+    price_display: "$647",
+    rating: "4.5 stars from 57 ratings",
+    rating_value: 4.5,
+    rating_count: 57,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 4800,
+    gas_running_w: 4000,
+    propane_peak_w: 4320,
+    propane_running_w: 3600,
+    runtime_h: "up to 7 hours at half load on gas, 12 hours on propane",
+    noise_dba: 62,
+    weight_lb: 78.5, // weight contested across sources (78.5 lb vs 91 lb) — roster uses 78.5 lb
+    specs: "4,800 peak / 4,000 running watts on gas · 4,320 peak / 3,600 running on propane · 224cc · 62 dB · 78.5 lb · push-button start · up to 7 hours at half load",
+    fit: "A quiet dual-fuel inverter for RV and essentials backup — 62 dB with push-button start at $647, the best-rated WEN in this batch. Consumer Reports lab-tested it and called its power 'especially clean.' Weight is contested across sources (78.5 lb vs 91 lb). Out of stock at Walmart right now, so check the listing before you buy.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/6341151320",
+    review_url: "/reviews/wen-df480ix/",
+  },
+  {
+    id: "wen-56360i",
+    name: "WEN 56360i — Inverter Generator",
+    short: "56360i",
+    price: 440,
+    price_display: "$440",
+    rating: "4.7 stars from 55 ratings",
+    rating_value: 4.7,
+    rating_count: 55,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "gas",
+    type: "inverter",
+    gas_peak_w: 3600,
+    gas_running_w: 2900,
+    propane_peak_w: null,
+    propane_running_w: null,
+    runtime_h: null, // CONTESTED: 3 hours in the spec table vs "up to 5 hours at half load" in the description — never pick one
+    noise_dba: 65,
+    weight_lb: 46,
+    specs: "3,600 peak / 2,900 running watts · gas inverter · 149cc · 65 dB · 46 lb · pull-cord start · TT-30R RV outlet",
+    fit: "A light gas inverter for small loads and campgrounds — 46 lb at $440 (down from $498) with clean power (under 1.2% THD). Runtime is contested on the listing (3 hours in the spec table vs up to 5 hours at half load in the description). Out of stock at Walmart right now, so check the listing before you buy.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/3686265971",
+    review_url: "/reviews/wen-56360i/",
+  },
+  {
+    id: "jackery1000plus-restored",
+    name: "Jackery Explorer 1000 Plus (Restored) + 100W Mini Panel — Portable Power Station",
+    short: "Explorer 1000 Plus (Restored)",
+    price: 699,
+    price_display: "$699",
+    rating: "5.0 stars from 7 ratings",
+    rating_value: 5.0,
+    rating_count: 7,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 1264,
+    continuous_w: 2000,
+    surge_w: 4000,
+    solar_input_w: 800,
+    runtime_h: null,
+    noise_dba: 0, // silent — no fuel, no engine
+    weight_lb: 40,
+    specs: "1,264Wh LiFePO4 battery · 2,000W continuous / 4,000W peak · 800W solar input · 40 lb · expandable to ~5kWh · includes 100W Mini solar panel",
+    fit: "No fuel, no fumes, safe indoors — 2,000W of clean power with a 100W Mini solar panel in the box at $699. This is a RESTORED unit of a DISCONTINUED model (replaced Sept 2026 by the HomePower 1000 Plus v2), and delivery runs Dec 10–18 — the $699 buys the restored unit plus the panel. Runs a fridge for hours, not days; add solar panels for longer outages. Thin review base: 7 ratings, no written reviews.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/21197917802",
+    review_url: "/reviews/jackery-explorer-1000-plus-restored/",
+  },
 ];
 
 // Effective running watts for a needs check: gas running watts for fuel
@@ -930,7 +1073,7 @@ function buildPick(m, needs, rank, isClosest) {
   }
   if (needs.indoor || needs.fuel === "solar") reasons.push("No fuel, no fumes — safe to run indoors");
   if (needs.portable && m.weight_lb !== null) reasons.push(m.weight_lb + " lb — light enough to carry");
-  if (m.stock === "in") reasons.push("In stock on Walmart (checked Nov 20, 2026)");
+  if (m.stock === "in") reasons.push("In stock on Walmart (checked Nov 21, 2026)");
   else if (m.alt_link) reasons.push("Out of stock on Walmart — but in stock on eBay at " + m.alt_price_display);
   else reasons.push("Out of stock on Walmart right now — check the listing before you buy");
   if (m.status === "reviewed") reasons.push("Reviewed on video by Garage Reviews");
@@ -1005,7 +1148,7 @@ export async function onRequest(context) {
       picks,
       no_exact_fit,
       note,
-      checked: "Nov 20, 2026",
+      checked: "Nov 21, 2026",
     },
     { headers: { "Cache-Control": "no-store" } }
   );

@@ -25,6 +25,11 @@
   // $491.71 -> $453.99 (all verified on the live site Nov 20, 2026).
   // Nov 21, 2026: 310CRK $453.99 -> $479 (Walmart), eBay listing sold out;
   // river2pro out of stock (verified live Nov 21, 2026).
+  // Nov 21, 2026: +5 models from the day's verified review pages
+  // (anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix, wen-56360i,
+  // jackery1000plus-restored). Prices/stock as of Nov 21, 2026. Also
+  // reconciled: delta3classical1000 $462 -> $438.90 (already fixed in
+  // match.js + finder Nov 20, 2026).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -128,7 +133,7 @@
     delta3classical1000: {
       name: "EcoFlow DELTA 3 Classical 1000 — Portable Power Station",
       short: "DELTA 3 Classical 1000",
-      price: 462, priceDisplay: "$462",
+      price: 438.90, priceDisplay: "$438.90",
       rating: "4.5 stars from 2,229 ratings",
       stock: "In stock", inStock: true,
       continuousW: 1800, surgeW: 3600, batteryWh: 1024,
@@ -362,6 +367,74 @@
       specs: "5,000 peak / 3,900 running watts · gas inverter · up to 18 hours at 25% load · 52 dBA · 104.7 lb · TT-30R RV outlet · no CO sensor",
       link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gas-Powered-Portable-Inverter-Generator-with-Electric-Start/132513179",
       reviewUrl: "/reviews/westinghouse-igen5000/"
+    },
+    "anker-solix-c1000x-gen2": {
+      name: "Anker SOLIX C1000X Gen 2 — Portable Power Station",
+      short: "SOLIX C1000X Gen 2",
+      price: 499.99, priceDisplay: "$499.99",
+      rating: "4.5 stars from 55 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 2000, surgeW: null, batteryWh: 1024, // surge CONTESTED: 2,400W marketing vs 3,000W spec table — never pick one
+      runtime: null,
+      noiseDba: 0, weightLb: 27.12,
+      specs: "1,024Wh LiFePO4 battery · 2,000W continuous · 49-minute recharge · 4,000+ cycles · 27.12 lb · charges from the wall or sun",
+      link: "https://www.walmart.com/ip/17775762177",
+      reviewUrl: "/reviews/anker-solix-c1000x-gen-2/"
+    },
+    "wen-df680ix": {
+      name: "WEN DF680iX — Dual Fuel Inverter Generator",
+      short: "DF680iX",
+      price: 798, priceDisplay: "$798",
+      rating: "4.1 stars from 55 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 5100, gasPeakW: 6800,
+      propaneRunningW: 4500, propanePeakW: 6000,
+      runtime: "up to 6.1 hours at half load on gas, 9 hours on propane",
+      noiseDba: 64, weightLb: 94.8, // spec table also lists 99.2 lb in one place
+      specs: "6,800 peak / 5,100 running watts on gas · 6,000 peak / 4,500 running on propane · 224cc · 64 dB · 94.8 lb · electric start with recoil backup · up to 6.1 hours at half load",
+      link: "https://www.walmart.com/ip/15322924646",
+      reviewUrl: "/reviews/wen-df680ix/"
+    },
+    "wen-df480ix": {
+      name: "WEN DF480iX — Dual Fuel Inverter Generator",
+      short: "DF480iX",
+      price: 647, priceDisplay: "$647",
+      rating: "4.5 stars from 57 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 4000, gasPeakW: 4800,
+      propaneRunningW: 3600, propanePeakW: 4320,
+      runtime: "up to 7 hours at half load on gas, 12 hours on propane",
+      noiseDba: 62, weightLb: 78.5, // weight contested across sources (78.5 lb vs 91 lb)
+      specs: "4,800 peak / 4,000 running watts on gas · 4,320 peak / 3,600 running on propane · 224cc · 62 dB · 78.5 lb · push-button start · up to 7 hours at half load",
+      link: "https://www.walmart.com/ip/6341151320",
+      reviewUrl: "/reviews/wen-df480ix/"
+    },
+    "wen-56360i": {
+      name: "WEN 56360i — Inverter Generator",
+      short: "56360i",
+      price: 440, priceDisplay: "$440",
+      rating: "4.7 stars from 55 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 2900, gasPeakW: 3600,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: null, // CONTESTED: 3 hours spec table vs "up to 5 hours at half load" description
+      noiseDba: 65, weightLb: 46,
+      specs: "3,600 peak / 2,900 running watts · gas inverter · 149cc · 65 dB · 46 lb · pull-cord start · TT-30R RV outlet",
+      link: "https://www.walmart.com/ip/3686265971",
+      reviewUrl: "/reviews/wen-56360i/"
+    },
+    "jackery1000plus-restored": {
+      name: "Jackery Explorer 1000 Plus (Restored) + 100W Mini Panel — Portable Power Station",
+      short: "Explorer 1000 Plus (Restored)",
+      price: 699, priceDisplay: "$699",
+      rating: "5.0 stars from 7 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 2000, surgeW: 4000, batteryWh: 1264,
+      runtime: null,
+      noiseDba: 0, weightLb: 40,
+      specs: "1,264Wh LiFePO4 battery · 2,000W continuous / 4,000W peak · 800W solar input · 40 lb · expandable to ~5kWh · includes 100W Mini solar panel · RESTORED unit of a DISCONTINUED model (replaced Sept 2026)",
+      link: "https://www.walmart.com/ip/21197917802",
+      reviewUrl: "/reviews/jackery-explorer-1000-plus-restored/"
     }
   };
 
@@ -481,7 +554,7 @@
     $("buy-rating").textContent = m.rating;
     $("buy-specs").textContent = m.specs + ".";
     var stockEl = $("buy-stock");
-    stockEl.textContent = m.stock + " — checked Nov 20, 2026";
+    stockEl.textContent = m.stock + " — checked Nov 21, 2026";
     stockEl.className = m.inStock ? "stock in" : "stock out";
     $("buy-link").href = m.link;
     $("buy-link").textContent = "Shop the " + m.short + " — " + m.priceDisplay;
@@ -489,7 +562,7 @@
     if (m.altLink) {
       alt.hidden = false;
       $("buy-alt-link").href = m.altLink;
-      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 20, 2026)";
+      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 21, 2026)";
     } else {
       alt.hidden = true;
     }
@@ -588,7 +661,7 @@
         "<li><strong>Let it cool before refueling.</strong> Never refuel a hot generator — shut it down, wait for it to cool, then fill the tank.</li>";
     }
 
-    $("plan-date").textContent = "Prices and stock checked Nov 20, 2026 — re-check the listing before you buy; prices can change.";
+    $("plan-date").textContent = "Prices and stock checked Nov 21, 2026 — re-check the listing before you buy; prices can change.";
   }
 
   var printBtn = $("print-btn");
@@ -611,7 +684,8 @@
 // igen2500, g12kbn, delta3classical1000, gxs4300i, ai4000s, wen4750w,
 // reliance310crk, g1200sg, wendf472, wgen9500dfc, champion201319, river2pro,
 // jackery300v2, jackery300lifepo4, igen12000dfc, igen2800dfc, igen5000c,
-// xp13000hx, igen5000) —
+// xp13000hx, igen5000, anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix,
+// wen-56360i, jackery1000plus-restored) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------

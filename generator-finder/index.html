@@ -16,7 +16,7 @@
 <h1>Find Your Generator</h1>
 <p>Three quick questions, up to three honest options. No email, no sign-up — the result is right here.</p>
 <p class="disclosure-top">Links on this page are paid links. If you buy through them, Garage Reviews may earn a commission at no extra cost to you.</p>
-<p class="quiz-note">Twenty-three generators in the roster so far — one reviewed on video, twenty-two more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
+<p class="quiz-note">Twenty-eight generators in the roster so far — one reviewed on video, twenty-seven more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
 
 <form id="quiz">
 <fieldset>
@@ -60,7 +60,7 @@
 </section>
 
 <p>Prices checked Nov 21, 2026 and can change. Out-of-stock flags are as of Nov 21, 2026.</p>
-<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 23 models</a></p>
+<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 28 models</a></p>
 
 <p class="disclosure">As a Walmart Creator, Garage Reviews earns from qualifying purchases made through these links, at no extra cost to you. We never claim hands-on testing we haven't done — every pick is honest research, and the video says plainly when to skip one.</p>
 </main>
@@ -79,6 +79,9 @@
   // igen12000dfc, igen2800dfc, igen5000c, xp13000hx, igen5000) — all verified from the live review pages that day.
   // Nov 20 flips reconciled to the live site: DELTA 3 $462 -> $438.90, wen4750w + wendf472 out of stock,
   // g1200sg back in stock.
+  // Nov 21: +5 models (anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix, wen-56360i,
+  // jackery1000plus-restored) — all verified from the live review pages that day.
+  // Nov 21 flips reconciled: river2pro out of stock (verified live Nov 21, 2026).
   var MODELS = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -332,6 +335,61 @@
       stock: "In stock",
       video: null,
       link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gas-Powered-Portable-Inverter-Generator-with-Electric-Start/132513179"
+    },
+    "anker-solix-c1000x-gen2": {
+      name: "Anker SOLIX C1000X Gen 2 — Portable Power Station",
+      price: "$499.99",
+      rating: "4.5 stars from 55 ratings",
+      specs: "1,024Wh LiFePO4 battery · 2,000W continuous · 49-minute recharge · 4,000+ cycles · 27.12 lb · charges from the wall or sun",
+      fit: "No fuel, no fumes, safe indoors — 2,000W of clean power in a 27.12 lb box at $499.99 (down from $799.99). Surge watts are contested on the listing (2,400W marketing copy vs 3,000W spec table) — we use the 2,000W continuous figure, which both sources agree on.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://www.walmart.com/ip/17775762177"
+    },
+    "wen-df680ix": {
+      name: "WEN DF680iX — Dual Fuel Inverter Generator",
+      price: "$798",
+      rating: "4.1 stars from 55 ratings",
+      specs: "6,800 peak / 5,100 running watts on gas · 6,000 peak / 4,500 running on propane · 224cc · 64 dB · 94.8 lb · electric start with recoil backup · up to 6.1 hours at half load",
+      fit: "Dual-fuel inverter watts for the essentials — 5,100 running watts on gas at $798. Start method is contested on the listing (electric start with recoil backup in the title vs 'Pull Cord Start' in the spec table). Out of stock at Walmart right now, so check the listing before you buy.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://www.walmart.com/ip/15322924646"
+    },
+    "wen-df480ix": {
+      name: "WEN DF480iX — Dual Fuel Inverter Generator",
+      price: "$647",
+      rating: "4.5 stars from 57 ratings",
+      specs: "4,800 peak / 4,000 running watts on gas · 4,320 peak / 3,600 running on propane · 224cc · 62 dB · 78.5 lb · push-button start · up to 7 hours at half load",
+      fit: "A quiet dual-fuel inverter for RV and essentials backup — 62 dB with push-button start at $647, the best-rated WEN in this batch. Consumer Reports lab-tested it and called its power 'especially clean.' Weight is contested across sources (78.5 lb vs 91 lb). Out of stock at Walmart right now, so check the listing before you buy.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://www.walmart.com/ip/6341151320"
+    },
+    "wen-56360i": {
+      name: "WEN 56360i — Inverter Generator",
+      price: "$440",
+      rating: "4.7 stars from 55 ratings",
+      specs: "3,600 peak / 2,900 running watts · gas inverter · 149cc · 65 dB · 46 lb · pull-cord start · TT-30R RV outlet",
+      fit: "A light gas inverter for small loads and campgrounds — 46 lb at $440 (down from $498) with clean power (under 1.2% THD). Runtime is contested on the listing (3 hours in the spec table vs up to 5 hours at half load in the description). Out of stock at Walmart right now, so check the listing before you buy.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://www.walmart.com/ip/3686265971"
+    },
+    "jackery1000plus-restored": {
+      name: "Jackery Explorer 1000 Plus (Restored) + 100W Mini Panel — Portable Power Station",
+      price: "$699",
+      rating: "5.0 stars from 7 ratings",
+      specs: "1,264Wh LiFePO4 battery · 2,000W continuous / 4,000W peak · 800W solar input · 40 lb · expandable to ~5kWh · includes 100W Mini solar panel",
+      fit: "No fuel, no fumes, safe indoors — 2,000W of clean power with a 100W Mini solar panel in the box at $699. This is a RESTORED unit of a DISCONTINUED model (replaced Sept 2026 by the HomePower 1000 Plus v2), and delivery runs Dec 10–18. Thin review base: 7 ratings, no written reviews.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://www.walmart.com/ip/21197917802"
     }
   };
 
@@ -342,7 +400,7 @@
 
   function decide(use, fuel, budget) {
     if (fuel === "solar") {
-      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Four in the roster now — two of the three below are in stock; the RIVER 2 Pro is out of stock at Walmart as of Nov 21, 2026, and the Jackery Explorer 1000 v2 is out of stock too, so check the listing before you buy.", options: ["river2pro", "delta3classical1000", "jackery300v2"] };
+      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Seven in the roster now — the three below are all in stock as of Nov 21, 2026.", options: ["anker-solix-c1000x-gen2", "delta3classical1000", "jackery300v2"] };
     }
     if (use === "small") {
       return { heading: "Small loads — three honest options", intro: "Phones, a laptop and a few lights is a small-load job. A power station is the quiet, no-fuel, indoor-safe way to run them — two of the three below are in stock, lightest first — the RIVER 2 Pro is out of stock at Walmart as of Nov 21, 2026.", options: ["jackery300v2", "jackery300lifepo4", "river2pro"] };
@@ -403,7 +461,7 @@
         + "&amp;budget=" + encodeURIComponent(budget);
       html += '<p><a class="btn secondary" href="' + planUrl + '">Get your printable outage plan — ' + MODELS[d.options[0]].name.split(" — ")[0] + '<small>What to buy, what it runs, what it costs — one page, ready to print</small></a></p>';
     }
-    html += '<p class="footnote">Out-of-stock flags are as of Nov 20, 2026. <a href="/compare/">Compare all 23 models side by side</a></p>';
+    html += '<p class="footnote">Out-of-stock flags are as of Nov 21, 2026. <a href="/compare/">Compare all 28 models side by side</a></p>';
     result.innerHTML = html;
     result.hidden = false;
     result.scrollIntoView({ behavior: "smooth", block: "start" });
