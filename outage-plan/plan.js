@@ -30,6 +30,11 @@
   // jackery1000plus-restored). Prices/stock as of Nov 21, 2026. Also
   // reconciled: delta3classical1000 $462 -> $438.90 (already fixed in
   // match.js + finder Nov 20, 2026).
+  // Nov 22, 2026: +1 model from the day's verified review pages
+  // (river3plus). Price/stock as of Nov 22, 2026. RIVER 3 Plus is OUT OF
+  // STOCK (no buy button on the page); capacity CONTESTED (286Wh maker
+  // vs 268Wh bundle name); surge_w null (1,200W X-Boost is per the bundle
+  // variant name only); noiseDba null ("under 30 dB" per the maker).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -435,6 +440,19 @@
       specs: "1,264Wh LiFePO4 battery · 2,000W continuous / 4,000W peak · 800W solar input · 40 lb · expandable to ~5kWh · includes 100W Mini solar panel · RESTORED unit of a DISCONTINUED model (replaced Sept 2026)",
       link: "https://www.walmart.com/ip/21197917802",
       reviewUrl: "/reviews/jackery-explorer-1000-plus-restored/"
+    },
+    river3plus: {
+      name: "EcoFlow RIVER 3 Plus — Portable Power Station",
+      short: "RIVER 3 Plus",
+      price: 289, priceDisplay: "From $289",
+      rating: "4.6 stars from 58 ratings",
+      stock: "Out of stock", inStock: false,
+      continuousW: 600, surgeW: null, batteryWh: 286, // surge null: 1,200W X-Boost is per the bundle variant name only, not a verified surge rating; battery 286Wh maker figure, bundle name says 268Wh
+      runtime: null,
+      noiseDba: null, weightLb: 10.4, // "under 30 dB" per the maker — no single dBA figure verified
+      specs: "286Wh LiFePO4 battery (maker figure; bundle name says 268Wh) · 600W continuous (1,200W with X-Boost) · sub-10ms UPS · under 30 dB · 10.4 lb · 0–100% in 1 hour",
+      link: "https://www.walmart.com/ip/16230373961", // verified RIVER 3 Plus item; the live review page's "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed
+      reviewUrl: "/reviews/ecoflow-river-3-plus/"
     }
   };
 
@@ -554,7 +572,7 @@
     $("buy-rating").textContent = m.rating;
     $("buy-specs").textContent = m.specs + ".";
     var stockEl = $("buy-stock");
-    stockEl.textContent = m.stock + " — checked Nov 21, 2026";
+    stockEl.textContent = m.stock + " — checked Nov 22, 2026";
     stockEl.className = m.inStock ? "stock in" : "stock out";
     $("buy-link").href = m.link;
     $("buy-link").textContent = "Shop the " + m.short + " — " + m.priceDisplay;
@@ -562,7 +580,7 @@
     if (m.altLink) {
       alt.hidden = false;
       $("buy-alt-link").href = m.altLink;
-      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 21, 2026)";
+      $("buy-alt-link").textContent = "Same " + m.short + " on eBay — " + m.altPriceDisplay + " (" + m.altStock + ", checked Nov 22, 2026)";
     } else {
       alt.hidden = true;
     }
@@ -661,7 +679,7 @@
         "<li><strong>Let it cool before refueling.</strong> Never refuel a hot generator — shut it down, wait for it to cool, then fill the tank.</li>";
     }
 
-    $("plan-date").textContent = "Prices and stock checked Nov 21, 2026 — re-check the listing before you buy; prices can change.";
+    $("plan-date").textContent = "Prices and stock checked Nov 22, 2026 — re-check the listing before you buy; prices can change.";
   }
 
   var printBtn = $("print-btn");
@@ -685,7 +703,7 @@
 // reliance310crk, g1200sg, wendf472, wgen9500dfc, champion201319, river2pro,
 // jackery300v2, jackery300lifepo4, igen12000dfc, igen2800dfc, igen5000c,
 // xp13000hx, igen5000, anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix,
-// wen-56360i, jackery1000plus-restored) —
+// wen-56360i, jackery1000plus-restored, river3plus) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------

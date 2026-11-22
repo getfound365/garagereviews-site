@@ -38,6 +38,15 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // Nov 21, 2026: +5 models from the day's verified review pages
 // (anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix, wen-56360i,
 // jackery-explorer-1000-plus-restored). Prices/stock as of Nov 21, 2026.
+// Nov 22, 2026: +1 model from the day's verified review pages
+// (ecoflow-river-3-plus). Price/stock as of Nov 22, 2026. RIVER 3 Plus is
+// OUT OF STOCK (no buy button on the page). Capacity CONTESTED (286Wh
+// maker vs 268Wh bundle name) — battery_wh uses the 286Wh maker figure
+// with the dispute in the comment + fit copy; surge_w is null (1,200W
+// X-Boost is per the bundle variant name only, not a verified surge
+// rating); noise_dba is null ("under 30 dB" per the maker, no single
+// figure verified). The other 9 Nov 22 pages are not backup-power gear
+// and stay out of the matcher (KB + deal watcher only).
 // Surge watts on the Anker C1000X Gen 2 are CONTESTED on the listing
 // (2,400W marketing copy vs 3,000W spec table) — surge_w is null and the
 // fit copy says so; the 2,000W continuous figure is the agreed number.
@@ -804,6 +813,33 @@ const ROSTER = [
     link: "https://www.walmart.com/ip/21197917802",
     review_url: "/reviews/jackery-explorer-1000-plus-restored/",
   },
+  {
+    id: "river3plus",
+    name: "EcoFlow RIVER 3 Plus — Portable Power Station",
+    short: "RIVER 3 Plus",
+    price: 289,
+    price_display: "From $289",
+    rating: "4.6 stars from 58 ratings",
+    rating_value: 4.6,
+    rating_count: 58,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 286, // maker figure; the Walmart bundle name says 268Wh — print both, pick neither (see review page)
+    continuous_w: 600,
+    surge_w: null, // 1,200W with X-Boost is per the bundle variant name only, not a verified surge rating — never invent one
+    solar_input_w: null, // solar input watts not verified on the sources checked — never invent one
+    runtime_h: null,
+    noise_dba: null, // "under 30 dB" per the maker — no single dBA figure verified; not silent-zero like the fanless stations
+    weight_lb: 10.4,
+    specs: "286Wh LiFePO4 battery (maker figure; bundle name says 268Wh) · 600W continuous (1,200W with X-Boost) · sub-10ms UPS · under 30 dB · 10.4 lb · 0–100% in 1 hour",
+    fit: "No fuel, no fumes, safe indoors — 600W of clean power in a 10.4 lb box from $289, with a sub-10ms UPS for a router or CPAP through a short outage. Runs small loads for hours, not days; add solar panels for longer outages. Capacity is contested on the listing (286Wh per EcoFlow vs 268Wh in the bundle name) and the EB600 bundle named in the title has no variant or price shown. Out of stock at Walmart right now, so check the listing before you buy.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/16230373961", // verified RIVER 3 Plus item (picker + build footnote + BV confirm today). NOTE: the live review page's own "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed; do NOT copy that link here.
+    review_url: "/reviews/ecoflow-river-3-plus/",
+  },
 ];
 
 // Effective running watts for a needs check: gas running watts for fuel
@@ -1073,7 +1109,7 @@ function buildPick(m, needs, rank, isClosest) {
   }
   if (needs.indoor || needs.fuel === "solar") reasons.push("No fuel, no fumes — safe to run indoors");
   if (needs.portable && m.weight_lb !== null) reasons.push(m.weight_lb + " lb — light enough to carry");
-  if (m.stock === "in") reasons.push("In stock on Walmart (checked Nov 21, 2026)");
+  if (m.stock === "in") reasons.push("In stock on Walmart (checked Nov 22, 2026)");
   else if (m.alt_link) reasons.push("Out of stock on Walmart — but in stock on eBay at " + m.alt_price_display);
   else reasons.push("Out of stock on Walmart right now — check the listing before you buy");
   if (m.status === "reviewed") reasons.push("Reviewed on video by Garage Reviews");
@@ -1148,7 +1184,7 @@ export async function onRequest(context) {
       picks,
       no_exact_fit,
       note,
-      checked: "Nov 21, 2026",
+      checked: "Nov 22, 2026",
     },
     { headers: { "Cache-Control": "no-store" } }
   );
