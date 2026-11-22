@@ -68,7 +68,7 @@ const TOKEN_SCOPE = "https://api.ebay.com/oauth/api_scope";
 
 // One entry per live eBay listing on the site. price_display / in_stock
 // are the last VERIFIED static figures (Jackery Nov 18, the other seven
-// Nov 19, 2026; 310CRK sold out Nov 21, 2026) — used ONLY as the
+// Nov 19, 2026; 310CRK sold out Nov 21, 2026; DELTA 3 eBay $415 Nov 22, 2026) — used ONLY as the
 // fallback when the API cannot be reached. Update them when the deal
 // watcher confirms a real change.
 const ALLOWLIST = {
@@ -95,7 +95,7 @@ const ALLOWLIST = {
   },
   "137928316231": {
     name: "EcoFlow DELTA 3 Classical 1000",
-    price_display: "$425.00",
+    price_display: "$415.00",
     in_stock: true,
     buy_url:
       "https://www.ebay.com/itm/137928316231?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
