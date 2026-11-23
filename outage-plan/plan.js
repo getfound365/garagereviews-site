@@ -35,6 +35,11 @@
   // STOCK (no buy button on the page); capacity CONTESTED (286Wh maker
   // vs 268Wh bundle name); surge_w null (1,200W X-Boost is per the bundle
   // variant name only); noiseDba null ("under 30 dB" per the maker).
+  // Nov 23, 2026: +1 model from the day's verified review pages
+  // (bluetti-ac70). Price/stock as of Nov 23, 2026. AC70 is the 10,048 mAh
+  // $379.00 option on a shared Elite 100 Mini / AC70 listing (the other
+  // capacities are out of stock); noiseDba null (45 dB is the Silent
+  // charging mode only, not a verified operating-noise figure).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -453,6 +458,19 @@
       specs: "286Wh LiFePO4 battery (maker figure; bundle name says 268Wh) · 600W continuous (1,200W with X-Boost) · sub-10ms UPS · under 30 dB · 10.4 lb · 0–100% in 1 hour",
       link: "https://www.walmart.com/ip/16230373961", // verified RIVER 3 Plus item; the live review page's "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed
       reviewUrl: "/reviews/ecoflow-river-3-plus/"
+    },
+    "bluetti-ac70": {
+      name: "BLUETTI AC70 — Portable Power Station",
+      short: "AC70",
+      price: 379, priceDisplay: "$379.00",
+      rating: "4.6 stars from 115 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 1000, surgeW: 2000, batteryWh: 768, // shared Elite 100 Mini / AC70 listing — AC70 is the 10,048 mAh $379.00 option; other capacities out of stock
+      runtime: null,
+      noiseDba: null, weightLb: 22.5, // 45 dB is the Silent charging mode only — no verified operating-noise figure
+      specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
+      link: "https://www.walmart.com/ip/5135434116",
+      reviewUrl: "/reviews/bluetti-ac70/"
     }
   };
 
@@ -703,7 +721,7 @@
 // reliance310crk, g1200sg, wendf472, wgen9500dfc, champion201319, river2pro,
 // jackery300v2, jackery300lifepo4, igen12000dfc, igen2800dfc, igen5000c,
 // xp13000hx, igen5000, anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix,
-// wen-56360i, jackery1000plus-restored, river3plus) —
+// wen-56360i, jackery1000plus-restored, river3plus, bluetti-ac70) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------

@@ -16,7 +16,7 @@
 <h1>Find Your Generator</h1>
 <p>Three quick questions, up to three honest options. No email, no sign-up — the result is right here.</p>
 <p class="disclosure-top">Links on this page are paid links. If you buy through them, Garage Reviews may earn a commission at no extra cost to you.</p>
-<p class="quiz-note">Twenty-nine generators in the roster so far — one reviewed on video, twenty-eight more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
+<p class="quiz-note">Thirty generators in the roster so far — one reviewed on video, twenty-nine more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
 
 <form id="quiz">
 <fieldset>
@@ -60,7 +60,7 @@
 </section>
 
 <p>Prices checked Nov 22, 2026 and can change. Out-of-stock flags are as of Nov 22, 2026.</p>
-<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 29 models</a></p>
+<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 30 models</a></p>
 
 <p class="disclosure">As a Walmart Creator, Garage Reviews earns from qualifying purchases made through these links, at no extra cost to you. We never claim hands-on testing we haven't done — every pick is honest research, and the video says plainly when to skip one.</p>
 </main>
@@ -85,6 +85,10 @@
   // Nov 22: +1 model (river3plus) — verified from the live review page that day.
   // RIVER 3 Plus is OUT OF STOCK (no buy button on the page); capacity CONTESTED
   // (286Wh maker vs 268Wh bundle name) — specs print the maker figure with the dispute noted.
+  // Nov 23: +1 model (bluetti-ac70) — verified from the live review page that day.
+  // Shared Elite 100 Mini / AC70 listing — the AC70 is the 10,048 mAh $379.00 option;
+  // the other capacities are out of stock. Noise figure is the 45 dB Silent charging
+  // mode only, not a verified operating-noise figure, so specs carry it as such.
   var MODELS = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -404,6 +408,17 @@
       stock: "Out of stock",
       video: null,
       link: "https://www.walmart.com/ip/16230373961" // verified RIVER 3 Plus item; the live review page's "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed
+    },
+    "bluetti-ac70": {
+      name: "BLUETTI AC70 — Portable Power Station",
+      price: "$379.00",
+      rating: "4.6 stars from 115 ratings",
+      specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
+      fit: "No fuel, no fumes, safe indoors — 1,000W of clean power in a 22.5 lb box at $379.00 (Black Friday Deal). Shared listing with the BLUETTI Elite 100 Mini — the AC70 is the 10,048 mAh $379.00 option; the other capacities are out of stock. Runs a fridge for hours, not days; add solar panels for longer outages.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://www.walmart.com/ip/5135434116"
     }
   };
 
@@ -414,7 +429,7 @@
 
   function decide(use, fuel, budget) {
     if (fuel === "solar") {
-      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Eight in the roster now — the Jackery Explorer 300 v2 below is out of stock at Walmart as of Nov 23, 2026; the other two are in stock.", options: ["anker-solix-c1000x-gen2", "delta3classical1000", "jackery300v2"] };
+      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Nine in the roster now — the Jackery Explorer 300 v2 below is out of stock at Walmart as of Nov 23, 2026; the other two are in stock.", options: ["anker-solix-c1000x-gen2", "delta3classical1000", "jackery300v2"] };
     }
     if (use === "small") {
       return { heading: "Small loads — three honest options", intro: "Phones, a laptop and a few lights is a small-load job. A power station is the quiet, no-fuel, indoor-safe way to run them — one of the three below is in stock, lightest first — the Jackery Explorer 300 v2 and the RIVER 2 Pro are out of stock at Walmart as of Nov 23, 2026.", options: ["jackery300v2", "jackery300lifepo4", "river2pro"] };
@@ -475,7 +490,7 @@
         + "&amp;budget=" + encodeURIComponent(budget);
       html += '<p><a class="btn secondary" href="' + planUrl + '">Get your printable outage plan — ' + MODELS[d.options[0]].name.split(" — ")[0] + '<small>What to buy, what it runs, what it costs — one page, ready to print</small></a></p>';
     }
-    html += '<p class="footnote">Out-of-stock flags are as of Nov 22, 2026. <a href="/compare/">Compare all 29 models side by side</a></p>';
+    html += '<p class="footnote">Out-of-stock flags are as of Nov 22, 2026. <a href="/compare/">Compare all 30 models side by side</a></p>';
     result.innerHTML = html;
     result.hidden = false;
     result.scrollIntoView({ behavior: "smooth", block: "start" });

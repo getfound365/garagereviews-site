@@ -47,6 +47,14 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // rating); noise_dba is null ("under 30 dB" per the maker, no single
 // figure verified). The other 9 Nov 22 pages are not backup-power gear
 // and stay out of the matcher (KB + deal watcher only).
+// Nov 23, 2026: +1 model from the day's verified review pages
+// (bluetti-ac70). Price/stock as of Nov 23, 2026. AC70 is the 10,048 mAh
+// $379.00 option on a shared Elite 100 Mini / AC70 listing (the other
+// capacities are out of stock); the fit copy states this plainly.
+// noise_dba is null — 45 dB on the review page is the Silent charging
+// mode only, not a verified operating-noise figure. The other 9 Nov 23
+// pages are not backup-power gear and stay out of the matcher (KB +
+// deal watcher only).
 // Surge watts on the Anker C1000X Gen 2 are CONTESTED on the listing
 // (2,400W marketing copy vs 3,000W spec table) — surge_w is null and the
 // fit copy says so; the 2,000W continuous figure is the agreed number.
@@ -839,6 +847,33 @@ const ROSTER = [
     video: null,
     link: "https://www.walmart.com/ip/16230373961", // verified RIVER 3 Plus item (picker + build footnote + BV confirm today). NOTE: the live review page's own "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed; do NOT copy that link here.
     review_url: "/reviews/ecoflow-river-3-plus/",
+  },
+  {
+    id: "bluetti-ac70",
+    name: "BLUETTI AC70 — Portable Power Station",
+    short: "AC70",
+    price: 379,
+    price_display: "$379.00",
+    rating: "4.6 stars from 115 ratings",
+    rating_value: 4.6,
+    rating_count: 115,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 768,
+    continuous_w: 1000,
+    surge_w: 2000,
+    solar_input_w: 500,
+    runtime_h: null,
+    noise_dba: null, // 45 dB on the review page is the Silent charging mode only (per BLUETTI) — no verified operating-noise figure; never guess
+    weight_lb: 22.5,
+    specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
+    fit: "No fuel, no fumes, safe indoors — 1,000W of clean power in a 22.5 lb box at $379.00 (Black Friday Deal). Shared listing with the BLUETTI Elite 100 Mini — the AC70 is the 10,048 mAh $379.00 option; the other capacities are out of stock. Runs a fridge for hours, not days; add solar panels for longer outages.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/5135434116",
+    review_url: "/reviews/bluetti-ac70/",
   },
 ];
 
