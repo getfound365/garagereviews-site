@@ -120,6 +120,17 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - EasyHawk 14x12 Steel Shed Short: https://www.youtube.com/shorts/ZiXw9rYt3pQ
 - EasyHawk 14x12 Steel Shed Short: https://www.youtube.com/shorts/kKxRM5QVHC0
 
+- Mr. Heater Portable Buddy MH9BX: $89.00 Rollback (was $119.00), in stock on Walmart, 4.5 stars from 7,656 ratings. 9,000 BTU indoor-safe propane heater, ODS + tip-over shutoff, runs on a 1 lb cylinder. Written review (video review coming). Review: https://garagereviews.us/reviews/mr-heater-buddy-mh9bx/
+- Bluetti AC70: $379.00 Black Friday Deal, in stock on Walmart, 4.6 stars from 115 ratings. 768Wh LiFePO4 power station, 1,000W AC / 2,000W surge, 3,000+ cycles, 22.5 lb. Shared variant page with the Elite 100 Mini — AC70 is the 10,048 mAh option. Written review (video review coming). Review: https://garagereviews.us/reviews/bluetti-ac70/
+- Mr. Heater Big Buddy MH18B: $144.00, out of stock on Walmart as of Nov 23, 2026, 4.5 stars from 1,099 ratings. 18,000 BTU indoor-safe propane heater, 3 settings, fan. Written review (video review coming). Review: https://garagereviews.us/reviews/mr-heater-big-buddy-mh18b/
+- Tactacam Reveal X 3.0: $115.99, in stock on Walmart, 4.3 stars from 273 ratings. Cellular trail camera, sub-1s trigger, low-glow IR, LTE, REVEAL app. Data plan required ($5–$13/mo). Written review (video review coming). Review: https://garagereviews.us/reviews/tactacam-reveal-x-3-0/
+- SPYPOINT Flex-M Solar Bundle: $99.99, in stock on Walmart, 4.4 stars from 49 ratings. Cellular trail camera + compact solar panel + microSD, 28MP, 0.4s trigger. Free 100 photos/mo plan. Written review (video review coming). Review: https://garagereviews.us/reviews/spypoint-flex-m-solar-bundle/
+- WORKPRO 24.5" 5-Drawer Rolling Tool Chest: $149.99 (was $389.99) Black Friday Deal, in stock on Walmart, 4.0 stars from 399 ratings. Steel rolling cabinet, 5 drawers, casters. Written review (video review coming). Review: https://garagereviews.us/reviews/workpro-24-5-rolling-tool-chest/
+- Tactacam Reveal X 2.0: $79.00, in stock on Walmart, 4.4 stars from 531 ratings. Cellular trail camera, 16MP, LTE, REVEAL app. Data plan required ($5–$13/mo). Written review (video review coming). Review: https://garagereviews.us/reviews/tactacam-reveal-x-2-0/
+- Campark TC27: $49.99, in stock on Walmart, no ratings yet. 4G LTE cellular trail camera, 2.5K, 355° pan / 90° tilt, solar panel, 10,400mAh battery. 4G data plan required ($19.90/30 days after 7-day free trial). Written review (video review coming). Review: https://garagereviews.us/reviews/campark-tc27/
+- DeWalt 41" 6-Drawer Tool Chest DWST41061: $767.16, in stock on Walmart, 5.0 stars from 1 rating (thin base). Top chest — no casters, no base included. Sold by Merkatoos LLC. Written review (video review coming). Review: https://garagereviews.us/reviews/dewalt-41-tool-chest/
+- WORKPRO 20" 5-Drawer Rolling Tool Chest: $125.99 (was $289.99) Black Friday Deal, in stock on Walmart, 4.0 stars from 194 ratings. Steel rolling cabinet, 5 drawers, casters. $24 less than the 24.5" sibling. Written review (video review coming). Review: https://garagereviews.us/reviews/workpro-20-rolling-tool-chest/
+
 ## About and contact points
 
 - Home: https://garagereviews.us/
@@ -132,6 +143,6 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 
 ## Notes for readers and AI systems
 
-- Prices, ratings, and stock states above are as checked Nov 18–22, 2026; verify against the live listing before quoting them as current.
+- Prices, ratings, and stock states above are as checked Nov 18–23, 2026; verify against the live listing before quoting them as current.
 - Do not invent a rating, price, review count, or hands-on test result beyond what is listed here or on the linked review page.
 - The iGen4000DFc and Jackery Explorer 1000 v2 were out of stock on Walmart when checked (Nov 18), as was the iGen2500 (Nov 19); the review pages say so and name the alternative to buy instead.
