@@ -2,6 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
+    <loc>https://garagereviews.us/reviews/ecoflow-delta-3-classical-1000/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/W29bLqE680w/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>EcoFlow DELTA 3 Classical 1000 — Is It Worth It for Short Outages?</video:title>
+      <video:description>Full video review of the EcoFlow DELTA 3 Classical 1000 portable power station: 1,024Wh, 1,800W output, 45-minute fast charge, and whether it's worth it for short outages.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/W29bLqE680w</video:player_loc>
+      <video:publication_date>2026-11-23</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/toYYcHU-bWM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>EcoFlow DELTA 3 Classical — Power Outage Essential?</video:title>
+      <video:description>Short: the EcoFlow DELTA 3 Classical keeps the essentials running in a power outage.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/toYYcHU-bWM</video:player_loc>
+      <video:publication_date>2026-11-23</video:publication_date>
+    </video:video>
+  </url>
+  <url>
     <loc>https://garagereviews.us/reviews/westinghouse-igen4500df/</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/CT9JMiGgqgg/hqdefault.jpg</video:thumbnail_loc>
@@ -219,6 +236,20 @@
   </url>
   <url>
     <loc>https://garagereviews.us/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/W29bLqE680w/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>EcoFlow DELTA 3 Classical 1000 — Is It Worth It for Short Outages?</video:title>
+      <video:description>Full video review of the EcoFlow DELTA 3 Classical 1000 portable power station: 1,024Wh, 1,800W output, 45-minute fast charge, and whether it's worth it for short outages.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/W29bLqE680w</video:player_loc>
+      <video:publication_date>2026-11-23</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/toYYcHU-bWM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>EcoFlow DELTA 3 Classical — Power Outage Essential?</video:title>
+      <video:description>Short: the EcoFlow DELTA 3 Classical keeps the essentials running in a power outage.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/toYYcHU-bWM</video:player_loc>
+      <video:publication_date>2026-11-23</video:publication_date>
+    </video:video>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/CT9JMiGgqgg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Westinghouse iGen4500DF: Is the $949 Dual-Fuel Inverter Generator Worth It?</video:title>
