@@ -124,8 +124,8 @@
     g12kbn: {
       name: "Pulsar G12KBN — Dual Fuel Portable Generator",
       short: "G12KBN",
-      price: 739, priceDisplay: "$739",
-      rating: "4.3 stars from 587 ratings",
+      price: 749, priceDisplay: "$749",
+      rating: "4.3 stars from 596 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: 9500, gasPeakW: 12000,
       propaneRunningW: 8550, propanePeakW: 10800,
@@ -166,8 +166,8 @@
     ai4000s: {
       name: "Aceup Energy AI4000S — Inverter Generator",
       short: "AI4000S",
-      price: 368.88, priceDisplay: "$368.88",
-      rating: "4.3 stars from 169 ratings",
+      price: 379.99, priceDisplay: "$379.99",
+      rating: "4.3 stars from 170 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: 3200, gasPeakW: 4000, // listing states 3,200 running watts; manual states 3,400
       propaneRunningW: null, propanePeakW: null,
@@ -195,7 +195,7 @@
       name: "Reliance Controls 310CRK — Manual Transfer Switch Kit",
       short: "310CRK",
       type: "transfer-switch",
-      price: 479, priceDisplay: "$479",
+      price: 503.79, priceDisplay: "$503.79",
       rating: "4.8 stars from 132 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: null, gasPeakW: null,
@@ -209,8 +209,8 @@
     g1200sg: {
       name: "Pulsar G1200SG — Portable Generator",
       short: "G1200SG",
-      price: 149, priceDisplay: "$149",
-      rating: "4.0 stars from 321 ratings",
+      price: 179, priceDisplay: "$179",
+      rating: "4.0 stars from 326 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: 900, gasPeakW: 1200,
       propaneRunningW: null, propanePeakW: null,
@@ -280,8 +280,8 @@
       name: "Jackery Explorer 300 v2 Auto Kit — Portable Power Station",
       short: "Jackery Explorer 300 v2",
       price: 198, priceDisplay: "$198",
-      rating: "4.4 stars from 274 ratings",
-      stock: "In stock", inStock: true,
+      rating: "4.4 stars from 289 ratings",
+      stock: "Out of stock", inStock: false,
       continuousW: 300, surgeW: 600, batteryWh: 288,
       runtime: null,
       noiseDba: 0, weightLb: 8.1,
@@ -431,8 +431,8 @@
     "jackery1000plus-restored": {
       name: "Jackery Explorer 1000 Plus (Restored) + 100W Mini Panel — Portable Power Station",
       short: "Explorer 1000 Plus (Restored)",
-      price: 699, priceDisplay: "$699",
-      rating: "5.0 stars from 7 ratings",
+      price: 449, priceDisplay: "$449",
+      rating: "5.0 stars from 5 ratings",
       stock: "In stock", inStock: true,
       continuousW: 2000, surgeW: 4000, batteryWh: 1264,
       runtime: null,
@@ -444,7 +444,7 @@
     river3plus: {
       name: "EcoFlow RIVER 3 Plus — Portable Power Station",
       short: "RIVER 3 Plus",
-      price: 289, priceDisplay: "From $289",
+      price: 239, priceDisplay: "From $239",
       rating: "4.6 stars from 58 ratings",
       stock: "Out of stock", inStock: false,
       continuousW: 600, surgeW: null, batteryWh: 286, // surge null: 1,200W X-Boost is per the bundle variant name only, not a verified surge rating; battery 286Wh maker figure, bundle name says 268Wh

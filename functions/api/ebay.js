@@ -102,7 +102,7 @@ const ALLOWLIST = {
   },
   "336700335243": {
     name: "Aceup Energy AI4000S",
-    price_display: "$379.90",
+    price_display: "$384.60",
     in_stock: true,
     buy_url:
       "https://www.ebay.com/itm/336700335243?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
