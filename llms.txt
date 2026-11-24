@@ -1,6 +1,6 @@
 # Garage Reviews
 
-Garage Reviews publishes honest, research-first reviews of generators and backup-power gear, plus workbenches, hunting gear, and other garage gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Sweaty Yeti sauna links go direct to the maker (affiliate link, coupon getfound3655 for 5% off) — Garage Reviews earns a flat $1,500 per sauna sale. Prices and stock were checked Nov 18–22, 2026 and can change.
+Garage Reviews publishes honest, research-first reviews of generators and backup-power gear, plus workbenches, hunting gear, and other garage gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Sweaty Yeti sauna links go direct to the maker (affiliate link, coupon getfound3655 for 5% off) — Garage Reviews earns a flat $1,500 per sauna sale. Prices and stock were checked Nov 18–24, 2026 and can change.
 
 ## What the site covers
 
@@ -130,6 +130,17 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - Campark TC27: $49.99, in stock on Walmart, no ratings yet. 4G LTE cellular trail camera, 2.5K, 355° pan / 90° tilt, solar panel, 10,400mAh battery. 4G data plan required ($19.90/30 days after 7-day free trial). Written review (video review coming). Review: https://garagereviews.us/reviews/campark-tc27/
 - DeWalt 41" 6-Drawer Tool Chest DWST41061: $767.16, in stock on Walmart, 5.0 stars from 1 rating (thin base). Top chest — no casters, no base included. Sold by Merkatoos LLC. Written review (video review coming). Review: https://garagereviews.us/reviews/dewalt-41-tool-chest/
 - WORKPRO 20" 5-Drawer Rolling Tool Chest: $125.99 (was $289.99) Black Friday Deal, in stock on Walmart, 4.0 stars from 194 ratings. Steel rolling cabinet, 5 drawers, casters. $24 less than the 24.5" sibling. Written review (video review coming). Review: https://garagereviews.us/reviews/workpro-20-rolling-tool-chest/
+- Westinghouse WGen7500DFc: $949, in stock on Walmart, 4.7 stars from 6,058 ratings. Dual-fuel generator, 9,500 peak / 7,500 running watts on gas, 8,550 / 6,750 on propane, CO sensor, remote start, transfer-switch ready. Written review (video review coming). Review: https://garagereviews.us/reviews/westinghouse-wgen7500dfc/
+- Jackery Explorer 2000 v2: $1,349, OUT OF STOCK on Walmart as of Nov 24, 2026, no ratings yet. 2,042Wh LiFePO4 power station, 2,200W continuous / 4,400W surge, under 20ms UPS, 39.5 lb. Walmart bundle adds one 200W panel. Written review (video review coming). Review: https://garagereviews.us/reviews/jackery-explorer-2000-v2/
+- Pecron F1000LFP: $369 (was $399), in stock on Walmart, 4.3 stars from 14 ratings. 960Wh LiFePO4 power station, 1,500W pure sine / 3,000W surge, 25 dB, 23.9 lb. Written review (video review coming). Review: https://garagereviews.us/reviews/pecron-f1000lfp/
+- NETAJE 2-Person Spectrum Sauna: $1,159.99 (was $1,999.99), in stock on Walmart, 4.4 stars from 35 ratings. 2-person red cedar far-infrared sauna, 5 low-EMF carbon panels, 1,500W, Wi-Fi + app control. $99.99 shipping — $1,259.98 delivered. Written review (video review coming). Review: https://garagereviews.us/reviews/netaje-2-person-spectrum-sauna/
+- Tactacam Reveal X 4.0: $129.97, in stock on Walmart, 4.7 stars from 28 ratings. Cellular trail camera, 4K/2.5K photo, 1080p video, 96 ft low-glow IR, Live View (extra subscription). Plans from $5/mo. Written review (video review coming). Review: https://garagereviews.us/reviews/tactacam-reveal-x-4-0/
+- SPYPOINT Flex-M Twin Pack: $79.99 (was $129.99), in stock on Walmart, 3.9 stars from 476 ratings. Two Flex-M cellular trail cameras, free 100 photos/mo per camera. Written review (video review coming). Review: https://garagereviews.us/reviews/spypoint-flex-m-twin-pack/
+- Campark TC36 2-Pack: $59.99 (was $69.98), in stock on Walmart, 3.8 stars from 140 ratings. 2-pack 4G LTE trail camera, 2.5K video, 32MP photos, 10x zoom, solar. Each camera needs its own plan. Written review (video review coming). Review: https://garagereviews.us/reviews/campark-tc36-2-pack/
+- DeWalt TOUGHSYSTEM 2.0 XL DWST60436: $254.12 (was $538.53), out of stock on Walmart as of Nov 24, 2026, 4.1 stars from 26 ratings. 3-piece rolling tool storage tower. Note: the Walmart listing currently shows the single XL box, not the 3-piece set. Written review (video review coming). Review: https://garagereviews.us/reviews/dewalt-toughsystem-2-0-xl/
+- Mr. Heater Little Buddy MH4B: $69 (was $91), in stock on Walmart, 4.3 stars from 1,084 ratings. 3,800 BTU indoor-safe propane heater, 95 sq ft, ODS + tip-over shutoff. Written review (video review coming). Review: https://garagereviews.us/reviews/mr-heater-little-buddy-mh4b/
+- SPYPOINT Flex-S: $449.95 (2-pack option as listed), in stock on Walmart, no ratings yet. Solar cellular trail camera, 36MP, integrated solar panel, dual-SIM LTE. Single-camera price not confirmed on the listing. Written review (video review coming). Review: https://garagereviews.us/reviews/spypoint-flex-s/
+
 
 ## About and contact points
 
@@ -143,6 +154,6 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 
 ## Notes for readers and AI systems
 
-- Prices, ratings, and stock states above are as checked Nov 18–23, 2026; verify against the live listing before quoting them as current.
+- Prices, ratings, and stock states above are as checked Nov 18–24, 2026; verify against the live listing before quoting them as current.
 - Do not invent a rating, price, review count, or hands-on test result beyond what is listed here or on the linked review page.
 - The iGen4000DFc and Jackery Explorer 1000 v2 were out of stock on Walmart when checked (Nov 18), as was the iGen2500 (Nov 19); the review pages say so and name the alternative to buy instead.
