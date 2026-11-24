@@ -131,7 +131,7 @@
       short: "G12KBN",
       price: 749, priceDisplay: "$749",
       rating: "4.3 stars from 596 ratings",
-      stock: "In stock", inStock: true,
+      stock: "Out of stock", inStock: false,
       gasRunningW: 9500, gasPeakW: 12000,
       propaneRunningW: 8550, propanePeakW: 10800,
       runtime: null,
@@ -381,9 +381,9 @@
     "anker-solix-c1000x-gen2": {
       name: "Anker SOLIX C1000X Gen 2 — Portable Power Station",
       short: "SOLIX C1000X Gen 2",
-      price: 499.99, priceDisplay: "$499.99",
+      price: 569.99, priceDisplay: "$569.99",
       rating: "4.5 stars from 55 ratings",
-      stock: "In stock", inStock: true,
+      stock: "Out of stock", inStock: false,
       continuousW: 2000, surgeW: null, batteryWh: 1024, // surge CONTESTED: 2,400W marketing vs 3,000W spec table — never pick one
       runtime: null,
       noiseDba: 0, weightLb: 27.12,
