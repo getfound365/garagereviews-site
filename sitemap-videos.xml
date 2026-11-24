@@ -2,6 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
+    <loc>https://garagereviews.us/reviews/westinghouse-wgen7500dfc/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/aqwZeoxvMmU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Westinghouse WGen7500DFc — Is It the Most Generator for the Money?</video:title>
+      <video:description>Full video review of the Westinghouse WGen7500DFc dual-fuel generator: 7,500 running watts, remote start, CO sensor, and whether it is the most generator for the money.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/aqwZeoxvMmU</video:player_loc>
+      <video:publication_date>2026-11-24T00:00:00-06:00</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/GNe8QlFf6Eo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Westinghouse WGen7500DFc — Whole-Home Backup Power?</video:title>
+      <video:description>Short: the Westinghouse WGen7500DFc runs the essentials through a transfer switch when the power goes out.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/GNe8QlFf6Eo</video:player_loc>
+      <video:publication_date>2026-11-24T00:00:00-06:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
     <loc>https://garagereviews.us/reviews/ecoflow-delta-3-classical-1000/</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/W29bLqE680w/hqdefault.jpg</video:thumbnail_loc>
@@ -236,6 +253,20 @@
   </url>
   <url>
     <loc>https://garagereviews.us/videos/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/aqwZeoxvMmU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Westinghouse WGen7500DFc — Is It the Most Generator for the Money?</video:title>
+      <video:description>Full video review of the Westinghouse WGen7500DFc dual-fuel generator: 7,500 running watts, remote start, CO sensor, and whether it is the most generator for the money.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/aqwZeoxvMmU</video:player_loc>
+      <video:publication_date>2026-11-24T00:00:00-06:00</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/GNe8QlFf6Eo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Westinghouse WGen7500DFc — Whole-Home Backup Power?</video:title>
+      <video:description>Short: the Westinghouse WGen7500DFc runs the essentials through a transfer switch when the power goes out.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/GNe8QlFf6Eo</video:player_loc>
+      <video:publication_date>2026-11-24T00:00:00-06:00</video:publication_date>
+    </video:video>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/W29bLqE680w/hqdefault.jpg</video:thumbnail_loc>
       <video:title>EcoFlow DELTA 3 Classical 1000 — Is It Worth It for Short Outages?</video:title>
