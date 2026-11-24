@@ -16,7 +16,7 @@
 <h1>Find Your Generator</h1>
 <p>Three quick questions, up to three honest options. No email, no sign-up — the result is right here.</p>
 <p class="disclosure-top">Links on this page are paid links. If you buy through them, Garage Reviews may earn a commission at no extra cost to you.</p>
-<p class="quiz-note">Thirty generators in the roster so far — one reviewed on video, twenty-nine more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
+<p class="quiz-note">Thirty-three generators in the roster so far — one reviewed on video, thirty-two more with specs verified from the listing. This finder grows as we review more, one video a day.</p>
 
 <form id="quiz">
 <fieldset>
@@ -60,7 +60,7 @@
 </section>
 
 <p>Prices checked Nov 22, 2026 and can change. Out-of-stock flags are as of Nov 22, 2026.</p>
-<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 30 models</a></p>
+<p><a class="back-link" href="/">&#8592; Back to Garage Reviews</a> · <a href="/compare/">Compare all 33 models</a></p>
 
 <p class="disclosure">As a Walmart Creator, Garage Reviews earns from qualifying purchases made through these links, at no extra cost to you. We never claim hands-on testing we haven't done — every pick is honest research, and the video says plainly when to skip one.</p>
 </main>
@@ -89,6 +89,13 @@
   // Shared Elite 100 Mini / AC70 listing — the AC70 is the 10,048 mAh $379.00 option;
   // the other capacities are out of stock. Noise figure is the 45 dB Silent charging
   // mode only, not a verified operating-noise figure, so specs carry it as such.
+  // Nov 24: +3 models (wgen7500dfc, jackery2000v2, pecron-f1000lfp) — verified from
+  // the live review pages that day. Jackery 2000 v2 is OUT OF STOCK (both variants)
+  // and has NO ratings yet — rating reads "No ratings yet", stock "Out of stock",
+  // and the fit copy points at the in-stock Pecron. Its battery is 2,042Wh per
+  // Jackery (bundle name says 2,036Wh — rounding difference, stated in the fit).
+  // Pecron noise is a verified 25 dB operating figure; Jackery noise has no single
+  // verified figure ("<30 dB" per the maker, 45 dB at full load).
   var MODELS = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -419,6 +426,39 @@
       stock: "In stock",
       video: null,
       link: "https://www.walmart.com/ip/5135434116"
+    },
+    wgen7500dfc: {
+      name: "Westinghouse WGen7500DFc — Dual Fuel Portable Generator",
+      price: "$949",
+      rating: "4.7 stars from 6,058 ratings",
+      specs: "9,500 peak / 7,500 running watts on gas · 8,550 peak / 6,750 running on propane · up to 11 hours at 25% load · 72 dBA · CO sensor · transfer-switch ready · 202.1 lb",
+      fit: "A 7,500-running-watt dual-fuel unit with a CO sensor and a 30A transfer-switch outlet at $949 — the smaller sibling of the WGen9500DF, same transfer-switch-ready setup. Open-frame, so louder than an inverter, and it needs an electrician-installed connection. Remote start included; runtime is 11 hours on gas at 25% load per Westinghouse's own spec table.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://www.walmart.com/ip/Westinghouse-9500-Peak-Watt-Home-Backup-Dual-Fuel-Portable-Generator-Transfer-Switch-Ready-CO-Sensor/884106339"
+    },
+    jackery2000v2: {
+      name: "Jackery Explorer 2000 v2 — Portable Power Station",
+      price: "$1,349",
+      rating: "No ratings yet",
+      specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
+      fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Out of stock at Walmart as of Nov 24, 2026 (both the $1,349 bundle and the $1,189 variant); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
+      status: "coming",
+      stock: "Out of stock",
+      video: null,
+      link: "https://www.walmart.com/ip/17303366024"
+    },
+    "pecron-f1000lfp": {
+      name: "PECRON F1000LFP — Portable Power Station",
+      price: "$369",
+      rating: "4.3 stars from 14 ratings",
+      specs: "960Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 600W solar input · 25 dB · 23.9 lb · 1,000W AC input, 0–80% in 50 minutes · <20ms UPS · 3,500+ cycles",
+      fit: "No fuel, no fumes, safe indoors — 1,500W of clean power in a 23.9 lb box at $369 (was $399). The cheapest way into a 1,500W station in the roster; runs a fridge for hours, not days. Thin review base (4.3 stars from 14 ratings), so the rating is early, not proven.",
+      status: "coming",
+      stock: "In stock",
+      video: null,
+      link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345"
     }
   };
 
@@ -429,7 +469,7 @@
 
   function decide(use, fuel, budget) {
     if (fuel === "solar") {
-      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Nine in the roster now — the Jackery Explorer 300 v2 below is out of stock at Walmart as of Nov 23, 2026; the other two are in stock.", options: ["anker-solix-c1000x-gen2", "delta3classical1000", "jackery300v2"] };
+      return { heading: "Your match: solar power, no fuel", intro: "Solar-only means a portable power station: quiet, no fuel, safe to run indoors, charges from the wall or a solar panel. Eleven in the roster now — the Jackery Explorer 300 v2 below is out of stock at Walmart as of Nov 23, 2026; the other two are in stock.", options: ["anker-solix-c1000x-gen2", "delta3classical1000", "jackery300v2"] };
     }
     if (use === "small") {
       return { heading: "Small loads — three honest options", intro: "Phones, a laptop and a few lights is a small-load job. A power station is the quiet, no-fuel, indoor-safe way to run them — one of the three below is in stock, lightest first — the Jackery Explorer 300 v2 and the RIVER 2 Pro are out of stock at Walmart as of Nov 23, 2026.", options: ["jackery300v2", "jackery300lifepo4", "river2pro"] };
@@ -490,7 +530,7 @@
         + "&amp;budget=" + encodeURIComponent(budget);
       html += '<p><a class="btn secondary" href="' + planUrl + '">Get your printable outage plan — ' + MODELS[d.options[0]].name.split(" — ")[0] + '<small>What to buy, what it runs, what it costs — one page, ready to print</small></a></p>';
     }
-    html += '<p class="footnote">Out-of-stock flags are as of Nov 22, 2026. <a href="/compare/">Compare all 30 models side by side</a></p>';
+    html += '<p class="footnote">Out-of-stock flags are as of Nov 22, 2026. <a href="/compare/">Compare all 33 models side by side</a></p>';
     result.innerHTML = html;
     result.hidden = false;
     result.scrollIntoView({ behavior: "smooth", block: "start" });

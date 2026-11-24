@@ -55,6 +55,18 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // mode only, not a verified operating-noise figure. The other 9 Nov 23
 // pages are not backup-power gear and stay out of the matcher (KB +
 // deal watcher only).
+// Nov 24, 2026: +3 models from the day's verified review pages
+// (wgen7500dfc, jackery2000v2, pecron-f1000lfp). Prices/stock as of
+// Nov 24, 2026. Jackery 2000 v2 is OUT OF STOCK (both variants, no buy
+// button on the page) and has NO ratings yet — rating_value/rating_count
+// are 0 and the fit copy states the OOS state plainly with the in-stock
+// Pecron as the alternative. Its battery is 2,042Wh per Jackery (the
+// bundle name says 2,036Wh — rounding difference, stated in the fit).
+// noise_dba is null for both new stations (Jackery: "<30 dB" per the
+// maker, 45 dB at full load — no single figure; Pecron's 25 dB IS a
+// verified operating figure). The other 7 Nov 24 pages (sauna, 4 trail
+// cams, tool chest, heater) are not backup-power gear and stay out of
+// the matcher (KB + deal watcher only).
 // Surge watts on the Anker C1000X Gen 2 are CONTESTED on the listing
 // (2,400W marketing copy vs 3,000W spec table) — surge_w is null and the
 // fit copy says so; the 2,000W continuous figure is the agreed number.
@@ -874,6 +886,87 @@ const ROSTER = [
     video: null,
     link: "https://www.walmart.com/ip/5135434116",
     review_url: "/reviews/bluetti-ac70/",
+  },
+  {
+    id: "wgen7500dfc",
+    name: "Westinghouse WGen7500DFc — Dual Fuel Portable Generator",
+    short: "WGen7500DFc",
+    price: 949,
+    price_display: "$949",
+    rating: "4.7 stars from 6,058 ratings",
+    rating_value: 4.7,
+    rating_count: 6058,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "dual-fuel",
+    type: "open-frame",
+    gas_peak_w: 9500,
+    gas_running_w: 7500,
+    propane_peak_w: 8550,
+    propane_running_w: 6750,
+    runtime_h: "up to 11 hours on gas at 25% load",
+    noise_dba: 72,
+    weight_lb: 202.1, // dry weight per Westinghouse spec table
+    specs: "9,500 peak / 7,500 running watts on gas · 8,550 peak / 6,750 running on propane · up to 11 hours at 25% load · 72 dBA · CO sensor · transfer-switch ready · 202.1 lb",
+    fit: "A 7,500-running-watt dual-fuel unit with a CO sensor and a 30A transfer-switch outlet at $949 — the smaller sibling of the WGen9500DF, same transfer-switch-ready setup. Open-frame, so louder than an inverter, and it needs an electrician-installed connection. Remote start included; runtime is 11 hours on gas at 25% load per Westinghouse's own spec table.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/Westinghouse-9500-Peak-Watt-Home-Backup-Dual-Fuel-Portable-Generator-Transfer-Switch-Ready-CO-Sensor/884106339",
+    review_url: "/reviews/westinghouse-wgen7500dfc/",
+  },
+  {
+    id: "jackery2000v2",
+    name: "Jackery Explorer 2000 v2 — Portable Power Station",
+    short: "Jackery Explorer 2000 v2",
+    price: 1349,
+    price_display: "$1,349",
+    rating: "No ratings yet",
+    rating_value: 0,
+    rating_count: 0,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 2042, // Jackery maker figure; bundle name says 2,036Wh — rounding difference
+    continuous_w: 2200,
+    surge_w: 4400,
+    solar_input_w: null, // bundle includes one 200W panel; solar input watts not verified on the sources checked — never invent one
+    runtime_h: null,
+    noise_dba: null, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
+    weight_lb: 39.5,
+    specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
+    fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Out of stock at Walmart as of Nov 24, 2026 (both the $1,349 bundle and the $1,189 variant); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — the OOS review page carries no buy button and no slugged URL
+    review_url: "/reviews/jackery-explorer-2000-v2/",
+  },
+  {
+    id: "pecron-f1000lfp",
+    name: "PECRON F1000LFP — Portable Power Station",
+    short: "F1000LFP",
+    price: 369,
+    price_display: "$369",
+    rating: "4.3 stars from 14 ratings",
+    rating_value: 4.3,
+    rating_count: 14,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 960,
+    continuous_w: 1500,
+    surge_w: 3000,
+    solar_input_w: 600,
+    runtime_h: null,
+    noise_dba: 25,
+    weight_lb: 23.9,
+    specs: "960Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 600W solar input · 25 dB · 23.9 lb · 1,000W AC input, 0–80% in 50 minutes · <20ms UPS · 3,500+ cycles",
+    fit: "No fuel, no fumes, safe indoors — 1,500W of clean power in a 23.9 lb box at $369 (was $399). The cheapest way into a 1,500W station in the roster; runs a fridge for hours, not days. Thin review base (4.3 stars from 14 ratings), so the rating is early, not proven.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345",
+    review_url: "/reviews/pecron-f1000lfp/",
   },
 ];
 

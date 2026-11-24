@@ -40,6 +40,14 @@
   // $379.00 option on a shared Elite 100 Mini / AC70 listing (the other
   // capacities are out of stock); noiseDba null (45 dB is the Silent
   // charging mode only, not a verified operating-noise figure).
+  // Nov 24, 2026: +3 models from the day's verified review pages
+  // (wgen7500dfc, jackery2000v2, pecron-f1000lfp). Prices/stock as of
+  // Nov 24, 2026. Jackery 2000 v2 is OUT OF STOCK (both variants) and
+  // has NO ratings yet — rating reads "No ratings yet", inStock false.
+  // Battery 2,042Wh per Jackery (bundle name says 2,036Wh — rounding
+  // difference, stated in the specs). noiseDba null for the Jackery
+  // ("<30 dB" per the maker, 45 dB at full load — no single figure);
+  // Pecron noiseDba is the verified 25 dB operating figure.
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -471,6 +479,46 @@
       specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
       link: "https://www.walmart.com/ip/5135434116",
       reviewUrl: "/reviews/bluetti-ac70/"
+    },
+    wgen7500dfc: {
+      name: "Westinghouse WGen7500DFc — Dual Fuel Portable Generator",
+      short: "WGen7500DFc",
+      price: 949, priceDisplay: "$949",
+      rating: "4.7 stars from 6,058 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 7500, gasPeakW: 9500,
+      propaneRunningW: 6750, propanePeakW: 8550,
+      runtime: "up to 11 hours on gas at 25% load",
+      noiseDba: 72, weightLb: 202.1, // dry weight per Westinghouse spec table
+      specs: "9,500 peak / 7,500 running watts on gas · 8,550 peak / 6,750 running on propane · up to 11 hours at 25% load · 72 dBA · CO sensor · transfer-switch ready · 202.1 lb",
+      link: "https://www.walmart.com/ip/Westinghouse-9500-Peak-Watt-Home-Backup-Dual-Fuel-Portable-Generator-Transfer-Switch-Ready-CO-Sensor/884106339",
+      reviewUrl: "/reviews/westinghouse-wgen7500dfc/"
+    },
+    jackery2000v2: {
+      name: "Jackery Explorer 2000 v2 — Portable Power Station",
+      short: "Jackery Explorer 2000 v2",
+      price: 1349, priceDisplay: "$1,349",
+      rating: "No ratings yet",
+      stock: "Out of stock", inStock: false,
+      continuousW: 2200, surgeW: 4400, batteryWh: 2042, // Jackery maker figure; bundle name says 2,036Wh — rounding difference
+      runtime: null,
+      noiseDba: null, weightLb: 39.5, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
+      specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
+      link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — the OOS review page carries no buy button and no slugged URL
+      reviewUrl: "/reviews/jackery-explorer-2000-v2/"
+    },
+    "pecron-f1000lfp": {
+      name: "PECRON F1000LFP — Portable Power Station",
+      short: "F1000LFP",
+      price: 369, priceDisplay: "$369",
+      rating: "4.3 stars from 14 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 1500, surgeW: 3000, batteryWh: 960,
+      runtime: null,
+      noiseDba: 25, weightLb: 23.9,
+      specs: "960Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 600W solar input · 25 dB · 23.9 lb · 1,000W AC input, 0–80% in 50 minutes · <20ms UPS · 3,500+ cycles",
+      link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345",
+      reviewUrl: "/reviews/pecron-f1000lfp/"
     }
   };
 
@@ -721,7 +769,8 @@
 // reliance310crk, g1200sg, wendf472, wgen9500dfc, champion201319, river2pro,
 // jackery300v2, jackery300lifepo4, igen12000dfc, igen2800dfc, igen5000c,
 // xp13000hx, igen5000, anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix,
-// wen-56360i, jackery1000plus-restored, river3plus, bluetti-ac70) —
+// wen-56360i, jackery1000plus-restored, river3plus, bluetti-ac70,
+// wgen7500dfc, jackery2000v2, pecron-f1000lfp) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------
