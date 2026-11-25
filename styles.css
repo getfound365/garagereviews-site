@@ -358,3 +358,88 @@ header.site .site-search { margin-top: .7rem; max-width: 460px; }
 @media (max-width: 640px) {
   header.site .site-search { max-width: none; }
 }
+
+/* --- 2026-11-25: bubbly retailer buy buttons with CSS logo chips --- */
+/* Text-only retailer buttons ("Buy on Amazon", "Buy on eBay — $…") get
+   their logo from CSS instead of markup: a white ::before chip carrying
+   the retailer's SVG as a background image. The chip only renders when
+   the button has NO .buy-logo-wrap / .buy-text-label already (:has()
+   guard), so buttons with a real <img> logo never get a second logo.
+   All three SVGs need the white chip: Amazon's wordmark is dark
+   #131921 (invisible on its own #131921 button), Walmart's is brand
+   blue (illegible on the blue button), eBay's is multicolour on
+   transparent. If :has() is unsupported the ::before rule is dropped
+   and the button simply stays text-only — nothing breaks.
+   No Lowe's logo: there is no assets/logos/lowes.svg, and Lowe's
+   buttons must not render before the Creator application is approved.
+   Palette note: the live file is black + signal yellow #FFD21F (brand
+   v9), not the charcoal/orange/green palette in the brief — no
+   site-wide recolour here; retailer brand colours stay on their own
+   buttons only. */
+
+/* Bubbly base: pill, soft shadow, comfortable padding, tappable height.
+   Flex column centres the logo chip / text / price / small-print stack. */
+.buy-row .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: .85rem 1rem;
+  border-width: 2px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.28), 0 1px 3px rgba(0,0,0,.20);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease;
+}
+.buy-row .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.20); }
+.buy-row .btn:focus-visible { outline: 3px solid #FFD21F; outline-offset: 2px; }
+.buy-row .btn.oos:hover { transform: none; box-shadow: none; }
+
+/* CSS logo chip for text-only retailer buttons (no <img> logo in markup).
+   Matches the existing .buy-logo-wrap chip: white, 8px radius, 24px logo. */
+.buy-row .btn.buy-amazon:not(:has(.buy-logo-wrap, .buy-text-label))::before,
+.buy-row .btn.buy-ebay:not(:has(.buy-logo-wrap, .buy-text-label))::before,
+.buy-row .btn.buy-walmart:not(:has(.buy-logo-wrap, .buy-text-label))::before {
+  content: "";
+  flex: none;
+  width: min(190px, 100%);
+  height: 38px;
+  margin-bottom: .45rem;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+.buy-row .btn.buy-amazon:not(:has(.buy-logo-wrap, .buy-text-label))::before { background-image: url("/assets/logos/amazon.svg"); }
+.buy-row .btn.buy-ebay:not(:has(.buy-logo-wrap, .buy-text-label))::before { background-image: url("/assets/logos/ebay.svg"); }
+.buy-row .btn.buy-walmart:not(:has(.buy-logo-wrap, .buy-text-label))::before { background-image: url("/assets/logos/walmart.svg"); }
+
+/* Walmart is the featured/primary retailer: true brand blue (matches
+   the logo SVG's own #0053e2) instead of the muted #2f5d8a, plus a
+   stronger shadow so it reads as primary in the row. White on #0053e2
+   is ~6.3:1 — passes AA. */
+.buy-row .btn.buy-walmart { background: #0053e2; border-color: #0053e2; box-shadow: 0 6px 18px rgba(0,83,226,.45), 0 2px 6px rgba(0,0,0,.25); }
+.buy-row .btn.buy-walmart:hover { background: #0040ad; border-color: #0040ad; box-shadow: 0 8px 22px rgba(0,83,226,.50), 0 2px 6px rgba(0,0,0,.25); }
+
+/* Text-only eBay buttons carry the price in a bare [data-ebay-price]
+   span (no .price class): same big-price treatment as .price. */
+.buy-row .btn.buy-ebay:not(:has(.buy-logo-wrap, .buy-text-label)) [data-ebay-price] { display: block; font-size: 1.3rem; font-weight: 800; color: #ffd21f; }
+.buy-row .btn.buy-ebay:not(:has(.buy-logo-wrap, .buy-text-label)):hover [data-ebay-price] { color: #111; }
+
+/* Sticky banner: same chip, compact (matches the 18px logos there). */
+.sticky-buy .buy-row .btn.buy-amazon:not(:has(.buy-logo-wrap, .buy-text-label))::before,
+.sticky-buy .buy-row .btn.buy-ebay:not(:has(.buy-logo-wrap, .buy-text-label))::before,
+.sticky-buy .buy-row .btn.buy-walmart:not(:has(.buy-logo-wrap, .buy-text-label))::before {
+  height: 26px;
+  background-size: auto 18px;
+  margin-bottom: .15rem;
+}
+
+/* Phones: one full-width button per row — roomy, tappable, no
+   side-by-side squeeze. Sticky banner keeps its compact row. */
+@media (max-width: 480px) {
+  .buy-row .btn { flex: 1 1 100%; }
+  .sticky-buy .buy-row .btn { flex: 1 1 120px; }
+}

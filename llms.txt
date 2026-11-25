@@ -77,7 +77,15 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 ## Key pages
 
 - Home: https://garagereviews.us/
-- Compare all generators: https://garagereviews.us/compare/
+- Compare all gear (hub): https://garagereviews.us/compare/
+- Compare generators (23 fuel generators, $179–$1,899): https://garagereviews.us/compare/generators/
+- Compare portable power stations (16 stations, $139.99–$1,349): https://garagereviews.us/compare/portable-power-stations/
+- Compare saunas (9 saunas, $83.91–$29,700): https://garagereviews.us/compare/saunas/
+- Compare workbenches (3 benches, $112.99–$1,498): https://garagereviews.us/compare/workbenches/
+- Compare tool chests (7 chests, $125.99–$1,498): https://garagereviews.us/compare/tool-chests/
+- Compare trail cameras (18 cellular cameras, $34–$449.95): https://garagereviews.us/compare/trail-cameras/
+- Compare heaters (3 Mr. Heater Buddy propane heaters, $69–$144): https://garagereviews.us/compare/heaters/
+- Compare sheds & carports (3 sheds/carports, $389.99–$519.99): https://garagereviews.us/compare/sheds-carports/
 - Best dual-fuel generators under $1,000: https://garagereviews.us/best-dual-fuel-generators-under-1000/
 - Portable power station Black Friday deals: https://garagereviews.us/portable-power-station-black-friday-deals/
 - Sweaty Yeti sauna cheaper alternatives: https://garagereviews.us/reviews/sweaty-yeti-sauna-cheaper-alternatives/

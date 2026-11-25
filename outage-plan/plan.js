@@ -272,7 +272,7 @@
       runtime: "up to 12 hours on gas at 25% load",
       noiseDba: 74, weightLb: 212,
       specs: "12,500 peak / 9,500 running watts on gas · 11,200 peak / 8,500 running on propane · up to 12 hours at 25% load · 74 dBA · CO sensor · transfer-switch ready · 212 lb",
-      link: "https://www.walmart.com/ip/Westinghouse-12-500-Peak-Watt-Dual-Fuel-Portable-Generator-Gas-Propane-Transfer-Switch-Ready-CO-Sensor/205592694",
+      link: "https://walmrt.us/48FabCY",
       reviewUrl: "/reviews/westinghouse-wgen9500dfc/"
     },
     champion201319: {
@@ -286,7 +286,7 @@
       runtime: "up to 14 hours on gas at 25% load, 21 hours on propane",
       noiseDba: 61, weightLb: null, // weight not published on the sources checked
       specs: "4,500 peak / 3,500 running watts on gas · 4,500 peak / 3,150 running on propane · up to 14 hours on gas at 25% load · 61 dBA · CO Shield · TT-30R RV outlet · <3% THD",
-      link: "https://www.walmart.com/ip/Champion-4500-Watt-Electric-Start-Dual-Fuel-RV-Ready-Portable-Inverter-Generator-with-Quiet-Technology-and-CO-Shield/5292447369",
+      link: "https://walmrt.us/4fRZAIF",
       reviewUrl: "/reviews/champion-201319-4500w-dual-fuel-inverter/"
     },
     river2pro: {
@@ -299,7 +299,7 @@
       runtime: null,
       noiseDba: 0, weightLb: 18.2,
       specs: "716Wh LiFePO4 battery (Walmart RIVER 2 Pro 700 variant; standard version is 768Wh) · 800W continuous / 1,600W surge · 18.2 lb · 0–100% in about 70 minutes",
-      link: "https://www.walmart.com/ip/EF-EcoFlow-Portable-Power-Station-RIVER-2-Pro-700-716Wh-LFP-Battery-1600W-Solar-Generator-for-Outdoor-Home-Use/3285267150",
+      link: "https://walmrt.us/4jCTSN2",
       reviewUrl: "/reviews/ecoflow-river-2-pro/"
     },
     jackery300v2: {
@@ -312,7 +312,7 @@
       runtime: null,
       noiseDba: 0, weightLb: 8.1,
       specs: "288Wh LiFePO4 battery · 300W continuous / 600W surge · 8.1 lb · includes 12V auto-charging cable · charges from the wall, car, or sun",
-      link: "https://www.walmart.com/ip/Jackery-Explorer-300v2-Auto-Kit-Portable-Power-Station-with-12V-Battery-Charging-Cable/19346557265",
+      link: "https://walmrt.us/4ATl5kn",
       reviewUrl: "/reviews/jackery-explorer-300-v2-auto-kit/"
     },
     jackery300lifepo4: {
@@ -325,7 +325,7 @@
       runtime: null,
       noiseDba: 0, weightLb: 7.5,
       specs: "292Wh LiFePO4 battery · 300W continuous · 7.5 lb · 4,000+ cycles to 70% · 100W USB-C PD · 5-year warranty",
-      link: "https://www.walmart.com/ip/Jackery-E300New-290Wh-Portable-Power-Station-with-5m-Extension-Cord-300W-LiFePO4-Battery-for-Camping-Travel-Backup/17514002741",
+      link: "https://walmrt.us/4jdAqoK",
       reviewUrl: "/reviews/jackery-explorer-300-lifepo4/"
     },
     igen12000dfc: {
@@ -339,7 +339,7 @@
       runtime: "up to 19 hours on gas at 25% load, 9 hours on propane",
       noiseDba: 64, weightLb: 189,
       specs: "12,000 peak / 9,000 running watts on gas · 11,000 peak / 8,100 running on propane · up to 19 hours at 25% load · 64 dBA · remote start · CO sensor · 50A outlet · 189 lb",
-      link: "https://www.walmart.com/ip/Westinghouse-11-000-Peak-Watt-Portable-Inverter-Generator-Dual-Fuel-Remote-Start-with-CO-Sensor/5255290485",
+      link: "https://walmrt.us/48LFyMa",
       reviewUrl: "/reviews/westinghouse-igen12000dfc/"
     },
     igen2800dfc: {
@@ -354,7 +354,7 @@
       noiseDba: null, // CONTESTED: 52 dBA marketing vs 62 dBA at 25% load in one spec table
       weightLb: 45.4,
       specs: "2,800 peak / 2,200 running watts on gas · 2,520 peak / 1,980 running on propane · up to 12 hours at 25% load · CO sensor · TT-30R RV outlet · 45.4 lb · recoil start only",
-      link: "https://www.walmart.com/ip/Westinghouse-2800-Peak-Watt-Portable-Gas-Propane-Powered-Inverter-Generator-Dual-Fuel-Parallel-Capable-with-CO-Sensor/18953253301",
+      link: "https://walmrt.us/4AOGWtf",
       reviewUrl: "/reviews/westinghouse-igen2800dfc/"
     },
     igen5000c: {
@@ -368,7 +368,7 @@
       runtime: "up to 18 hours at 25% load, 15 hours at 50% load",
       noiseDba: 52, weightLb: 105.8,
       specs: "5,000 peak / 3,900 running watts · gas inverter · CO sensor · up to 18 hours at 25% load · 52 dBA · 105.8 lb · TT-30R RV outlet",
-      link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gasoline-Powered-Portable-Inverter-Generator-with-CO-Sensor/329397713",
+      link: "https://walmrt.us/3WWAgLe",
       reviewUrl: "/reviews/westinghouse-igen5000c/"
     },
     xp13000hx: {
@@ -382,7 +382,7 @@
       runtime: "up to 17 hours on gas at 25% load, 13 hours on propane",
       noiseDba: 74, weightLb: 240,
       specs: "13,000 peak / 10,500 running watts on gas · 12,500 peak / 10,000 running on propane · up to 17 hours at 25% load · 74 dB · CO Alert · 240 lb",
-      link: "https://www.walmart.com/ip/DuroMax-XP13000HX-13-000-Watt-Portable-Dual-Fuel-Gas-Propane-CO-Alert-Generator/783922308",
+      link: "https://walmrt.us/4AcLWYU",
       reviewUrl: "/reviews/duromax-xp13000hx/"
     },
     igen5000: {
@@ -396,7 +396,7 @@
       runtime: "up to 18 hours at 25% load, 15 hours at 50% load",
       noiseDba: 52, weightLb: 104.7,
       specs: "5,000 peak / 3,900 running watts · gas inverter · up to 18 hours at 25% load · 52 dBA · 104.7 lb · TT-30R RV outlet · no CO sensor",
-      link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gas-Powered-Portable-Inverter-Generator-with-Electric-Start/132513179",
+      link: "https://walmrt.us/4Ciz84R",
       reviewUrl: "/reviews/westinghouse-igen5000/"
     },
     "anker-solix-c1000x-gen2": {
@@ -409,7 +409,7 @@
       runtime: null,
       noiseDba: 0, weightLb: 27.12,
       specs: "1,024Wh LiFePO4 battery · 2,000W continuous · 49-minute recharge · 4,000+ cycles · 27.12 lb · charges from the wall or sun",
-      link: "https://www.walmart.com/ip/17775762177",
+      link: "https://walmrt.us/4zHAtQ2",
       reviewUrl: "/reviews/anker-solix-c1000x-gen-2/"
     },
     "wen-df680ix": {
@@ -423,7 +423,7 @@
       runtime: "up to 6.1 hours at half load on gas, 9 hours on propane",
       noiseDba: 64, weightLb: 94.8, // spec table also lists 99.2 lb in one place
       specs: "6,800 peak / 5,100 running watts on gas · 6,000 peak / 4,500 running on propane · 224cc · 64 dB · 94.8 lb · electric start with recoil backup · up to 6.1 hours at half load",
-      link: "https://www.walmart.com/ip/15322924646",
+      link: "https://walmrt.us/4ClqnGW",
       reviewUrl: "/reviews/wen-df680ix/"
     },
     "wen-df480ix": {
@@ -437,7 +437,7 @@
       runtime: "up to 7 hours at half load on gas, 12 hours on propane",
       noiseDba: 62, weightLb: 78.5, // weight contested across sources (78.5 lb vs 91 lb)
       specs: "4,800 peak / 4,000 running watts on gas · 4,320 peak / 3,600 running on propane · 224cc · 62 dB · 78.5 lb · push-button start · up to 7 hours at half load",
-      link: "https://www.walmart.com/ip/6341151320",
+      link: "https://walmrt.us/4zHfPzu",
       reviewUrl: "/reviews/wen-df480ix/"
     },
     "wen-56360i": {
@@ -451,7 +451,7 @@
       runtime: null, // CONTESTED: 3 hours spec table vs "up to 5 hours at half load" description
       noiseDba: 65, weightLb: 46,
       specs: "3,600 peak / 2,900 running watts · gas inverter · 149cc · 65 dB · 46 lb · pull-cord start · TT-30R RV outlet",
-      link: "https://www.walmart.com/ip/3686265971",
+      link: "https://walmrt.us/4zJXi5B",
       reviewUrl: "/reviews/wen-56360i/"
     },
     "jackery1000plus-restored": {
@@ -464,7 +464,7 @@
       runtime: null,
       noiseDba: 0, weightLb: 40,
       specs: "1,264Wh LiFePO4 battery · 2,000W continuous / 4,000W peak · 800W solar input · 40 lb · expandable to ~5kWh · includes 100W Mini solar panel · RESTORED unit of a DISCONTINUED model (replaced Sept 2026)",
-      link: "https://www.walmart.com/ip/21197917802",
+      link: "https://walmrt.us/4eVey0a",
       reviewUrl: "/reviews/jackery-explorer-1000-plus-restored/"
     },
     river3plus: {
@@ -477,7 +477,7 @@
       runtime: null,
       noiseDba: null, weightLb: 10.4, // "under 30 dB" per the maker — no single dBA figure verified
       specs: "286Wh LiFePO4 battery (maker figure; bundle name says 268Wh) · 600W continuous (1,200W with X-Boost) · sub-10ms UPS · under 30 dB · 10.4 lb · 0–100% in 1 hour",
-      link: "https://www.walmart.com/ip/16230373961", // verified RIVER 3 Plus item; the live review page's "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed
+      link: "https://walmrt.us/4tozcMf", // verified RIVER 3 Plus item; the live review page's "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed
       reviewUrl: "/reviews/ecoflow-river-3-plus/"
     },
     "bluetti-ac70": {
@@ -490,7 +490,7 @@
       runtime: null,
       noiseDba: null, weightLb: 22.5, // 45 dB is the Silent charging mode only — no verified operating-noise figure
       specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
-      link: "https://www.walmart.com/ip/5135434116",
+      link: "https://walmrt.us/4lcIJnn",
       reviewUrl: "/reviews/bluetti-ac70/"
     },
     wgen7500dfc: {
@@ -504,7 +504,7 @@
       runtime: "up to 11 hours on gas at 25% load",
       noiseDba: 72, weightLb: 202.1, // dry weight per Westinghouse spec table
       specs: "9,500 peak / 7,500 running watts on gas · 8,550 peak / 6,750 running on propane · up to 11 hours at 25% load · 72 dBA · CO sensor · transfer-switch ready · 202.1 lb",
-      link: "https://www.walmart.com/ip/Westinghouse-9500-Peak-Watt-Home-Backup-Dual-Fuel-Portable-Generator-Transfer-Switch-Ready-CO-Sensor/884106339",
+      link: "https://walmrt.us/4j2Sao7",
       reviewUrl: "/reviews/westinghouse-wgen7500dfc/"
     },
     jackery2000v2: {
@@ -517,7 +517,7 @@
       runtime: null,
       noiseDba: null, weightLb: 39.5, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
       specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
-      link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — no slugged URL on the listing
+      link: "https://walmrt.us/4kuPEYW", // bare /ip/ URL — no slugged URL on the listing
       reviewUrl: "/reviews/jackery-explorer-2000-v2/"
     },
     "pecron-f1000lfp": {
@@ -530,7 +530,7 @@
       runtime: null,
       noiseDba: 25, weightLb: 23.9,
       specs: "960Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 600W solar input · 25 dB · 23.9 lb · 1,000W AC input, 0–80% in 50 minutes · <20ms UPS · 3,500+ cycles",
-      link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345",
+      link: "https://walmrt.us/4ANVhpR",
       reviewUrl: "/reviews/pecron-f1000lfp/"
     },
     "bluetti-elite-30-v2": {
@@ -543,7 +543,7 @@
       runtime: null,
       noiseDba: null, weightLb: 9.48,
       specs: "288Wh LiFePO4 battery · 600W continuous (1,500W Power Lifting, resistive loads only) · 200W solar input · ≤10ms UPS · 9.48 lb · 3,000+ cycles",
-      link: "https://www.walmart.com/ip/18080114176",
+      link: "https://walmrt.us/4zNnXP9",
       reviewUrl: "/reviews/bluetti-elite-30-v2/"
     },
     "oukitel-p2001-plus": {
@@ -556,7 +556,7 @@
       runtime: null,
       noiseDba: null, weightLb: 48.5,
       specs: "2,048Wh LiFePO4 battery · 2,400W continuous / 4,800W surge · 500W solar input · <10ms EPS · 48.5 lb · 3,500+ cycles",
-      link: "https://www.walmart.com/ip/18660371712",
+      link: "https://walmrt.us/4tjxDzd",
       reviewUrl: "/reviews/oukitel-p2001-plus/"
     },
     "greenworks-60v-2000w-inverter": {
@@ -569,7 +569,7 @@
       runtime: null,
       noiseDba: null, weightLb: null, // weight/dimensions not published anywhere found
       specs: "2,000W continuous / 3,000W surge inverter — BATTERIES NOT INCLUDED (0 Ah built in; up to 1,728Wh with the owner's own 60V batteries) · 3 AC outlets · 1,500W fast charger · smart LCD + Bluetooth app",
-      link: "https://www.walmart.com/ip/17270451583",
+      link: "https://walmrt.us/3WQIwwi",
       reviewUrl: "/reviews/greenworks-60v-2000w-inverter/"
     },
     "bluetti-elite-10": {
@@ -582,7 +582,7 @@
       runtime: null,
       noiseDba: null, weightLb: 3.97,
       specs: "128Wh LiFePO4 battery · 200W continuous / 300W surge (400W Power Lifting, resistive loads only) · 100W solar input · 10ms UPS · 3.97 lb · 3,000+ cycles",
-      link: "https://www.walmart.com/ip/20613266088",
+      link: "https://walmrt.us/49eDNqV",
       reviewUrl: "/reviews/bluetti-elite-10/"
     },
     "bailibatt-2000w": {
@@ -595,7 +595,7 @@
       runtime: null,
       noiseDba: null, weightLb: null, // weight/dimensions not stated on the listing
       specs: "2,000W continuous / 4,000W surge · LiFePO4 · 4,000+ cycles — Wh capacity NOT stated on the listing, so no battery size is claimed",
-      link: "https://www.walmart.com/ip/20718662409",
+      link: "https://walmrt.us/4th04gY",
       reviewUrl: "/reviews/bailibatt-2000w/"
     },
     "jackery-homepower-1000-v2": {
@@ -608,7 +608,7 @@
       runtime: "8 hours", // listing spec-block figure
       noiseDba: null, weightLb: null, // weight/dimensions NOT stated on the listing
       specs: "1,024Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 400W solar input · sub-10ms UPS · 6,000 cycles to 70%+ · 50-min Emergency Charge",
-      link: "https://www.walmart.com/ip/Jackery-HomePower-1000-v2-1024Wh-1500W-Continuous-3000W-Peak-Portable-Power-Station-Black/21351753268",
+      link: "https://walmrt.us/49ge811",
       reviewUrl: "/reviews/jackery-homepower-1000-v2/"
     }
   };

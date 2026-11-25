@@ -469,7 +469,7 @@ const ROSTER = [
     fit: "The big dual-fuel home-backup unit with a CO sensor — 9,500 running watts and a transfer-switch outlet. Out of stock at Walmart right now, so check the listing before you buy; the non-CO-sensor WGen9500DF is the in-stock sibling.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Westinghouse-12-500-Peak-Watt-Dual-Fuel-Portable-Generator-Gas-Propane-Transfer-Switch-Ready-CO-Sensor/205592694",
+    link: "https://walmrt.us/48FabCY",
     review_url: "/reviews/westinghouse-wgen9500dfc/",
   },
   {
@@ -496,7 +496,7 @@ const ROSTER = [
     fit: "A quiet dual-fuel inverter for RV and essentials backup — 61 dBA with CO Shield and electric start at $999. The 3,500 running watts cover a fridge, lights, and furnace fan.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Champion-4500-Watt-Electric-Start-Dual-Fuel-RV-Ready-Portable-Inverter-Generator-with-Quiet-Technology-and-CO-Shield/5292447369",
+    link: "https://walmrt.us/4fRZAIF",
     review_url: "/reviews/champion-201319-4500w-dual-fuel-inverter/",
   },
   {
@@ -523,7 +523,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 800W of clean power in an 18.2 lb box at $349 (down from $549 in the Black Friday sale). Runs a fridge for hours, not days; add solar panels for longer outages. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/EF-EcoFlow-Portable-Power-Station-RIVER-2-Pro-700-716Wh-LFP-Battery-1600W-Solar-Generator-for-Outdoor-Home-Use/3285267150",
+    link: "https://walmrt.us/4jCTSN2",
     review_url: "/reviews/ecoflow-river-2-pro/",
   },
   {
@@ -550,7 +550,7 @@ const ROSTER = [
     fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. The standalone unit is sold out at Jackery direct. Out of stock at Walmart as of Nov 23, 2026.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Jackery-Explorer-300v2-Auto-Kit-Portable-Power-Station-with-12V-Battery-Charging-Cable/19346557265",
+    link: "https://walmrt.us/4ATl5kn",
     review_url: "/reviews/jackery-explorer-300-v2-auto-kit/",
   },
   {
@@ -577,7 +577,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — the lightest power station in the roster at 7.5 lb, at $309 (down from $349). Thin review base (3.53 stars from only 15 Bazaarvoice reviews), so the 4.6-star listing average is early, not proven.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Jackery-E300New-290Wh-Portable-Power-Station-with-5m-Extension-Cord-300W-LiFePO4-Battery-for-Camping-Travel-Backup/17514002741",
+    link: "https://walmrt.us/4jdAqoK",
     review_url: "/reviews/jackery-explorer-300-lifepo4/",
   },
   {
@@ -604,7 +604,7 @@ const ROSTER = [
     fit: "Whole-home inverter watts with a CO sensor and remote start — 9,000 running watts on gas. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Westinghouse-11-000-Peak-Watt-Portable-Inverter-Generator-Dual-Fuel-Remote-Start-with-CO-Sensor/5255290485",
+    link: "https://walmrt.us/48LFyMa",
     review_url: "/reviews/westinghouse-igen12000dfc/",
   },
   {
@@ -631,7 +631,7 @@ const ROSTER = [
     fit: "A light dual-fuel inverter for RV and camping — 45.4 lb with a CO sensor at $549. Noise is contested (52 dBA marketing vs 62 dBA in one spec table). Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Westinghouse-2800-Peak-Watt-Portable-Gas-Propane-Powered-Inverter-Generator-Dual-Fuel-Parallel-Capable-with-CO-Sensor/18953253301",
+    link: "https://walmrt.us/4AOGWtf",
     review_url: "/reviews/westinghouse-igen2800dfc/",
   },
   {
@@ -658,7 +658,7 @@ const ROSTER = [
     fit: "The essentials pick with a CO sensor — 3,900 running watts, quiet at 52 dBA, and in stock at $899. The gas-only twin without the CO sensor is $50 less.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gasoline-Powered-Portable-Inverter-Generator-with-CO-Sensor/329397713",
+    link: "https://walmrt.us/3WWAgLe",
     review_url: "/reviews/westinghouse-igen5000c/",
   },
   {
@@ -685,7 +685,7 @@ const ROSTER = [
     fit: "The biggest dual-fuel unit in the roster — 10,500 running watts with CO Alert for whole-home backup. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/DuroMax-XP13000HX-13-000-Watt-Portable-Dual-Fuel-Gas-Propane-CO-Alert-Generator/783922308",
+    link: "https://walmrt.us/4AcLWYU",
     review_url: "/reviews/duromax-xp13000hx/",
   },
   {
@@ -712,7 +712,7 @@ const ROSTER = [
     fit: "The essentials pick without the CO sensor — 3,900 running watts at $849, $50 less than the iGen5000c twin that adds the sensor. Same core specs otherwise.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Westinghouse-5000-Peak-Watt-RV-Ready-Gas-Powered-Portable-Inverter-Generator-with-Electric-Start/132513179",
+    link: "https://walmrt.us/4Ciz84R",
     review_url: "/reviews/westinghouse-igen5000/",
   },
   {
@@ -739,7 +739,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 2,000W of clean power in a 27.12 lb box at $569.99 (was $799.99). Runs a fridge for hours, not days; add solar panels for longer outages. Surge watts are contested on the listing (2,400W marketing copy vs 3,000W spec table) — we use the 2,000W continuous figure, which both sources agree on. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/17775762177",
+    link: "https://walmrt.us/4zHAtQ2",
     review_url: "/reviews/anker-solix-c1000x-gen-2/",
   },
   {
@@ -766,7 +766,7 @@ const ROSTER = [
     fit: "Dual-fuel inverter watts for the essentials — 5,100 running watts on gas at $798. Start method is contested on the listing (electric start with recoil backup in the title vs 'Pull Cord Start' in the spec table) — confirm it with WEN before you buy for someone who cannot pull-start a generator. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/15322924646",
+    link: "https://walmrt.us/4ClqnGW",
     review_url: "/reviews/wen-df680ix/",
   },
   {
@@ -793,7 +793,7 @@ const ROSTER = [
     fit: "A quiet dual-fuel inverter for RV and essentials backup — 62 dB with push-button start at $647, the best-rated WEN in this batch. Consumer Reports lab-tested it and called its power 'especially clean.' Weight is contested across sources (78.5 lb vs 91 lb). Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/6341151320",
+    link: "https://walmrt.us/4zHfPzu",
     review_url: "/reviews/wen-df480ix/",
   },
   {
@@ -820,7 +820,7 @@ const ROSTER = [
     fit: "A light gas inverter for small loads and campgrounds — 46 lb at $440 (down from $498) with clean power (under 1.2% THD). Runtime is contested on the listing (3 hours in the spec table vs up to 5 hours at half load in the description). Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/3686265971",
+    link: "https://walmrt.us/4zJXi5B",
     review_url: "/reviews/wen-56360i/",
   },
   {
@@ -847,7 +847,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 2,000W of clean power with a 100W Mini solar panel in the box at $449. This is a RESTORED unit of a DISCONTINUED model (replaced Sept 2026 by the HomePower 1000 Plus v2), and delivery runs Dec 10–18 — the $449 buys the restored unit plus the panel. Runs a fridge for hours, not days; add solar panels for longer outages. Thin review base: 5 ratings, no written reviews.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/21197917802",
+    link: "https://walmrt.us/4eVey0a",
     review_url: "/reviews/jackery-explorer-1000-plus-restored/",
   },
   {
@@ -874,7 +874,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 600W of clean power in a 10.4 lb box from $239, with a sub-10ms UPS for a router or CPAP through a short outage. Runs small loads for hours, not days; add solar panels for longer outages. Capacity is contested on the listing (286Wh per EcoFlow vs 268Wh in the bundle name) and the EB600 bundle named in the title has no variant or price shown. Out of stock at Walmart right now, so check the listing before you buy.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/16230373961", // verified RIVER 3 Plus item (picker + build footnote + BV confirm today). NOTE: the live review page's own "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed; do NOT copy that link here.
+    link: "https://walmrt.us/4tozcMf", // verified RIVER 3 Plus item (picker + build footnote + BV confirm today). NOTE: the live review page's own "Check price" link wrongly points at the DELTA 3 item 1108904221 — build-agent fix needed; do NOT copy that link here.
     review_url: "/reviews/ecoflow-river-3-plus/",
   },
   {
@@ -901,7 +901,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 1,000W of clean power in a 22.5 lb box at $549.00. Shared listing with the BLUETTI Elite 100 Mini — the AC70 is the 7,680 mAh option; the $379.00 in-stock option is the Elite 100 Mini (1,004.8Wh), a different station. Runs a fridge for hours, not days; add solar panels for longer outages.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/5135434116",
+    link: "https://walmrt.us/4lcIJnn",
     review_url: "/reviews/bluetti-ac70/",
   },
   {
@@ -928,7 +928,7 @@ const ROSTER = [
     fit: "A 7,500-running-watt dual-fuel unit with a CO sensor and a 30A transfer-switch outlet at $949 — the smaller sibling of the WGen9500DF, same transfer-switch-ready setup. Open-frame, so louder than an inverter, and it needs an electrician-installed connection. Remote start included; runtime is 11 hours on gas at 25% load per Westinghouse's own spec table.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Westinghouse-9500-Peak-Watt-Home-Backup-Dual-Fuel-Portable-Generator-Transfer-Switch-Ready-CO-Sensor/884106339",
+    link: "https://walmrt.us/4j2Sao7",
     review_url: "/reviews/westinghouse-wgen7500dfc/",
   },
   {
@@ -955,7 +955,7 @@ const ROSTER = [
     fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Back in stock at Walmart as of Nov 25, 2026 — only 4 left (the $1,189 variant was out of stock as of Nov 24 and was not re-checked); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — no slugged URL on the listing
+    link: "https://walmrt.us/4kuPEYW", // bare /ip/ URL — no slugged URL on the listing
     review_url: "/reviews/jackery-explorer-2000-v2/",
   },
   {
@@ -982,7 +982,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 1,500W of clean power in a 23.9 lb box at $369 (was $399). The cheapest way into a 1,500W station in the roster; runs a fridge for hours, not days. Thin review base (4.3 stars from 14 ratings), so the rating is early, not proven.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345",
+    link: "https://walmrt.us/4ANVhpR",
     review_url: "/reviews/pecron-f1000lfp/",
   },
   {
@@ -1009,7 +1009,7 @@ const ROSTER = [
     fit: "Out of stock on Walmart as of Nov 25, 2026 — $259 (was $289.99) is the Light Sand Grey variant; the other $259 variants were not confirmed in stock, so none is presented as buyable. A 288Wh LiFePO4 station at 9.48 lb for phones, laptops and lights; the in-stock BLUETTI Elite 10 at $139.99 covers the same small-load job for less, and the Pecron F1000LFP at $369 is the in-stock step up to 1,500W.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/18080114176",
+    link: "https://walmrt.us/4zNnXP9",
     review_url: "/reviews/bluetti-elite-30-v2/",
   },
   {
@@ -1036,7 +1036,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 2,400W of clean power in a 48.5 lb box at $659.99, the same price as the Bailibatt 2000W but with a stated 2,048Wh battery the Bailibatt listing never states. Flag: Walmart's Brand field reads FFpower, not OUKITEL — the seller is OUKITEL-Official-US. Thin review base (4.6 stars from 5 ratings), so the rating is early, not proven.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/18660371712",
+    link: "https://walmrt.us/4tjxDzd",
     review_url: "/reviews/oukitel-p2001-plus/",
   },
   {
@@ -1063,7 +1063,7 @@ const ROSTER = [
     fit: "NOT a standalone power station — an inverter for owners who already own Greenworks 60V batteries, and only for them: with no batteries it does absolutely nothing. Do not compare its $748 against standalone stations as if it were one; the complete Pecron F1000LFP at $369 is the cheaper way into a 1,500W station with a battery included.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/17270451583",
+    link: "https://walmrt.us/3WQIwwi",
     review_url: "/reviews/greenworks-60v-2000w-inverter/",
   },
   {
@@ -1090,7 +1090,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — the lightest station in the roster at 3.97 lb, at $139.99. Not a Walmart deal: Amazon lists it at $119, stated on the review page. 128Wh runs phones, laptops and lights for hours, not a fridge for a day. Thin review base (4.7 stars from 3 ratings), so the rating is early, not proven.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/20613266088",
+    link: "https://walmrt.us/49eDNqV",
     review_url: "/reviews/bluetti-elite-10/",
   },
   {
@@ -1117,7 +1117,7 @@ const ROSTER = [
     fit: "CAUTION: the single written review is 1 star and alleges the unit is mislabelled on wattage; no-name brand with no brand site and no stated Wh capacity, weight or warranty. At $659.99 (was $1,099.99) it costs the same as the OUKITEL P2001 Plus, which states a 2,048Wh battery and a named seller — the OUKITEL is the safer buy at the same price.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/20718662409",
+    link: "https://walmrt.us/4th04gY",
     review_url: "/reviews/bailibatt-2000w/",
   },
   {
@@ -1144,7 +1144,7 @@ const ROSTER = [
     fit: "No fuel, no fumes, safe indoors — 1,500W of clean power at $469 (was $549, Black Friday). No owner ratings yet on this listing, so there is no proven rating to quote. The Pecron F1000LFP at $369 is the cheaper in-stock 1,500W alternative with a rating; the OUKITEL P2001 Plus at $659.99 is the step up to 2,400W.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/Jackery-HomePower-1000-v2-1024Wh-1500W-Continuous-3000W-Peak-Portable-Power-Station-Black/21351753268",
+    link: "https://walmrt.us/49ge811",
     review_url: "/reviews/jackery-homepower-1000-v2/",
   },
 ];

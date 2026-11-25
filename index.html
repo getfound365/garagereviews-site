@@ -94,11 +94,14 @@
       "@type": "ItemList",
       "name": "Garage Reviews categories",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Generators", "url": "https://garagereviews.us/#categories" },
-        { "@type": "ListItem", "position": 2, "name": "Workbenches", "url": "https://garagereviews.us/#categories" },
-        { "@type": "ListItem", "position": 3, "name": "Tools", "url": "https://garagereviews.us/#categories" },
-        { "@type": "ListItem", "position": 4, "name": "Yard Equipment", "url": "https://garagereviews.us/#categories" },
-        { "@type": "ListItem", "position": 5, "name": "Hunting", "url": "https://garagereviews.us/#categories" },
+        { "@type": "ListItem", "position": 1, "name": "Generators", "url": "https://garagereviews.us/compare/generators/" },
+        { "@type": "ListItem", "position": 2, "name": "Power Stations", "url": "https://garagereviews.us/compare/portable-power-stations/" },
+        { "@type": "ListItem", "position": 3, "name": "Saunas", "url": "https://garagereviews.us/compare/saunas/" },
+        { "@type": "ListItem", "position": 4, "name": "Workbenches", "url": "https://garagereviews.us/compare/workbenches/" },
+        { "@type": "ListItem", "position": 5, "name": "Tool Chests", "url": "https://garagereviews.us/compare/tool-chests/" },
+        { "@type": "ListItem", "position": 6, "name": "Trail Cameras", "url": "https://garagereviews.us/compare/trail-cameras/" },
+        { "@type": "ListItem", "position": 7, "name": "Heaters", "url": "https://garagereviews.us/compare/heaters/" },
+        { "@type": "ListItem", "position": 8, "name": "Sheds & Carports", "url": "https://garagereviews.us/compare/sheds-carports/" },
         { "@type": "ListItem", "position": 6, "name": "Compare", "url": "https://garagereviews.us/#compare" }
       ]
     },
@@ -160,6 +163,11 @@
   nav.main-nav a:hover { background: #1d1e20; color: var(--yellow); }
   nav.main-nav a.yt { background: var(--yellow); color: #111; margin-left: 6px; }
   nav.main-nav a.yt:hover { background: #ffe14d; color: #111; }
+  .nav-drop { position: relative; display: inline-flex; }
+  .nav-drop-menu { display: none; position: absolute; top: 100%; left: 0; z-index: 70; min-width: 250px; background: #141416; border: 1px solid var(--line); border-radius: 10px; padding: 6px; box-shadow: 0 10px 28px rgba(0,0,0,.5); }
+  .nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu { display: block; }
+  .nav-drop-menu a { display: block; text-transform: none; letter-spacing: 0; font-size: 14.5px; }
+  .nav-drop-menu a:hover { background: #1d1e20; color: var(--yellow); }
 
   /* ---------- Hero — animated category showcase ---------- */
   .hero { position: relative; margin-top: 22px; border-radius: var(--radius); overflow: hidden; background: #000; }
@@ -360,7 +368,20 @@ footer nav a { color: inherit; }
       <a href="#reviews">Reviews</a>
       <a href="#videos">Videos</a>
       <a href="#tools">Tools</a>
-      <a href="#compare">Compare</a>
+      <div class="nav-drop">
+      <a href="/compare/">Compare &#9662;</a>
+      <div class="nav-drop-menu">
+      <a href="/compare/">All comparisons</a>
+      <a href="/compare/generators/">Generators</a>
+      <a href="/compare/portable-power-stations/">Portable Power Stations</a>
+      <a href="/compare/saunas/">Saunas</a>
+      <a href="/compare/workbenches/">Workbenches</a>
+      <a href="/compare/tool-chests/">Tool Chests</a>
+      <a href="/compare/trail-cameras/">Trail Cameras</a>
+      <a href="/compare/heaters/">Heaters</a>
+      <a href="/compare/sheds-carports/">Sheds &amp; Carports</a>
+      </div>
+      </div>
       <a href="#faq">FAQ</a>
       <a class="yt" href="https://www.youtube.com/@garagereviews22" target="_blank" rel="noopener">▶ YouTube</a>
     </nav>
@@ -482,12 +503,14 @@ footer nav a { color: inherit; }
     <section class="block" id="categories" aria-labelledby="cats-h">
       <div class="sec-head"><h2 id="cats-h">Shop by <span>Category</span></h2><a href="#reviews">All reviews →</a></div>
       <div class="cats">
-        <a class="cat" href="#reviews"><img src="/assets/products/westinghouse-igen4500df.jpg" alt="Westinghouse iGen4500DF generator" loading="lazy" /><span>Generators <i>→</i></span></a>
-        <a class="cat" href="#reviews"><img src="/assets/products/workpro-48-workbench.jpg" alt="WORKPRO 48-inch workbench" loading="lazy" /><span>Workbenches <i>→</i></span></a>
-        <a class="cat" href="#reviews"><img src="/assets/products/hart-72-tool-chest.jpg" alt="HART 72-inch tool chest" loading="lazy" /><span>Tools <i>→</i></span></a>
-        <a class="cat" href="#reviews"><img src="/assets/products/walsunny-12x20-carport.jpg" alt="Walsunny 12x20 steel-roof carport" loading="lazy" /><span>Yard Equipment <i>→</i></span></a>
-        <a class="cat" href="#reviews"><img src="/assets/products/barnett-demun-tri-strike.jpg" alt="Barnett Demun Tri-Strike crossbow" loading="lazy" /><span>Hunting <i>→</i></span></a>
-        <a class="cat" href="/reviews/sweaty-yeti-sauna-models/"><img src="/assets/media-generation-tile-sauna-0-e0f2be79-77a1-47fa-810f-8bad71b3bf87.jpg" alt="Outdoor sauna" loading="lazy" /><span>Saunas <i>→</i></span></a>
+        <a class="cat" href="/compare/generators/"><img src="/assets/products/westinghouse-igen4500df.jpg" alt="Westinghouse iGen4500DF generator" loading="lazy" /><span>Generators <i>→</i></span></a>
+        <a class="cat" href="/compare/portable-power-stations/"><img src="/assets/products/ecoflow-delta-3-classical-1000.jpg" alt="EcoFlow DELTA 3 Classical power station" loading="lazy" /><span>Power Stations <i>→</i></span></a>
+        <a class="cat" href="/compare/workbenches/"><img src="/assets/products/workpro-48-workbench.jpg" alt="WORKPRO 48-inch workbench" loading="lazy" /><span>Workbenches <i>→</i></span></a>
+        <a class="cat" href="/compare/tool-chests/"><img src="/assets/products/hart-72-tool-chest.jpg" alt="HART 72-inch tool chest" loading="lazy" /><span>Tools <i>→</i></span></a>
+        <a class="cat" href="/compare/sheds-carports/"><img src="/assets/products/walsunny-12x20-carport.jpg" alt="Walsunny 12x20 steel-roof carport" loading="lazy" /><span>Yard Equipment <i>→</i></span></a>
+        <a class="cat" href="/compare/trail-cameras/"><img src="/assets/products/moultrie-edge-3.jpg" alt="Moultrie Edge 3 cellular trail camera" loading="lazy" /><span>Trail Cameras <i>→</i></span></a>
+        <a class="cat" href="/compare/saunas/"><img src="/assets/media-generation-tile-sauna-0-e0f2be79-77a1-47fa-810f-8bad71b3bf87.jpg" alt="Outdoor sauna" loading="lazy" /><span>Saunas <i>→</i></span></a>
+        <a class="cat" href="/compare/heaters/"><img src="/assets/products/mr-heater-buddy-mh9bx.jpg" alt="Mr. Heater Portable Buddy propane heater" loading="lazy" /><span>Heaters <i>→</i></span></a>
         <a class="cat" href="/best-cold-plunge-tub/"><img src="/assets/media-generation-tile-cold-plunge-0-64e75bce-bd2d-49f0-b787-a1971d253333.jpg" alt="Cold plunge tub with ice" loading="lazy" /><span>Cold Plunges <i>→</i></span></a>
         <a class="cat" href="/compare/"><img src="/assets/products/jackery-explorer-1000-v2.jpg" alt="Jackery Explorer 1000 v2 power station" loading="lazy" /><span>Compare <i>→</i></span></a>
       </div>
@@ -771,7 +794,7 @@ footer nav a { color: inherit; }
       <div class="flogo">Garage <span>Reviews</span></div>
       <nav aria-label="Footer navigation">
         <a href="#overview">Overview</a><a href="#categories">Categories</a><a href="#reviews">Reviews</a><a href="#videos">Videos</a>
-      <a href="#tools">Tools</a><a href="#compare">Compare</a><a href="#faq">FAQ</a><a href="/ask/">Ask Garage AI</a><a href="/review-request/">Want your product reviewed?</a><a href="/generator-finder/">Generator Finder</a><a href="/outage-plan/">Outage Plan</a>
+      <a href="#tools">Tools</a><a href="/compare/">Compare</a><a href="#faq">FAQ</a><a href="/ask/">Ask Garage AI</a><a href="/review-request/">Want your product reviewed?</a><a href="/generator-finder/">Generator Finder</a><a href="/outage-plan/">Outage Plan</a>
       </nav>
     </div>
     <div class="disclaimer" role="contentinfo" aria-label="Disclaimer">

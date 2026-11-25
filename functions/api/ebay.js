@@ -145,7 +145,7 @@ const ALLOWLIST = {
   "177830935305": {
     name: "Moultrie Edge 2 Pro",
     price_display: "$59.99",
-    in_stock: true,
+    in_stock: false,
     buy_url:
       "https://www.ebay.com/itm/177830935305?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
@@ -166,7 +166,7 @@ const ALLOWLIST = {
   "227034372968": {
     name: "Mr. Heater Big Buddy MH18B",
     price_display: "$129.99",
-    in_stock: true,
+    in_stock: false,
     buy_url:
       "https://www.ebay.com/itm/227034372968?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
@@ -194,7 +194,7 @@ const ALLOWLIST = {
   "366175492807": {
     name: "Tactacam Reveal X 3.0",
     price_display: "$82.99",
-    in_stock: true,
+    in_stock: false,
     buy_url:
       "https://www.ebay.com/itm/366175492807?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
