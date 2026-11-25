@@ -25,8 +25,8 @@
 // If the credentials are not set, the function returns the fallback shape
 // — the site keeps showing its verified static figures and nothing breaks.
 //
-// Allowlist: every eBay listing linked from the site (8 items, verified
-// 2026-11-19). There are no suitable eBay listings for the iGen4500DF or
+// Allowlist: every eBay listing linked from the site (18 items, verified
+// 2026-11-24). There are no suitable eBay listings for the iGen4500DF or
 // the iGen4000DFc — do not add an item here without a live, verified
 // listing. Tyler's rule (2026-11-19): eBay figures come from this API,
 // dates are watched, and no listing is added unless it can be updated
@@ -80,9 +80,9 @@ const ALLOWLIST = {
       "https://www.ebay.com/itm/840084662851?amdata=enc%3AAQALAAAAoCHNgUiiE%2FjQhlDTaMiAde8pxdFQG0HwwTGa1pSBEYrLM9tdeJbgLyJmRiOoKPhYolY0hbeDusQdPQ%2FHPrzc5KN9OHPQ2vSrkkwy1riURjIERHDjobDOvwKGM7cWZWb4Eihs%2BIDRVWsmLsXBmKcWBseQjJSD6ahBOGFMjdz2faKDOeP9z%2FeaaEesq37yxRRUtxuq9FKMZ6qzrhzMU87UcVM%3D&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
   "336903887877": {
-    name: "Westinghouse iGen2800 (iGen2500 page buyable option)",
+    name: "Westinghouse iGen2800 (iGen2500 page — sold out Nov 25, 2026)",
     price_display: "$344.99",
-    in_stock: true,
+    in_stock: false,
     buy_url:
       "https://www.ebay.com/itm/336903887877?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
@@ -127,6 +127,76 @@ const ALLOWLIST = {
     in_stock: true,
     buy_url:
       "https://www.ebay.com/itm/355913039258?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "375364065558": {
+    name: "Bluetti AC70",
+    price_display: "$369",
+    in_stock: false,
+    buy_url:
+      "https://www.ebay.com/itm/375364065558?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "146657770415": {
+    name: "Campark TC35",
+    price_display: "$54.14",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/146657770415?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "177830935305": {
+    name: "Moultrie Edge 2 Pro",
+    price_display: "$59.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/177830935305?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "900045823592": {
+    name: "Moultrie Edge 3 2-Pack",
+    price_display: "$101.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/900045823592?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "365833810015": {
+    name: "Moultrie EDGE Solar",
+    price_display: "$93.50",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/365833810015?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "227034372968": {
+    name: "Mr. Heater Big Buddy MH18B",
+    price_display: "$129.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/227034372968?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "920026456598": {
+    name: "Mr. Heater Little Buddy MH4B",
+    price_display: "$79.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/920026456598?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "256648238017": {
+    name: "SPYPOINT Flex-M Solar Bundle",
+    price_display: "$99.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/256648238017?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "278362920444": {
+    name: "Tactacam Reveal X 2.0",
+    price_display: "$72.00",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/278362920444?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
+  },
+  "366175492807": {
+    name: "Tactacam Reveal X 3.0",
+    price_display: "$82.99",
+    in_stock: true,
+    buy_url:
+      "https://www.ebay.com/itm/366175492807?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",
   },
 };
 

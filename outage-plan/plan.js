@@ -36,14 +36,16 @@
   // vs 268Wh bundle name); surge_w null (1,200W X-Boost is per the bundle
   // variant name only); noiseDba null ("under 30 dB" per the maker).
   // Nov 23, 2026: +1 model from the day's verified review pages
-  // (bluetti-ac70). Price/stock as of Nov 23, 2026. AC70 is the 10,048 mAh
-  // $379.00 option on a shared Elite 100 Mini / AC70 listing (the other
-  // capacities are out of stock); noiseDba null (45 dB is the Silent
-  // charging mode only, not a verified operating-noise figure).
+  // (bluetti-ac70). Price/stock as of Nov 25, 2026. AC70 is the 7,680 mAh
+  // $549.00 option on a shared Elite 100 Mini / AC70 listing, OUT OF STOCK;
+  // the $379.00 in-stock option is the Elite 100 Mini (1,004.8Wh), a different
+  // station — corrected Nov 25, 2026 after a variant-by-variant live read;
+  // noiseDba null (45 dB is the Silent charging mode only, not a verified
+  // operating-noise figure).
   // Nov 24, 2026: +3 models from the day's verified review pages
   // (wgen7500dfc, jackery2000v2, pecron-f1000lfp). Prices/stock as of
-  // Nov 24, 2026. Jackery 2000 v2 is OUT OF STOCK (both variants) and
-  // has NO ratings yet — rating reads "No ratings yet", inStock false.
+  // Nov 25, 2026. Jackery 2000 v2 is BACK IN STOCK (only 4 left, Nov 25) —
+  // rating reads "4.5 stars from 300 ratings", inStock true.
   // Battery 2,042Wh per Jackery (bundle name says 2,036Wh — rounding
   // difference, stated in the specs). noiseDba null for the Jackery
   // ("<30 dB" per the maker, 45 dB at full load — no single figure);
@@ -470,10 +472,10 @@
     "bluetti-ac70": {
       name: "BLUETTI AC70 — Portable Power Station",
       short: "AC70",
-      price: 379, priceDisplay: "$379.00",
+      price: 549, priceDisplay: "$549.00",
       rating: "4.6 stars from 115 ratings",
-      stock: "In stock", inStock: true,
-      continuousW: 1000, surgeW: 2000, batteryWh: 768, // shared Elite 100 Mini / AC70 listing — AC70 is the 10,048 mAh $379.00 option; other capacities out of stock
+      stock: "Out of stock", inStock: false,
+      continuousW: 1000, surgeW: 2000, batteryWh: 768, // shared Elite 100 Mini / AC70 listing — AC70 is the 7,680 mAh $549.00 option, out of stock; $379.00 option is the Elite 100 Mini
       runtime: null,
       noiseDba: null, weightLb: 22.5, // 45 dB is the Silent charging mode only — no verified operating-noise figure
       specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
@@ -498,13 +500,13 @@
       name: "Jackery Explorer 2000 v2 — Portable Power Station",
       short: "Jackery Explorer 2000 v2",
       price: 1349, priceDisplay: "$1,349",
-      rating: "No ratings yet",
-      stock: "Out of stock", inStock: false,
+      rating: "4.5 stars from 300 ratings",
+      stock: "In stock (only 4 left)", inStock: true,
       continuousW: 2200, surgeW: 4400, batteryWh: 2042, // Jackery maker figure; bundle name says 2,036Wh — rounding difference
       runtime: null,
       noiseDba: null, weightLb: 39.5, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
       specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
-      link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — the OOS review page carries no buy button and no slugged URL
+      link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — no slugged URL on the listing
       reviewUrl: "/reviews/jackery-explorer-2000-v2/"
     },
     "pecron-f1000lfp": {

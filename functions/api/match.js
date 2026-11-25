@@ -48,19 +48,20 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // figure verified). The other 9 Nov 22 pages are not backup-power gear
 // and stay out of the matcher (KB + deal watcher only).
 // Nov 23, 2026: +1 model from the day's verified review pages
-// (bluetti-ac70). Price/stock as of Nov 23, 2026. AC70 is the 10,048 mAh
-// $379.00 option on a shared Elite 100 Mini / AC70 listing (the other
-// capacities are out of stock); the fit copy states this plainly.
+// (bluetti-ac70). Price/stock as of Nov 25, 2026. AC70 is the 7,680 mAh
+// $549.00 option on a shared Elite 100 Mini / AC70 listing, OUT OF STOCK;
+// the $379.00 in-stock option is the Elite 100 Mini (1,004.8Wh), a different
+// station — corrected Nov 25, 2026 after a variant-by-variant live read;
+// the fit copy states this plainly.
 // noise_dba is null — 45 dB on the review page is the Silent charging
 // mode only, not a verified operating-noise figure. The other 9 Nov 23
 // pages are not backup-power gear and stay out of the matcher (KB +
 // deal watcher only).
 // Nov 24, 2026: +3 models from the day's verified review pages
 // (wgen7500dfc, jackery2000v2, pecron-f1000lfp). Prices/stock as of
-// Nov 24, 2026. Jackery 2000 v2 is OUT OF STOCK (both variants, no buy
-// button on the page) and has NO ratings yet — rating_value/rating_count
-// are 0 and the fit copy states the OOS state plainly with the in-stock
-// Pecron as the alternative. Its battery is 2,042Wh per Jackery (the
+// Nov 25, 2026. Jackery 2000 v2 is BACK IN STOCK (only 4 left, Nov 25) —
+// rating_value/rating_count are 4.5/300 and the fit copy states the restock
+// plainly with the in-stock Pecron as the smaller alternative. Its battery is 2,042Wh per Jackery (the
 // bundle name says 2,036Wh — rounding difference, stated in the fit).
 // noise_dba is null for both new stations (Jackery: "<30 dB" per the
 // maker, 45 dB at full load — no single figure; Pecron's 25 dB IS a
@@ -864,13 +865,13 @@ const ROSTER = [
     id: "bluetti-ac70",
     name: "BLUETTI AC70 — Portable Power Station",
     short: "AC70",
-    price: 379,
-    price_display: "$379.00",
+    price: 549,
+    price_display: "$549.00",
     rating: "4.6 stars from 115 ratings",
     rating_value: 4.6,
     rating_count: 115,
-    stock: "in",
-    stock_display: "In stock",
+    stock: "out",
+    stock_display: "Out of stock",
     fuel: "solar",
     type: "power-station",
     battery_wh: 768,
@@ -881,7 +882,7 @@ const ROSTER = [
     noise_dba: null, // 45 dB on the review page is the Silent charging mode only (per BLUETTI) — no verified operating-noise figure; never guess
     weight_lb: 22.5,
     specs: "768Wh LiFePO4 battery · 1,000W continuous / 2,000W surge · 500W solar input · 22.5 lb · 850W AC input, 0–100% in about 1.5 hours (Turbo) · Silent charging mode 45 dB",
-    fit: "No fuel, no fumes, safe indoors — 1,000W of clean power in a 22.5 lb box at $379.00 (Black Friday Deal). Shared listing with the BLUETTI Elite 100 Mini — the AC70 is the 10,048 mAh $379.00 option; the other capacities are out of stock. Runs a fridge for hours, not days; add solar panels for longer outages.",
+    fit: "No fuel, no fumes, safe indoors — 1,000W of clean power in a 22.5 lb box at $549.00. Shared listing with the BLUETTI Elite 100 Mini — the AC70 is the 7,680 mAh option; the $379.00 in-stock option is the Elite 100 Mini (1,004.8Wh), a different station. Runs a fridge for hours, not days; add solar panels for longer outages.",
     status: "coming",
     video: null,
     link: "https://www.walmart.com/ip/5135434116",
@@ -920,11 +921,11 @@ const ROSTER = [
     short: "Jackery Explorer 2000 v2",
     price: 1349,
     price_display: "$1,349",
-    rating: "No ratings yet",
-    rating_value: 0,
-    rating_count: 0,
-    stock: "out",
-    stock_display: "Out of stock",
+    rating: "4.5 stars from 300 ratings",
+    rating_value: 4.5,
+    rating_count: 300,
+    stock: "in",
+    stock_display: "In stock (only 4 left)",
     fuel: "solar",
     type: "power-station",
     battery_wh: 2042, // Jackery maker figure; bundle name says 2,036Wh — rounding difference
@@ -935,10 +936,10 @@ const ROSTER = [
     noise_dba: null, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
     weight_lb: 39.5,
     specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
-    fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Out of stock at Walmart as of Nov 24, 2026 (both the $1,349 bundle and the $1,189 variant); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
+    fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Back in stock at Walmart as of Nov 25, 2026 — only 4 left (the $1,189 variant was out of stock as of Nov 24 and was not re-checked); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
     status: "coming",
     video: null,
-    link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — the OOS review page carries no buy button and no slugged URL
+    link: "https://www.walmart.com/ip/17303366024", // bare /ip/ URL — no slugged URL on the listing
     review_url: "/reviews/jackery-explorer-2000-v2/",
   },
   {
