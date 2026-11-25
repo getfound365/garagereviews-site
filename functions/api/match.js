@@ -68,6 +68,22 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // verified operating figure). The other 7 Nov 24 pages (sauna, 4 trail
 // cams, tool chest, heater) are not backup-power gear and stay out of
 // the matcher (KB + deal watcher only).
+// Nov 25, 2026: +6 models from the day's verified review pages
+// (bluetti-elite-30-v2, oukitel-p2001-plus, greenworks-60v-2000w-inverter,
+// bluetti-elite-10, bailibatt-2000w, jackery-homepower-1000-v2). Prices/stock
+// as of Nov 25, 2026. Elite 30 V2 is OUT OF STOCK ($259 was $289.99); its
+// fit copy points at the in-stock Elite 10 and Pecron. HomePower 1000 v2 is
+// the only 0-rating roster entry — the 4.7 stars / 23 figure in the Nov 25
+// verify file was a search-result figure that does not survive a PDP read
+// (the listing shows 0 ratings; builder B re-verified). Greenworks is an
+// inverter ONLY — no built-in battery (0 Ah; up to 1,728Wh with the owner's
+// own 60V batteries) — battery_wh and weight_lb are null, and the fit copy
+// says so plainly. Bailibatt Wh capacity is NOT stated on the listing, so
+// battery_wh is null; its fit copy carries the 1-star mislabelling
+// allegation. noise_dba is null for all six new stations (no verified
+// operating figure). The other 4 Nov 25 pages (Tactacam 2-pack, 3 saunas)
+// are not backup-power gear and stay out of the matcher (KB + deal watcher
+// only).
 // Surge watts on the Anker C1000X Gen 2 are CONTESTED on the listing
 // (2,400W marketing copy vs 3,000W spec table) — surge_w is null and the
 // fit copy says so; the 2,000W continuous figure is the agreed number.
@@ -968,6 +984,168 @@ const ROSTER = [
     video: null,
     link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345",
     review_url: "/reviews/pecron-f1000lfp/",
+  },
+  {
+    id: "bluetti-elite-30-v2",
+    name: "BLUETTI Elite 30 V2 — Portable Power Station",
+    short: "Elite 30 V2",
+    price: 259,
+    price_display: "$259",
+    rating: "4.2 stars from 67 ratings",
+    rating_value: 4.2,
+    rating_count: 67,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 288,
+    continuous_w: 600,
+    surge_w: null, // 1,500W Power Lifting is a resistive-load mode, not a surge rating — never present it as surge
+    solar_input_w: 200,
+    runtime_h: null,
+    noise_dba: null, // no verified operating-noise figure
+    weight_lb: 9.48,
+    specs: "288Wh LiFePO4 battery · 600W continuous (1,500W Power Lifting, resistive loads only) · 200W solar input · ≤10ms UPS · 9.48 lb · 3,000+ cycles",
+    fit: "Out of stock on Walmart as of Nov 25, 2026 — $259 (was $289.99) is the Light Sand Grey variant; the other $259 variants were not confirmed in stock, so none is presented as buyable. A 288Wh LiFePO4 station at 9.48 lb for phones, laptops and lights; the in-stock BLUETTI Elite 10 at $139.99 covers the same small-load job for less, and the Pecron F1000LFP at $369 is the in-stock step up to 1,500W.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/18080114176",
+    review_url: "/reviews/bluetti-elite-30-v2/",
+  },
+  {
+    id: "oukitel-p2001-plus",
+    name: "OUKITEL P2001 Plus — Portable Power Station",
+    short: "P2001 Plus",
+    price: 659.99,
+    price_display: "$659.99",
+    rating: "4.6 stars from 5 ratings",
+    rating_value: 4.6,
+    rating_count: 5,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 2048,
+    continuous_w: 2400,
+    surge_w: 4800,
+    solar_input_w: 500,
+    runtime_h: null,
+    noise_dba: null, // no verified operating-noise figure
+    weight_lb: 48.5,
+    specs: "2,048Wh LiFePO4 battery · 2,400W continuous / 4,800W surge · 500W solar input · <10ms EPS · 48.5 lb · 3,500+ cycles",
+    fit: "No fuel, no fumes, safe indoors — 2,400W of clean power in a 48.5 lb box at $659.99, the same price as the Bailibatt 2000W but with a stated 2,048Wh battery the Bailibatt listing never states. Flag: Walmart's Brand field reads FFpower, not OUKITEL — the seller is OUKITEL-Official-US. Thin review base (4.6 stars from 5 ratings), so the rating is early, not proven.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/18660371712",
+    review_url: "/reviews/oukitel-p2001-plus/",
+  },
+  {
+    id: "greenworks-60v-2000w-inverter",
+    name: "Greenworks 60V 2000W 4-Slot Battery Inverter",
+    short: "Greenworks 60V Inverter",
+    price: 748,
+    price_display: "$748",
+    rating: "4.2 stars from 20 ratings",
+    rating_value: 4.2,
+    rating_count: 20,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station", // inverter-only unit modelled as a station so the matcher can surface it; battery_wh is null — it has NO built-in battery
+    battery_wh: null, // 0 Ah built in — BATTERIES NOT INCLUDED; up to 1,728Wh only with the owner's own 60V batteries
+    continuous_w: 2000,
+    surge_w: 3000, // headline/bullets figure; the listing's spec block contradicts with 300W — flagged on the review page
+    solar_input_w: null, // no solar input — it charges 60V batteries, it is not a solar station
+    runtime_h: null,
+    noise_dba: null, // no verified operating-noise figure
+    weight_lb: null, // weight/dimensions not published anywhere found — never invent them
+    specs: "2,000W continuous / 3,000W surge inverter — BATTERIES NOT INCLUDED (0 Ah built in; up to 1,728Wh with the owner's own 60V batteries) · 3 AC outlets · 1,500W fast charger · smart LCD + Bluetooth app",
+    fit: "NOT a standalone power station — an inverter for owners who already own Greenworks 60V batteries, and only for them: with no batteries it does absolutely nothing. Do not compare its $748 against standalone stations as if it were one; the complete Pecron F1000LFP at $369 is the cheaper way into a 1,500W station with a battery included.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/17270451583",
+    review_url: "/reviews/greenworks-60v-2000w-inverter/",
+  },
+  {
+    id: "bluetti-elite-10",
+    name: "BLUETTI Elite 10 — Portable Power Station",
+    short: "Elite 10",
+    price: 139.99,
+    price_display: "$139.99",
+    rating: "4.7 stars from 3 ratings",
+    rating_value: 4.7,
+    rating_count: 3,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 128,
+    continuous_w: 200,
+    surge_w: 300, // 400W Power Lifting is resistive-only, not a surge rating
+    solar_input_w: 100,
+    runtime_h: null,
+    noise_dba: null, // no verified operating-noise figure
+    weight_lb: 3.97,
+    specs: "128Wh LiFePO4 battery · 200W continuous / 300W surge (400W Power Lifting, resistive loads only) · 100W solar input · 10ms UPS · 3.97 lb · 3,000+ cycles",
+    fit: "No fuel, no fumes, safe indoors — the lightest station in the roster at 3.97 lb, at $139.99. Not a Walmart deal: Amazon lists it at $119, stated on the review page. 128Wh runs phones, laptops and lights for hours, not a fridge for a day. Thin review base (4.7 stars from 3 ratings), so the rating is early, not proven.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/20613266088",
+    review_url: "/reviews/bluetti-elite-10/",
+  },
+  {
+    id: "bailibatt-2000w",
+    name: "Bailibatt 2000W — Portable Power Station",
+    short: "Bailibatt 2000W",
+    price: 659.99,
+    price_display: "$659.99",
+    rating: "4.1 stars from 12 ratings",
+    rating_value: 4.1,
+    rating_count: 12,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: null, // Wh capacity NOT stated anywhere on the listing (31,200 mAh with no voltage) — never compute it
+    continuous_w: 2000,
+    surge_w: 4000,
+    solar_input_w: null, // solar wattage not stated on the listing
+    runtime_h: null,
+    noise_dba: null, // no verified operating-noise figure
+    weight_lb: null, // weight/dimensions not stated on the listing
+    specs: "2,000W continuous / 4,000W surge · LiFePO4 · 4,000+ cycles — Wh capacity NOT stated on the listing, so no battery size is claimed",
+    fit: "CAUTION: the single written review is 1 star and alleges the unit is mislabelled on wattage; no-name brand with no brand site and no stated Wh capacity, weight or warranty. At $659.99 (was $1,099.99) it costs the same as the OUKITEL P2001 Plus, which states a 2,048Wh battery and a named seller — the OUKITEL is the safer buy at the same price.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/20718662409",
+    review_url: "/reviews/bailibatt-2000w/",
+  },
+  {
+    id: "jackery-homepower-1000-v2",
+    name: "Jackery HomePower 1000 v2 — Portable Power Station",
+    short: "HomePower 1000 v2",
+    price: 469,
+    price_display: "$469",
+    rating: "No ratings yet",
+    rating_value: 0,
+    rating_count: 0,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 1024,
+    continuous_w: 1500,
+    surge_w: 3000,
+    solar_input_w: 400,
+    runtime_h: "8 hours", // listing spec-block figure
+    noise_dba: null, // no verified operating-noise figure
+    weight_lb: null, // weight/dimensions NOT stated on the listing — never invent them
+    specs: "1,024Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 400W solar input · sub-10ms UPS · 6,000 cycles to 70%+ · 50-min Emergency Charge",
+    fit: "No fuel, no fumes, safe indoors — 1,500W of clean power at $469 (was $549, Black Friday). No owner ratings yet on this listing, so there is no proven rating to quote. The Pecron F1000LFP at $369 is the cheaper in-stock 1,500W alternative with a rating; the OUKITEL P2001 Plus at $659.99 is the step up to 2,400W.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/Jackery-HomePower-1000-v2-1024Wh-1500W-Continuous-3000W-Peak-Portable-Power-Station-Black/21351753268",
+    review_url: "/reviews/jackery-homepower-1000-v2/",
   },
 ];
 

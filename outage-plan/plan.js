@@ -50,6 +50,17 @@
   // difference, stated in the specs). noiseDba null for the Jackery
   // ("<30 dB" per the maker, 45 dB at full load — no single figure);
   // Pecron noiseDba is the verified 25 dB operating figure.
+  // Nov 25, 2026: +6 models from the day's verified review pages
+  // (bluetti-elite-30-v2, oukitel-p2001-plus, greenworks-60v-2000w-inverter,
+  // bluetti-elite-10, bailibatt-2000w, jackery-homepower-1000-v2). Prices/stock
+  // as of Nov 25, 2026. Elite 30 V2 is OUT OF STOCK ($259 was $289.99).
+  // HomePower 1000 v2 has NO ratings yet (0 ratings on the PDP). Greenworks is
+  // an inverter ONLY — BATTERIES NOT INCLUDED, no built-in battery
+  // (batteryWh null; up to 1,728Wh with the owner's own 60V batteries).
+  // Bailibatt Wh capacity is NOT stated on the listing (batteryWh null).
+  // noiseDba null for all six new stations (no verified operating figure);
+  // weightLb null where the listing states none (Greenworks, Bailibatt,
+  // HomePower).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -521,6 +532,84 @@
       specs: "960Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 600W solar input · 25 dB · 23.9 lb · 1,000W AC input, 0–80% in 50 minutes · <20ms UPS · 3,500+ cycles",
       link: "https://www.walmart.com/ip/PECRON-F1000LFP-Portable-Power-Station-960Wh-1500W-LiFePO4-Battery-Solar-Generator-BMS-UPS-Fast-Charging-Power-Backup-for-Camping-Home-Use-RV/19942953345",
       reviewUrl: "/reviews/pecron-f1000lfp/"
+    },
+    "bluetti-elite-30-v2": {
+      name: "BLUETTI Elite 30 V2 — Portable Power Station",
+      short: "Elite 30 V2",
+      price: 259, priceDisplay: "$259",
+      rating: "4.2 stars from 67 ratings",
+      stock: "Out of stock", inStock: false,
+      continuousW: 600, surgeW: null, batteryWh: 288, // 1,500W Power Lifting is a resistive-load mode, not a surge rating
+      runtime: null,
+      noiseDba: null, weightLb: 9.48,
+      specs: "288Wh LiFePO4 battery · 600W continuous (1,500W Power Lifting, resistive loads only) · 200W solar input · ≤10ms UPS · 9.48 lb · 3,000+ cycles",
+      link: "https://www.walmart.com/ip/18080114176",
+      reviewUrl: "/reviews/bluetti-elite-30-v2/"
+    },
+    "oukitel-p2001-plus": {
+      name: "OUKITEL P2001 Plus — Portable Power Station",
+      short: "P2001 Plus",
+      price: 659.99, priceDisplay: "$659.99",
+      rating: "4.6 stars from 5 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 2400, surgeW: 4800, batteryWh: 2048,
+      runtime: null,
+      noiseDba: null, weightLb: 48.5,
+      specs: "2,048Wh LiFePO4 battery · 2,400W continuous / 4,800W surge · 500W solar input · <10ms EPS · 48.5 lb · 3,500+ cycles",
+      link: "https://www.walmart.com/ip/18660371712",
+      reviewUrl: "/reviews/oukitel-p2001-plus/"
+    },
+    "greenworks-60v-2000w-inverter": {
+      name: "Greenworks 60V 2000W 4-Slot Battery Inverter",
+      short: "Greenworks 60V Inverter",
+      price: 748, priceDisplay: "$748",
+      rating: "4.2 stars from 20 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 2000, surgeW: 3000, batteryWh: null, // inverter-only: 0 Ah built in; up to 1,728Wh with the owner's own 60V batteries
+      runtime: null,
+      noiseDba: null, weightLb: null, // weight/dimensions not published anywhere found
+      specs: "2,000W continuous / 3,000W surge inverter — BATTERIES NOT INCLUDED (0 Ah built in; up to 1,728Wh with the owner's own 60V batteries) · 3 AC outlets · 1,500W fast charger · smart LCD + Bluetooth app",
+      link: "https://www.walmart.com/ip/17270451583",
+      reviewUrl: "/reviews/greenworks-60v-2000w-inverter/"
+    },
+    "bluetti-elite-10": {
+      name: "BLUETTI Elite 10 — Portable Power Station",
+      short: "Elite 10",
+      price: 139.99, priceDisplay: "$139.99",
+      rating: "4.7 stars from 3 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 200, surgeW: 300, batteryWh: 128, // 400W Power Lifting is resistive-only, not surge
+      runtime: null,
+      noiseDba: null, weightLb: 3.97,
+      specs: "128Wh LiFePO4 battery · 200W continuous / 300W surge (400W Power Lifting, resistive loads only) · 100W solar input · 10ms UPS · 3.97 lb · 3,000+ cycles",
+      link: "https://www.walmart.com/ip/20613266088",
+      reviewUrl: "/reviews/bluetti-elite-10/"
+    },
+    "bailibatt-2000w": {
+      name: "Bailibatt 2000W — Portable Power Station",
+      short: "Bailibatt 2000W",
+      price: 659.99, priceDisplay: "$659.99",
+      rating: "4.1 stars from 12 ratings",
+      stock: "In stock", inStock: true,
+      continuousW: 2000, surgeW: 4000, batteryWh: null, // Wh capacity NOT stated on the listing — never compute it
+      runtime: null,
+      noiseDba: null, weightLb: null, // weight/dimensions not stated on the listing
+      specs: "2,000W continuous / 4,000W surge · LiFePO4 · 4,000+ cycles — Wh capacity NOT stated on the listing, so no battery size is claimed",
+      link: "https://www.walmart.com/ip/20718662409",
+      reviewUrl: "/reviews/bailibatt-2000w/"
+    },
+    "jackery-homepower-1000-v2": {
+      name: "Jackery HomePower 1000 v2 — Portable Power Station",
+      short: "HomePower 1000 v2",
+      price: 469, priceDisplay: "$469",
+      rating: "No ratings yet",
+      stock: "In stock", inStock: true,
+      continuousW: 1500, surgeW: 3000, batteryWh: 1024,
+      runtime: "8 hours", // listing spec-block figure
+      noiseDba: null, weightLb: null, // weight/dimensions NOT stated on the listing
+      specs: "1,024Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 400W solar input · sub-10ms UPS · 6,000 cycles to 70%+ · 50-min Emergency Charge",
+      link: "https://www.walmart.com/ip/Jackery-HomePower-1000-v2-1024Wh-1500W-Continuous-3000W-Peak-Portable-Power-Station-Black/21351753268",
+      reviewUrl: "/reviews/jackery-homepower-1000-v2/"
     }
   };
 
@@ -772,7 +861,9 @@
 // jackery300v2, jackery300lifepo4, igen12000dfc, igen2800dfc, igen5000c,
 // xp13000hx, igen5000, anker-solix-c1000x-gen2, wen-df680ix, wen-df480ix,
 // wen-56360i, jackery1000plus-restored, river3plus, bluetti-ac70,
-// wgen7500dfc, jackery2000v2, pecron-f1000lfp) —
+// wgen7500dfc, jackery2000v2, pecron-f1000lfp,
+// bluetti-elite-30-v2, oukitel-p2001-plus, greenworks-60v-2000w-inverter,
+// bluetti-elite-10, bailibatt-2000w, jackery-homepower-1000-v2) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------
