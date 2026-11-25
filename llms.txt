@@ -95,6 +95,7 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - Best cold plunge tub: https://garagereviews.us/best-cold-plunge-tub/
 - Best portable power stations: https://garagereviews.us/best-portable-power-stations/
 - Generator finder (3-question quiz): https://garagereviews.us/generator-finder/
+- Sauna finder (space, heat source, budget): https://garagereviews.us/sauna-finder/
 - Want your product reviewed (vendor review requests): https://garagereviews.us/review-request/
 - Video reviews: https://garagereviews.us/videos/
 - Sitemap: https://garagereviews.us/sitemap.xml

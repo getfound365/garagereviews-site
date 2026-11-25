@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sauna Finder — Garage Reviews</title>
+<meta name="description" content="Choose a sauna heat source, enter your available space and all-in budget, and see where to shop and what to verify before buying.">
+<link rel="canonical" href="https://garagereviews.us/sauna-finder/">
+<link rel="stylesheet" href="/styles.css?v=10">
+<style>
+.sauna-finder .finder-panel{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-top:1rem;padding:clamp(.85rem,4vw,1.4rem)}
+.sauna-finder fieldset{border:0;padding:0;margin:0 0 1.25rem}
+.sauna-finder legend,.sauna-finder label{font-weight:700}
+.sauna-finder legend{margin-bottom:.5rem}
+.sauna-finder .chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.sauna-finder .chips label{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;border:1px solid var(--muted);border-radius:24px;padding:.5rem .8rem;min-height:44px}
+.sauna-finder .chips label:has(input:checked){background:var(--accent-soft);border-color:var(--accent)}
+.sauna-finder .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(112px,100%),1fr));gap:.65rem}
+.sauna-finder input:not([type=radio]),.sauna-finder textarea{width:100%;padding:.6rem;border:1px solid var(--muted);border-radius:9px;min-height:44px;font:inherit;margin-top:.3rem;background:var(--bg);color:var(--ink)}
+.sauna-finder input[type=range],.sauna-finder input[type=radio]{accent-color:var(--accent)}
+.sauna-finder input[type=range]{padding:0}
+.sauna-finder :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.sauna-finder button.btn,.sauna-finder a.cta{padding:.65rem .9rem;border-radius:10px;border:0;background:var(--accent);color:#111;font:inherit;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.sauna-finder .offer{border-top:1px solid var(--line);padding:.9rem 0}
+.sauna-finder .offer h3,.sauna-finder #title{margin-top:0}
+.sauna-finder small{display:block;margin:.6rem 0;color:var(--muted)}
+.sauna-finder #status{margin-left:.5rem}
+.sauna-finder textarea{min-height:105px}
+.sauna-finder #amount{color:var(--accent);margin-left:.5rem}
+</style>
+</head>
+<body class="garage">
+<header class="site"><a class="brand" href="/">Garage <span>Reviews</span></a><p class="tagline">Honest gear reviews. No hype.</p><nav><a href="/">Home</a><a href="/compare/">Compare All</a><a href="/generator-finder/">Find Your Generator</a><a href="/videos/">Videos</a><a href="/ask/">Ask Garage Reviews</a><a href="https://www.youtube.com/@garagereviews22">YouTube</a><a href="https://www.instagram.com/garagereviews22/">Instagram</a><a href="https://www.pinterest.com/garagereviews22/">Pinterest</a></nav></header>
+<main class="sauna-finder">
+<section class="hero"><h1>Sauna <span>Finder</span></h1><p>Choose your space, heat source, and budget to see where to shop and what to verify before buying.</p><div class="cta-row"><a class="cta secondary" href="/compare/saunas/">Compare sauna reviews</a></div></section>
+<p class="disclosure-top">Garage Reviews may earn a commission if you buy through a paid link.</p>
+<form id="finder" class="finder-panel">
+<fieldset><legend>Location</legend><div class="chips">
+<label><input type="radio" name="location" value="outdoor" checked> Outdoor</label>
+<label><input type="radio" name="location" value="covered patio"> Covered patio</label>
+<label><input type="radio" name="location" value="indoor"> Indoor</label>
+</div></fieldset>
+<fieldset><legend>Heat source</legend><div class="chips">
+<label><input type="radio" name="heat" value="open to options" checked> Open to options</label>
+<label><input type="radio" name="heat" value="wood-fired"> Wood-fired</label>
+<label><input type="radio" name="heat" value="traditional electric"> Electric</label>
+<label><input type="radio" name="heat" value="infrared"> Infrared</label>
+</div></fieldset>
+<fieldset><legend>Clear space in feet</legend><div class="grid">
+<label>Width<input type="number" name="width" min="0.1" max="100" step="0.1" inputmode="decimal"></label>
+<label>Depth<input type="number" name="depth" min="0.1" max="100" step="0.1" inputmode="decimal"></label>
+<label>Height<input type="number" name="height" min="0.1" max="100" step="0.1" inputmode="decimal"></label>
+</div></fieldset>
+<fieldset><legend>All-in budget</legend><label for="range">Set a budget <output id="amount" for="range">$8,000</output></label>
+<input id="range" type="range" min="500" max="60000" step="500" value="8000">
+<label>Exact budget in dollars<input id="budget" type="number" name="budget" min="1" max="1000000" required step="1" value="8000" inputmode="numeric"></label>
+</fieldset>
+<button class="btn" type="submit">See shopping options</button>
+</form>
+<section id="result" class="finder-panel" hidden aria-labelledby="title" tabindex="-1">
+<h2 id="title">Your shopping options</h2>
+<p id="summary"></p><p id="checks"></p>
+<div id="offers"></div>
+<label for="handoff">Copy these details into Sauna Finder to compare exact models</label>
+<textarea id="handoff" readonly></textarea>
+<button class="btn" type="button" id="copy">Copy details</button><span id="status" role="status"></span>
+</section>
+</main>
+<footer><p>Garage Reviews — honest research, real prices, no fluff.</p><p><a href="https://www.youtube.com/@garagereviews22">YouTube</a> <a href="https://www.instagram.com/garagereviews22/">Instagram</a> <a href="https://www.pinterest.com/garagereviews22/">Pinterest</a></p></footer>
+<script>
+const byId = id => document.getElementById(id);
+const cash = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',maximumFractionDigits:0});
+const range = byId('range');
+const budget = byId('budget');
+range.addEventListener('input', () => { budget.value = range.value; byId('amount').textContent = cash.format(+budget.value); });
+budget.addEventListener('input', () => { range.value = budget.value; byId('amount').textContent = budget.value ? cash.format(+budget.value) : 'Enter amount'; });
+function addOffer(title, description, label, url, paid) {
+  const card = document.createElement('article');
+  card.className = 'offer';
+  const heading = document.createElement('h3');
+  heading.textContent = title;
+  const detail = document.createElement('p');
+  detail.textContent = description;
+  card.append(heading, detail);
+  if (paid) {
+    const disclosure = document.createElement('small');
+    disclosure.textContent = 'Garage Reviews may earn a commission.';
+    if (title === 'Amazon') disclosure.textContent += ' As an Amazon Associate I earn from qualifying purchases.';
+    card.append(disclosure);
+  }
+  const link = document.createElement('a');
+  link.className = 'cta';
+  link.href = url;
+  link.textContent = label;
+  link.rel = paid ? 'sponsored noopener' : 'noopener';
+  link.target = '_blank';
+  card.append(link);
+  byId('offers').append(card);
+}
+byId('finder').addEventListener('submit', event => {
+  event.preventDefault();
+  const input = new FormData(event.currentTarget);
+  const heat = input.get('heat');
+  const location = input.get('location');
+  const dimensions = ['width','depth','height'].map(key => input.get(key));
+  const footprint = dimensions.every(Boolean) ? dimensions.join(' × ') + ' ft (W × D × H)' : 'measurements incomplete';
+  const allIn = cash.format(+input.get('budget'));
+  byId('summary').textContent = location + ' · ' + heat + ' · ' + allIn + ' all-in · ' + footprint;
+  byId('checks').textContent = 'These links open shopping pages. Verify the exact model, published clearances, delivery, and installation before deciding what fits your budget.';
+  byId('offers').replaceChildren();
+  const term = [location === 'indoor' ? 'indoor' : 'outdoor', heat === 'open to options' ? '' : heat, 'sauna kit'].filter(Boolean).join(' ');
+  if (heat === 'wood-fired' && location === 'covered patio') {
+    addOffer('Check the installation first', 'Confirm chimney routing and clearances with a qualified local installer before committing to a wood-fired model under the existing roof.', 'Visit Garage Reviews', 'https://garagereviews.us', false);
+  }
+  const amazon = new URL('https://www.amazon.com/s');
+  amazon.search = new URLSearchParams({k:term,tag:'garagereviews05-20'});
+  addOffer('Amazon', 'Browse this category. Check what each kit includes before comparing costs.', 'Search Amazon', amazon, true);
+  const ebay = new URL('https://www.ebay.com/sch/i.html');
+  ebay.search = new URLSearchParams({_nkw:term,mkevt:'1',mkcid:'1',mkrid:'711-53200-19255-0',campid:'5338434176',toolid:'10001'});
+  addOffer('eBay', 'Compare condition, freight, and local pickup before judging the asking price.', 'Search eBay', ebay, true);
+  if (location !== 'indoor' && heat !== 'infrared' && +input.get('budget') >= 30000) {
+    addOffer('Sweaty Yeti', 'Premium outdoor option to investigate. Use getfound3655 for 5% off eligible purchases. Confirm the model and final installed price.', 'Visit Sweaty Yeti', 'https://sweatyyetisauna.com/?sld=141', true);
+  }
+  byId('handoff').value = 'Compare exact saunas for my ' + location + '. Heat: ' + heat + '. All-in budget: ' + allIn + '. Clear space: ' + footprint + '. Separate the listing price, freight, installation, and any unknowns. Give me verified model links and use affiliate links when there is a suitable match.';
+  byId('status').textContent = '';
+  byId('result').hidden = false;
+  byId('result').focus();
+});
+byId('copy').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(byId('handoff').value); byId('status').textContent = 'Copied.'; }
+  catch { byId('handoff').select(); byId('status').textContent = 'Select and copy the highlighted text.'; }
+});
+</script>
+</body>
+</html>
