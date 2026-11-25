@@ -471,4 +471,14 @@
       <video:publication_date>2026-11-18T00:00:00-06:00</video:publication_date>
     </video:video>
   </url>
+  <url>
+    <loc>https://garagereviews.us/reviews/sweaty-yeti-sauna/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/-l0SEyoH1IM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Is the $29,700 Sweaty Yeti Sauna Actually Worth It?</video:title>
+      <video:description>Full video review of the Sweaty Yeti Sauna: $29,700 factory-built outdoor sauna, 4-6 person, what you get, the configurator, delivery fine print, and the specs Sweaty Yeti doesn't publish.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/-l0SEyoH1IM</video:player_loc>
+      <video:publication_date>2026-11-04T00:00:00-06:00</video:publication_date>
+    </video:video>
+  </url>
 </urlset>
