@@ -137,7 +137,7 @@ const ALLOWLIST = {
   },
   "146657770415": {
     name: "Campark TC35",
-    price_display: "$54.14",
+    price_display: "$43.31",
     in_stock: true,
     buy_url:
       "https://www.ebay.com/itm/146657770415?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5338434176&customid=&toolid=10001&mkevt=1",

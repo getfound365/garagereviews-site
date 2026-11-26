@@ -59,7 +59,7 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // deal watcher only).
 // Nov 24, 2026: +3 models from the day's verified review pages
 // (wgen7500dfc, jackery2000v2, pecron-f1000lfp). Prices/stock as of
-// Nov 25, 2026. Jackery 2000 v2 is BACK IN STOCK (only 4 left, Nov 25) —
+// Nov 25, 2026. Jackery 2000 v2 is BACK IN STOCK (Nov 25; "only 4 left" wording gone Nov 26) —
 // rating_value/rating_count are 4.5/300 and the fit copy states the restock
 // plainly with the in-stock Pecron as the smaller alternative. Its battery is 2,042Wh per Jackery (the
 // bundle name says 2,036Wh — rounding difference, stated in the fit).
@@ -314,11 +314,11 @@ const ROSTER = [
     id: "gxs4300i",
     name: "A-iPower GXS4300i — Inverter Generator",
     short: "GXS4300i",
-    price: 499.99,
-    price_display: "$499.99",
-    rating: "4.9 stars from 70 ratings",
-    rating_value: 4.9,
-    rating_count: 70,
+    price: 599.99,
+    price_display: "$599.99",
+    rating: "4.8 stars from 71 ratings",
+    rating_value: 4.8,
+    rating_count: 71,
     stock: "in",
     stock_display: "In stock",
     fuel: "gas",
@@ -331,7 +331,7 @@ const ROSTER = [
     noise_dba: null, // DISPUTED: 62 dB per A-iPower spec sheet (at half load) vs 52 dBA advertised on Walmart — never pick one
     weight_lb: 48.9,
     specs: "4,300 peak / 3,450 running watts · gas inverter · CO sensor · electric start · 48.9 lb · up to 9.5 hours at 25% load",
-    fit: "A mid-size inverter with a CO sensor and electric start at $499.99 (down from $599.99) — but the noise figure is disputed (62 dB spec sheet vs 52 dBA listing), so do not buy it for quiet campground use on the claim alone. Thin review pool: 70 ratings.",
+    fit: "A mid-size inverter with a CO sensor and electric start at $599.99 (was $499.99 Nov 25) — but the noise figure is disputed (62 dB spec sheet vs 52 dBA listing), so do not buy it for quiet campground use on the claim alone. Thin review pool: 71 ratings.",
     status: "coming",
     video: null,
     link: "https://walmrt.us/3VG15CZ",
@@ -532,11 +532,11 @@ const ROSTER = [
     short: "Jackery Explorer 300 v2",
     price: 198,
     price_display: "$198",
-    rating: "4.4 stars from 289 ratings",
+    rating: "4.4 stars from 299 ratings",
     rating_value: 4.4,
-    rating_count: 289,
-    stock: "out",
-    stock_display: "Out of stock",
+    rating_count: 299,
+    stock: "in",
+    stock_display: "In stock (only 2 left)",
     fuel: "solar",
     type: "power-station",
     battery_wh: 288,
@@ -547,7 +547,7 @@ const ROSTER = [
     noise_dba: 0, // silent — no fuel, no engine
     weight_lb: 8.1,
     specs: "288Wh LiFePO4 battery · 300W continuous / 600W surge · 8.1 lb · includes 12V auto-charging cable · charges from the wall, car, or sun",
-    fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. The standalone unit is sold out at Jackery direct. Out of stock at Walmart as of Nov 23, 2026.",
+    fit: "The smallest, lightest power station in the roster at $198 — 8.1 lb for phones, a laptop, and lights, with a 12V car-charging cable in the kit. The standalone unit is sold out at Jackery direct. Back in stock at Walmart as of Nov 26, 2026 — only 2 left.",
     status: "coming",
     video: null,
     link: "https://walmrt.us/4ATl5kn",
@@ -941,7 +941,7 @@ const ROSTER = [
     rating_value: 4.5,
     rating_count: 300,
     stock: "in",
-    stock_display: "In stock (only 4 left)",
+    stock_display: "In stock",
     fuel: "solar",
     type: "power-station",
     battery_wh: 2042, // Jackery maker figure; bundle name says 2,036Wh — rounding difference
@@ -952,7 +952,7 @@ const ROSTER = [
     noise_dba: null, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
     weight_lb: 39.5,
     specs: "2,042Wh LiFePO4 battery (maker figure; bundle name says 2,036Wh) · 2,200W continuous / 4,400W surge · <20ms UPS · under 30 dB · 39.5 lb · 0–100% in about 1.7 hours · 4,000 cycles",
-    fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Back in stock at Walmart as of Nov 25, 2026 — only 4 left (the $1,189 variant was out of stock as of Nov 24 and was not re-checked); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
+    fit: "The big Jackery station — 2,200W continuous for a fridge plus more, with a sub-20ms UPS. Back in stock at Walmart as of Nov 26, 2026 (the $1,189 variant was out of stock as of Nov 24 and was not re-checked); the Pecron F1000LFP at $369 is the in-stock alternative for smaller loads. Jackery direct lists the unit-only version at $999 pre-order, shipping Dec 14.",
     status: "coming",
     video: null,
     link: "https://walmrt.us/4kuPEYW", // bare /ip/ URL — no slugged URL on the listing

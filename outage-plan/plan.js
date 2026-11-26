@@ -44,7 +44,7 @@
   // operating-noise figure).
   // Nov 24, 2026: +3 models from the day's verified review pages
   // (wgen7500dfc, jackery2000v2, pecron-f1000lfp). Prices/stock as of
-  // Nov 25, 2026. Jackery 2000 v2 is BACK IN STOCK (only 4 left, Nov 25) —
+  // Nov 25, 2026. Jackery 2000 v2 is BACK IN STOCK (Nov 25; "only 4 left" wording gone Nov 26) —
   // rating reads "4.5 stars from 300 ratings", inStock true.
   // Battery 2,042Wh per Jackery (bundle name says 2,036Wh — rounding
   // difference, stated in the specs). noiseDba null for the Jackery
@@ -177,8 +177,8 @@
     gxs4300i: {
       name: "A-iPower GXS4300i — Inverter Generator",
       short: "GXS4300i",
-      price: 499.99, priceDisplay: "$499.99",
-      rating: "4.9 stars from 70 ratings",
+      price: 599.99, priceDisplay: "$599.99",
+      rating: "4.8 stars from 71 ratings",
       stock: "In stock", inStock: true,
       gasRunningW: 3450, gasPeakW: 4300,
       propaneRunningW: null, propanePeakW: null,
@@ -306,8 +306,8 @@
       name: "Jackery Explorer 300 v2 Auto Kit — Portable Power Station",
       short: "Jackery Explorer 300 v2",
       price: 198, priceDisplay: "$198",
-      rating: "4.4 stars from 289 ratings",
-      stock: "Out of stock", inStock: false,
+      rating: "4.4 stars from 299 ratings",
+      stock: "In stock (only 2 left)", inStock: true,
       continuousW: 300, surgeW: 600, batteryWh: 288,
       runtime: null,
       noiseDba: 0, weightLb: 8.1,
@@ -512,7 +512,7 @@
       short: "Jackery Explorer 2000 v2",
       price: 1349, priceDisplay: "$1,349",
       rating: "4.5 stars from 300 ratings",
-      stock: "In stock (only 4 left)", inStock: true,
+      stock: "In stock", inStock: true,
       continuousW: 2200, surgeW: 4400, batteryWh: 2042, // Jackery maker figure; bundle name says 2,036Wh — rounding difference
       runtime: null,
       noiseDba: null, weightLb: 39.5, // "<30 dB" per the maker, 45 dB at full load — no single operating figure verified
