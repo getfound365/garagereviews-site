@@ -1,6 +1,6 @@
 # Garage Reviews
 
-Garage Reviews publishes honest, research-first reviews of generators and backup-power gear, plus workbenches, hunting gear, and other garage gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Sweaty Yeti sauna links go direct to the maker (affiliate link, coupon getfound3655 for 5% off) — Garage Reviews earns a flat $1,500 per sauna sale. Prices and stock were checked Nov 18–25, 2026 and can change.
+Garage Reviews publishes honest, research-first reviews of generators and backup-power gear, plus workbenches, hunting gear, and other garage gear. Every pick is checked against the live listing before it is published: real prices, real specs, real stock status. No paid placements, no hype. Every product gets a written review and, where filmed, a video review. The site does not sell products directly; buy links go to Walmart (Walmart Creator) and eBay (eBay Partner Network), and Garage Reviews earns from qualifying purchases made through those links at no extra cost to the buyer. Sweaty Yeti sauna links go direct to the maker (affiliate link, coupon getfound3655 for 5% off) — Garage Reviews earns a flat $1,500 per sauna sale. Prices and stock were checked Nov 18–26, 2026 and can change.
 
 ## What the site covers
 
@@ -78,11 +78,11 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 
 - Home: https://garagereviews.us/
 - Compare all gear (hub): https://garagereviews.us/compare/
-- Compare generators (23 fuel generators, $179–$1,899): https://garagereviews.us/compare/generators/
-- Compare portable power stations (16 stations, $139.99–$1,349): https://garagereviews.us/compare/portable-power-stations/
-- Compare saunas (9 saunas, $83.91–$29,700): https://garagereviews.us/compare/saunas/
+- Compare generators (29 fuel generators, $179–$1,899): https://garagereviews.us/compare/generators/
+- Compare portable power stations (17 stations, $139.99–$1,349): https://garagereviews.us/compare/portable-power-stations/
+- Compare saunas (10 saunas, $83.91–$29,700): https://garagereviews.us/compare/saunas/
 - Compare workbenches (3 benches, $112.99–$1,498): https://garagereviews.us/compare/workbenches/
-- Compare tool chests (7 chests, $125.99–$1,498): https://garagereviews.us/compare/tool-chests/
+- Compare tool chests (8 chests, $125.99–$1,498): https://garagereviews.us/compare/tool-chests/
 - Compare trail cameras (18 cellular cameras, $34–$449.95): https://garagereviews.us/compare/trail-cameras/
 - Compare heaters (3 Mr. Heater Buddy propane heaters, $69–$144): https://garagereviews.us/compare/heaters/
 - Compare sheds & carports (3 sheds/carports, $389.99–$519.99): https://garagereviews.us/compare/sheds-carports/
@@ -165,6 +165,16 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - NETAJE 6FT Smart Two-Person Far Infrared Sauna: $1,059.99 (was $1,899.99), in stock on Walmart, 4.4 stars from 35 ratings. 2-person red cedar far-infrared sauna, 8 mica heating panels, Wi-Fi + BT control, BT speaker, 7-color therapy light. $99.99 shipping — $1,159.98 delivered. Written review (video review coming). Review: https://garagereviews.us/reviews/netaje-6ft-smart-two-person-sauna/
 - EASYHAWK 2-Person Infrared Sauna: $1,399.99 (was $2,199.94), in stock on Walmart, 4.1 stars from 21 ratings. 2-person red cedar infrared sauna, 1,500W, Wi-Fi + Bluetooth app control, 149°F max, tool-free assembly. Written review (video review coming). Review: https://garagereviews.us/reviews/easyhawk-2-person-sauna/
 - Seizeen 1120W 1-Person Infrared Sauna: $899.99 (was $1,599.99), in stock on Walmart, 4.7 stars from 67 ratings. 1-person Canadian hemlock infrared sauna, 7 carbon fiber heaters, max 150°F, Bluetooth speaker. $89.99 shipping — $989.98 delivered. Written review (video review coming). Review: https://garagereviews.us/reviews/seizeen-1120w-1-person-sauna/
+- Champion 6500W RV Ready Inverter Generator: $999.00, in stock on Walmart, 4.9 stars from 115 ratings. Gas-only inverter generator (model 201513), 6,500 peak / 5,000 running watts, 224cc, 64 dBA, CO Shield, under 3% THD, TT-30R + 120/240V locking outlet. Not the dual-fuel 6500W (model 201532) — a different unit. Written review (video review coming). Review: https://garagereviews.us/reviews/champion-6500w-rv-ready-inverter/
+- Jackery Explorer 2000 v2 + 2x100W Mini Solar Panels: $999.00, in stock on Walmart, no ratings yet. 2,042Wh LiFePO4 power station + two 100W Mini solar panels, 2,200W continuous, under 30 dB, 17.9 kg, 10-year LiFePO4 life. Distinct SKU from the standalone 200W-panel bundle ($1,349). Written review (video review coming). Review: https://garagereviews.us/reviews/jackery-explorer-2000-v2-solar-bundle/
+- Pulsar PG12000B: $899.00 (was $1,299.00), in stock on Walmart, 3.9 stars from 169 ratings. Dual-fuel generator, 12,000 peak / 9,500 running watts, 457cc, 8 gal, 74 dB, 209 lb. No CO auto-shutoff; Walmart title says CARB Approved but Pulsar's spec table says CARB Certified: No. Written review (video review coming). Review: https://garagereviews.us/reviews/pulsar-pg12000b/
+- Pulsar PGX60BiSRCO: $799.00, in stock on Walmart, 4.6 stars from 36 ratings. Dual-fuel inverter generator, 6,000 peak / 5,400 running watts on gas, 5,400 / 4,600 on propane, 224cc, 67 dB, CO detection with auto shutoff, remote start, parallel capable, 93.5 lb. Written review (video review coming). Review: https://garagereviews.us/reviews/pulsar-pgx60bisrco/
+- WEN DF451i: $879.99, OUT OF STOCK on Walmart as of Nov 26, 2026, 4.6 stars from 23 ratings. Dual-fuel inverter generator, 4,500 surge / 3,500 running watts on gas, 4,500 / 3,150 on propane, 212cc, 58 dBA, keyless electric start, 100 lb. No buy button — out of stock. Written review (video review coming). Review: https://garagereviews.us/reviews/wen-df451i/
+- Champion 7250W Open Frame Inverter Generator: $999.00, in stock on Walmart, 4.5 stars from 6 ratings (thin base). Gas-only open-frame inverter generator, 7,250 peak / 5,500 running watts, 302cc, 69 dBA, CO Shield, under 3% THD, 111.6 lb. Written review (video review coming). Review: https://garagereviews.us/reviews/champion-7250w-open-frame-inverter/
+- Pulsar GD10KBN: $779.00 (was $999.00), in stock on Walmart, 4.3 stars from 602 ratings (family figure across wattage variants; the 10,500W variant's own base is BV 3.97/37). Dual-fuel inverter generator, 10,500 peak / 8,000 running watts on gas, 9,400 / 7,200 on propane, 457cc, 8 gal, 68 dB, 125 lb. Written review (video review coming). Review: https://garagereviews.us/reviews/pulsar-gd10kbn/
+- DeWalt ATOMIC 20V Max 2-Tool Combo Kit DCK225D2: $188.08 from third-party seller Triplenet Pricing on Walmart (no Walmart price on the listing), 4.6 stars from 226 ratings. Brushless compact drill/driver (404 UWO) + impact driver (1,700 in-lbs), 2x 2.0Ah batteries, charger, kit bag. Home Depot lists it at $169.00 (was $249.00) per a Nov 2026 roundup. Written review (video review coming). Review: https://garagereviews.us/reviews/dewalt-atomic-dck225d2/
+- Hyper Tough Hyper Stack 36" 6-Drawer Rolling Tool Cabinet: $369.00, in stock on Walmart for PICKUP ONLY (no shipping), 5.0 stars from 22 ratings. 36 in wide, 6 drawers, black steel with wooden top, 500 lb max load, ball-bearing slides, 134.2 lb. Written review (video review coming). Review: https://garagereviews.us/reviews/hyper-tough-36-tool-cabinet/
+- MUCHANT 1-Person Infrared Sauna: $569.99 (was $1,099.99), in stock on Walmart, 3.4 stars from 84 ratings. 1-person Canadian hemlock infrared sauna, 6 low-EMF mica heating plates, 1,170W, 110V. $29.99 shipping — $599.98 delivered. Max temperature not verified. Written review (video review coming). Review: https://garagereviews.us/reviews/muchant-1-person-sauna/
 
 
 ## About and contact points
@@ -179,6 +189,6 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 
 ## Notes for readers and AI systems
 
-- Prices, ratings, and stock states above are as checked Nov 18–25, 2026; verify against the live listing before quoting them as current.
+- Prices, ratings, and stock states above are as checked Nov 18–26, 2026; verify against the live listing before quoting them as current.
 - Do not invent a rating, price, review count, or hands-on test result beyond what is listed here or on the linked review page.
 - The iGen4000DFc and Jackery Explorer 1000 v2 were out of stock on Walmart when checked (Nov 18), as was the iGen2500 (Nov 19); the review pages say so and name the alternative to buy instead.
