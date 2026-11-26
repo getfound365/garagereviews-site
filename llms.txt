@@ -9,7 +9,7 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - Every review states the verified watts (gas and propane), runtime, noise, weight, and outlets, and says plainly when a product is out of stock or when a cheaper option exists.
 - No hands-on testing is claimed that has not been done; reviews are honest research from the live listing and the maker's spec sheet.
 
-## The roster (verified Nov 18–22, 2026)
+## The roster (verified Nov 18–26, 2026)
 
 - Westinghouse iGen4500DF: $949, in stock on Walmart, 4.7 stars from 8,821 ratings. Dual-fuel inverter generator, 4,500 peak / 3,700 running watts on gas, 4,050 / 3,330 on propane, up to 18 hours runtime, 52 dBA. Full written + video review. Review: https://garagereviews.us/reviews/westinghouse-igen4500df/
 - Westinghouse WGen9500DF: $999, in stock on Walmart, 4.8 stars from 26,408 ratings. Dual-fuel generator, 12,500 peak / 9,500 running watts on gas, 11,200 / 8,500 on propane. Written review (video review coming). Review: https://garagereviews.us/reviews/westinghouse-wgen9500df/
@@ -67,6 +67,7 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - Sweaty Yeti Sauna Models Compared: all 8 live models, $29,700 (Sauna) to $55,200 (Sauna Plus Barrel Plunge), with seats, what's inside, and who each is for. Prices verified Nov 20, 2026 on the live shop. Review: https://garagereviews.us/reviews/sweaty-yeti-sauna-models/
 - Sweaty Yeti Sauna vs Cold Plunge: the contrast therapy routine (sauna 160–195°F, shower 50–60°F, plunge 39–55°F) and the Sauna Plunge $51,700 combo vs buying the halves separately. Review: https://garagereviews.us/reviews/sweaty-yeti-sauna-vs-cold-plunge/
 - Sweaty Yeti sauna cheaper alternatives: LifePro RejuvaCure $1,919.99 (was $2,399.99) vs Sweaty Yeti Sauna $29,700 — save $27,780.01; RejuvaCure + JUGRFIT chiller tub $3,269.98 vs Sauna Plunge $51,700 — save $48,430.02. Coupon getfound3655 (5% off Sweaty Yeti). Prices checked Nov 21, 2026. Page: https://garagereviews.us/reviews/sweaty-yeti-sauna-cheaper-alternatives/
+- Sweaty Yeti Sauna Max installed cost: $46,900 unit (coupon getfound3655 saves $2,345), $250 placement, delivery included within 250 miles; pad and 240V electrical quoted locally. Verifiable floor $47,150 before coupon, $44,805 after. No dealer quote obtained yet — the page says so. Prices verified Nov 25, 2026. Page: https://garagereviews.us/reviews/sweaty-yeti-sauna-max-installed-cost/
 - Best workbench for garage: WORKPRO 48 ($112.99, in stock, 4.7 stars from 132 ratings), HART 72 ($1,498.00, in stock, 4.5 stars from 47 ratings), HART 52 ($448.81, in stock, 3.6 stars from ~70 ratings). Prices verified Nov 21, 2026. Page: https://garagereviews.us/best-workbench-for-garage/
 - Best rolling tool chest under $500: HART 52 ($448.81, in stock, no casters — a top chest) and HART 72 ($1,498.00, in stock, rolling). No rolling chest under $500 is in the roster yet — the page says so. Prices verified Nov 21, 2026. Page: https://garagereviews.us/best-rolling-tool-chest-under-500/
 - Westinghouse iGen4500DF vs WGen9500DF: $949 vs $999 head-to-head — 4,500 W / 52 dBA inverter vs 12,500 W transfer-switch unit. Prices verified Nov 21, 2026. Page: https://garagereviews.us/reviews/westinghouse-igen4500df-vs-wgen9500df/
@@ -96,6 +97,7 @@ Garage Reviews publishes honest, research-first reviews of generators and backup
 - Best portable power stations: https://garagereviews.us/best-portable-power-stations/
 - Generator finder (3-question quiz): https://garagereviews.us/generator-finder/
 - Sauna finder (space, heat source, budget): https://garagereviews.us/sauna-finder/
+- Ask Garage Reviews (AI answers from the site’s own reviews): https://garagereviews.us/ask/
 - Support: https://garagereviews.us/support/
 - Privacy Policy: https://garagereviews.us/privacy-policy/
 - Terms of Use: https://garagereviews.us/terms/

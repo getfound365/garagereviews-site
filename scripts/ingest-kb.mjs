@@ -1,8 +1,8 @@
 // Ingest the Ask Garage Reviews knowledge base.
 //
 // Rebuilds ask/kb.json from the LIVE pages on garagereviews.us:
-//   1. Fetch the 7 source pages (4 reviews, /compare/,
-//      /best-dual-fuel-generators-under-1000/, /videos/)
+//   1. Fetch the source pages in PAGES below (full review catalog
+//      plus /compare/, /best-dual-fuel-generators-under-1000/, /videos/)
 //   2. Extract clean text from <main>, split into ~1400-char chunks
 //   3. Embed each chunk with Workers AI @cf/baai/bge-base-en-v1.5 (768 dims)
 //   4. Write ask/kb.json (the bundled KB that functions/api/ask.js reads)
@@ -120,6 +120,20 @@ const PAGES = [
   { file: 'reviews/dewalt-atomic-dck225d2/index.html', url: 'https://garagereviews.us/reviews/dewalt-atomic-dck225d2/', title: 'DeWalt ATOMIC 20V Max 2-Tool Combo Kit DCK225D2 Review' },
   { file: 'reviews/hyper-tough-36-tool-cabinet/index.html', url: 'https://garagereviews.us/reviews/hyper-tough-36-tool-cabinet/', title: 'Hyper Tough Hyper Stack 36-Inch Tool Cabinet Review' },
   { file: 'reviews/muchant-1-person-sauna/index.html', url: 'https://garagereviews.us/reviews/muchant-1-person-sauna/', title: 'MUCHANT 1-Person Infrared Sauna Review' },
+  { file: 'reviews/barnett-demun-tri-strike/index.html', url: 'https://garagereviews.us/reviews/barnett-demun-tri-strike/', title: 'Barnett Demun Tri Strike Review' },
+  { file: 'reviews/easyhawk-shed/index.html', url: 'https://garagereviews.us/reviews/easyhawk-shed/', title: 'EasyHawk 14x12 Steel Shed Review' },
+  { file: 'reviews/hart-52-tool-chest/index.html', url: 'https://garagereviews.us/reviews/hart-52-tool-chest/', title: 'HART 52-Inch 6-Drawer Tool Chest Review' },
+  { file: 'reviews/hart-72-tool-chest/index.html', url: 'https://garagereviews.us/reviews/hart-72-tool-chest/', title: 'HART 72-Inch Tool Chest Workbench Review' },
+  { file: 'reviews/moultrie-edge-3/index.html', url: 'https://garagereviews.us/reviews/moultrie-edge-3/', title: 'Moultrie Edge 3 Review' },
+  { file: 'reviews/patiowell-10x10-shed/index.html', url: 'https://garagereviews.us/reviews/patiowell-10x10-shed/', title: 'Patiowell 10x10 Metal Shed Review' },
+  { file: 'reviews/sweaty-yeti-sauna/index.html', url: 'https://garagereviews.us/reviews/sweaty-yeti-sauna/', title: 'Sweaty Yeti Sauna Review' },
+  { file: 'reviews/sweaty-yeti-sauna-models/index.html', url: 'https://garagereviews.us/reviews/sweaty-yeti-sauna-models/', title: 'Sweaty Yeti Sauna Models Compared' },
+  { file: 'reviews/sweaty-yeti-sauna-vs-cold-plunge/index.html', url: 'https://garagereviews.us/reviews/sweaty-yeti-sauna-vs-cold-plunge/', title: 'Sweaty Yeti Sauna vs Cold Plunge' },
+  { file: 'reviews/sweaty-yeti-sauna-cheaper-alternatives/index.html', url: 'https://garagereviews.us/reviews/sweaty-yeti-sauna-cheaper-alternatives/', title: 'Sweaty Yeti Sauna Cheaper Alternatives' },
+  { file: 'reviews/sweaty-yeti-sauna-max-installed-cost/index.html', url: 'https://garagereviews.us/reviews/sweaty-yeti-sauna-max-installed-cost/', title: 'What Does the Sweaty Yeti Sauna Max Actually Cost to Get Installed?' },
+  { file: 'reviews/walsunny-12x20-carport/index.html', url: 'https://garagereviews.us/reviews/walsunny-12x20-carport/', title: 'Walsunny 12x20 Steel-Roof Carport Review' },
+  { file: 'reviews/westinghouse-igen4500df-vs-wgen9500df/index.html', url: 'https://garagereviews.us/reviews/westinghouse-igen4500df-vs-wgen9500df/', title: 'Westinghouse iGen4500DF vs WGen9500DF: Quiet Inverter or Whole-Home Power?' },
+  { file: 'reviews/workpro-48-workbench/index.html', url: 'https://garagereviews.us/reviews/workpro-48-workbench/', title: 'WORKPRO 48" x 20" Garage Workbench Review' },
   { file: 'compare/index.html', url: 'https://garagereviews.us/compare/', title: 'Compare All Generators' },
   { file: 'best-dual-fuel-generators-under-1000/index.html', url: 'https://garagereviews.us/best-dual-fuel-generators-under-1000/', title: 'Best Dual Fuel Generator Under $1000' },
   { file: 'videos/index.html', url: 'https://garagereviews.us/videos/', title: 'Video Reviews' },
