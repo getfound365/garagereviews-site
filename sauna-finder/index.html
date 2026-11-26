@@ -116,8 +116,9 @@ byId('finder').addEventListener('submit', event => {
   const ebay = new URL('https://www.ebay.com/sch/i.html');
   ebay.search = new URLSearchParams({_nkw:term,mkevt:'1',mkcid:'1',mkrid:'711-53200-19255-0',campid:'5338434176',toolid:'10001'});
   addOffer('eBay', 'Compare condition, freight, and local pickup before judging the asking price.', 'Search eBay', ebay, true);
-  if (location !== 'indoor' && heat !== 'infrared' && +input.get('budget') >= 30000) {
-    addOffer('Sweaty Yeti', 'Premium outdoor option to investigate. Use getfound3655 for 5% off eligible purchases. Confirm the model and final installed price.', 'Visit Sweaty Yeti', 'https://sweatyyetisauna.com/?sld=141', true);
+  if (location !== 'indoor' && (heat === 'traditional electric' || heat === 'open to options') && +input.get('budget') >= 30000) {
+    const headroom = cash.format(+input.get('budget') - 29700);
+    addOffer('Sweaty Yeti', 'Base model: $29,700 starting price. Installed total requires a quote. Delivery within 250 miles is included; on-site equipment rentals are excluded. At your ' + allIn + ' budget, ' + headroom + ' remains before tax, site prep, electrical work, or extra freight and placement, before any eligible discount. Use getfound3655 for 5% off eligible purchases.', 'Visit Sweaty Yeti', 'https://sweatyyetisauna.com/?sld=141', true);
   }
   byId('handoff').value = 'Compare exact saunas for my ' + location + '. Heat: ' + heat + '. All-in budget: ' + allIn + '. Clear space: ' + footprint + '. Separate the listing price, freight, installation, and any unknowns. Give me verified model links and use affiliate links when there is a suitable match.';
   byId('status').textContent = '';
