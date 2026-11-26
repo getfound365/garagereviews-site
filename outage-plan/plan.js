@@ -61,6 +61,18 @@
   // noiseDba null for all six new stations (no verified operating figure);
   // weightLb null where the listing states none (Greenworks, Bailibatt,
   // HomePower).
+  // Nov 26, 2026: +7 models from the day's verified review pages
+  // (champion-6500w-rv-ready-inverter, jackery-explorer-2000-v2-solar-bundle,
+  // pulsar-pg12000b, pulsar-pgx60bisrco, wen-df451i,
+  // champion-7250w-open-frame-inverter, pulsar-gd10kbn). Prices/stock as of
+  // Nov 26, 2026. WEN DF451i is OUT OF STOCK ($879.99). The Jackery bundle
+  // is a DISTINCT SKU from the standalone Explorer 2000 v2 ($1,349) and has
+  // NO ratings yet; surgeW null (not stated on the Jackery page) and
+  // noiseDba null ("<30 dB" per the maker — no single figure). PG12000B
+  // propane watts equal the gas watts per Pulsar's own spec table, and it
+  // has NO CO auto-shutoff (CARB conflict flagged in the review page).
+  // GD10KBN rating is the PDP family figure (4.3/602); noiseDba is the
+  // 68 dB spec-block figure. Champion 6500W weightLb null (NOT verified).
   var ROSTER = {
     igen4500df: {
       name: "Westinghouse iGen4500DF — Dual Fuel Inverter Generator",
@@ -610,6 +622,103 @@
       specs: "1,024Wh LiFePO4 battery · 1,500W continuous / 3,000W surge · 400W solar input · sub-10ms UPS · 6,000 cycles to 70%+ · 50-min Emergency Charge",
       link: "https://walmrt.us/49ge811",
       reviewUrl: "/reviews/jackery-homepower-1000-v2/"
+    },
+    "champion-6500w-rv-ready-inverter": {
+      name: "Champion 6500W RV Ready Inverter Generator",
+      short: "6500W RV Ready",
+      price: 999, priceDisplay: "$999",
+      rating: "4.9 stars from 115 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 5000, gasPeakW: 6500,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: "up to 18 hours at 25% load",
+      noiseDba: 64, weightLb: null, // weight and tank capacity NOT verified — never invent them
+      specs: "6,500 peak / 5,000 running watts on gas · up to 18 hours at 25% load · 64 dBA at 23 feet · CO Shield auto-shutoff · TT-30R RV outlet · <3% THD",
+      link: "https://www.walmart.com/ip/18034608937",
+      reviewUrl: "/reviews/champion-6500w-rv-ready-inverter/"
+    },
+    "jackery-explorer-2000-v2-solar-bundle": {
+      name: "Jackery Explorer 2000 v2 + 2×100W Mini Solar Panels — Portable Power Station",
+      short: "Explorer 2000 v2 Solar Bundle",
+      price: 999, priceDisplay: "$999",
+      rating: "No ratings yet",
+      stock: "In stock", inStock: true,
+      continuousW: 2200, surgeW: null, batteryWh: 2042, // surge wattage NOT stated on the Jackery page — never invent one
+      runtime: null,
+      noiseDba: null, weightLb: 39.5, // "<30 dB" per the maker — no single operating figure verified
+      specs: "2,042Wh LiFePO4 battery · 2,200W continuous · 2×100W Mini solar panels included · ≤20ms UPS · under 30 dB · 39.5 lb · LiFePO4 rated 10+ years",
+      link: "https://www.walmart.com/ip/15009717653",
+      reviewUrl: "/reviews/jackery-explorer-2000-v2-solar-bundle/"
+    },
+    "pulsar-pg12000b": {
+      name: "Pulsar PG12000B — Dual Fuel Portable Generator",
+      short: "PG12000B",
+      price: 899, priceDisplay: "$899",
+      rating: "3.9 stars from 169 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 9500, gasPeakW: 12000,
+      propaneRunningW: 9500, propanePeakW: 12000, // Pulsar's spec table lists 9,500W running for BOTH fuels — quoted as listed
+      runtime: "up to 12 hours at 50% load",
+      noiseDba: 74, weightLb: 209,
+      specs: "12,000 peak / 9,500 running watts · dual fuel · up to 12 hours at 50% load · 74 dB · 14-50R transfer-switch outlet · 209 lb",
+      link: "https://walmrt.us/4j7EvuI", // verified resolving to item 695477131
+      reviewUrl: "/reviews/pulsar-pg12000b/"
+    },
+    "pulsar-pgx60bisrco": {
+      name: "Pulsar PGX60BiSRCO — Dual Fuel Inverter Generator",
+      short: "PGX60BiSRCO",
+      price: 799, priceDisplay: "$799",
+      rating: "4.6 stars from 36 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 5400, gasPeakW: 6000,
+      propaneRunningW: 4600, propanePeakW: 5400,
+      runtime: "up to 6.5 hours at 50% load on gas",
+      noiseDba: 67, weightLb: 93.5,
+      specs: "6,000 peak / 5,400 running watts on gas · 5,400 peak / 4,600 running on propane · up to 6.5 hours at 50% load · 67 dB · remote start · CO detection with auto shutoff · 93.5 lb",
+      link: "https://www.walmart.com/ip/17033002957",
+      reviewUrl: "/reviews/pulsar-pgx60bisrco/"
+    },
+    "wen-df451i": {
+      name: "WEN DF451i — Dual Fuel Inverter Generator",
+      short: "DF451i",
+      price: 879.99, priceDisplay: "$879.99",
+      rating: "4.6 stars from 23 ratings",
+      stock: "Out of stock", inStock: false,
+      gasRunningW: 3500, gasPeakW: 4500,
+      propaneRunningW: 3150, propanePeakW: 4500,
+      runtime: "up to 8.5 hours at 50% load on gas",
+      noiseDba: 58, weightLb: 100, // WEN's own 58 dBA at quarter load; one retailer table lists 63 dB
+      specs: "4,500 peak / 3,500 running watts on gas · 4,500 peak / 3,150 running on propane · up to 8.5 hours at 50% load · 58 dBA at quarter load · keyless electric start · 100 lb",
+      link: "https://www.walmart.com/ip/1800120129",
+      reviewUrl: "/reviews/wen-df451i/"
+    },
+    "champion-7250w-open-frame-inverter": {
+      name: "Champion 7250W Open Frame Inverter Generator",
+      short: "7250W Open Frame",
+      price: 999, priceDisplay: "$999",
+      rating: "4.5 stars from 6 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 5500, gasPeakW: 7250,
+      propaneRunningW: null, propanePeakW: null,
+      runtime: "up to 15 hours at 25% load",
+      noiseDba: 69, weightLb: 111.6,
+      specs: "7,250 peak / 5,500 running watts · gas-only open-frame inverter · up to 15 hours at 25% load · 69 dBA at 23 feet · CO Shield · TT-30R + L14-30R · 111.6 lb",
+      link: "https://www.walmart.com/ip/18037912019",
+      reviewUrl: "/reviews/champion-7250w-open-frame-inverter/"
+    },
+    "pulsar-gd10kbn": {
+      name: "Pulsar GD10KBN — Dual Fuel Inverter Generator",
+      short: "GD10KBN",
+      price: 779, priceDisplay: "$779",
+      rating: "4.3 stars from 602 ratings",
+      stock: "In stock", inStock: true,
+      gasRunningW: 8000, gasPeakW: 10500,
+      propaneRunningW: 7200, propanePeakW: 9400,
+      runtime: "up to 10 hours at half load on gasoline",
+      noiseDba: 68, weightLb: 125, // 68 dB is the spec-block figure; listing copy claims 50 dB, a buyer measured ~72–75 dB
+      specs: "10,500 peak / 8,000 running watts on gas · 9,400 peak / 7,200 running on propane · up to 10 hours at half load · 68 dB · electric push-button start · 14-50R RV outlet · 125 lb",
+      link: "https://www.walmart.com/ip/12533757646",
+      reviewUrl: "/reviews/pulsar-gd10kbn/"
     }
   };
 
@@ -863,7 +972,10 @@
 // wen-56360i, jackery1000plus-restored, river3plus, bluetti-ac70,
 // wgen7500dfc, jackery2000v2, pecron-f1000lfp,
 // bluetti-elite-30-v2, oukitel-p2001-plus, greenworks-60v-2000w-inverter,
-// bluetti-elite-10, bailibatt-2000w, jackery-homepower-1000-v2) —
+// bluetti-elite-10, bailibatt-2000w, jackery-homepower-1000-v2,
+// champion-6500w-rv-ready-inverter, jackery-explorer-2000-v2-solar-bundle,
+// pulsar-pg12000b, pulsar-pgx60bisrco, wen-df451i,
+// champion-7250w-open-frame-inverter, pulsar-gd10kbn) —
 // anything else shows the empty state. No params at all -> empty state.
 // Email delivery is PHASE 2 and is not part of this page.
 // ---------------------------------------------------------------------------

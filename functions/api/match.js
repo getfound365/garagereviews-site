@@ -84,6 +84,27 @@ const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 // operating figure). The other 4 Nov 25 pages (Tactacam 2-pack, 3 saunas)
 // are not backup-power gear and stay out of the matcher (KB + deal watcher
 // only).
+// Nov 26, 2026: +7 models from the day's verified review pages
+// (champion-6500w-rv-ready-inverter, jackery-explorer-2000-v2-solar-bundle,
+// pulsar-pg12000b, pulsar-pgx60bisrco, wen-df451i,
+// champion-7250w-open-frame-inverter, pulsar-gd10kbn). Prices/stock as of
+// Nov 26, 2026. WEN DF451i is OUT OF STOCK ($879.99); its fit copy points
+// at the in-stock Pulsar PGX60BiSRCO and Champion 6500W. The Jackery bundle
+// is a DISTINCT SKU from the standalone Explorer 2000 v2 ($1,349) — same
+// 2,042Wh / 2,200W station, two 100W Mini panels instead of one 200W
+// panel; it has NO ratings yet (0 ratings on the PDP). Pulsar PG12000B
+// lists the same 9,500W running watts for gas and propane per Pulsar's own
+// spec table — quoted as listed — and has NO CO auto-shutoff, plus a CARB
+// conflict (Walmart title says CARB Approved, Pulsar says CARB Certified:
+// No). GD10KBN's PDP 4.3/602 is a FAMILY FIGURE aggregating all wattage
+// variants; the 10,500W variant's own base is BV 3.97/37 — flagged in the
+// fit copy. GD10KBN noise uses the 68 dB spec-block figure (listing copy
+// claims 50 dB, a buyer measured ~72–75 dB). Champion 6500W weight and
+// tank capacity were NOT verified, so weight_lb is null; it is the
+// gas-only model 201513 (5,000 running watts), not the dual-fuel 201532.
+// The other 3 Nov 26 pages (DeWalt combo kit, Hyper Tough cabinet,
+// MUCHANT sauna) are not backup-power gear and stay out of the matcher
+// (KB + deal watcher only).
 // Surge watts on the Anker C1000X Gen 2 are CONTESTED on the listing
 // (2,400W marketing copy vs 3,000W spec table) — surge_w is null and the
 // fit copy says so; the 2,000W continuous figure is the agreed number.
@@ -1146,6 +1167,195 @@ const ROSTER = [
     video: null,
     link: "https://walmrt.us/49ge811",
     review_url: "/reviews/jackery-homepower-1000-v2/",
+  },
+  {
+    id: "champion-6500w-rv-ready-inverter",
+    name: "Champion 6500W RV Ready Inverter Generator",
+    short: "6500W RV Ready",
+    price: 999,
+    price_display: "$999",
+    rating: "4.9 stars from 115 ratings",
+    rating_value: 4.9,
+    rating_count: 115,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "gas",
+    type: "inverter",
+    gas_peak_w: 6500,
+    gas_running_w: 5000,
+    propane_peak_w: null,
+    propane_running_w: null,
+    runtime_h: "up to 18 hours at 25% load",
+    noise_dba: 64,
+    weight_lb: null, // weight and tank capacity NOT verified on the listing or the maker spec as read — never invent them
+    specs: "6,500 peak / 5,000 running watts on gas · up to 18 hours at 25% load · 64 dBA at 23 feet · CO Shield auto-shutoff · TT-30R RV outlet · <3% THD",
+    fit: "Gasoline only — not the dual-fuel 6500W (model 201532, 5,250 running watts), a different unit; this is the gas-only model 201513. 5,000 running watts at $999 with a 4.9-star base of 115 ratings — the strongest review base in today's set — plus CO Shield and an RV-ready TT-30R. Weight and tank capacity were not verified, so neither is quoted here. No remote start listed.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/18034608937",
+    review_url: "/reviews/champion-6500w-rv-ready-inverter/",
+  },
+  {
+    id: "jackery-explorer-2000-v2-solar-bundle",
+    name: "Jackery Explorer 2000 v2 + 2×100W Mini Solar Panels — Portable Power Station",
+    short: "Explorer 2000 v2 Solar Bundle",
+    price: 999,
+    price_display: "$999",
+    rating: "No ratings yet",
+    rating_value: 0,
+    rating_count: 0,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "solar",
+    type: "power-station",
+    battery_wh: 2042,
+    continuous_w: 2200,
+    surge_w: null, // surge wattage NOT stated on the Jackery product page as read — never invent one
+    solar_input_w: null, // bundle includes two 100W Mini panels; the station's solar input watts are not stated on the sources checked
+    runtime_h: null,
+    noise_dba: null, // "<30 dB" per the maker — no single operating figure verified
+    weight_lb: 39.5, // 17.9 kg per Jackery
+    specs: "2,042Wh LiFePO4 battery · 2,200W continuous · 2×100W Mini solar panels included · ≤20ms UPS · under 30 dB · 39.5 lb · LiFePO4 rated 10+ years",
+    fit: "A DISTINCT SKU from the standalone Explorer 2000 v2 ($1,349) — the same 2,042Wh / 2,200W station, but with two 100W Mini panels instead of one 200W panel, at $999 ($380 below Jackery direct, which is out of stock). No owner ratings yet for this exact bundle, so there is no proven rating to quote. Not expandable — 2,042Wh is the ceiling.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/15009717653",
+    review_url: "/reviews/jackery-explorer-2000-v2-solar-bundle/",
+  },
+  {
+    id: "pulsar-pg12000b",
+    name: "Pulsar PG12000B — Dual Fuel Portable Generator",
+    short: "PG12000B",
+    price: 899,
+    price_display: "$899",
+    rating: "3.9 stars from 169 ratings",
+    rating_value: 3.9,
+    rating_count: 169,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "dual-fuel",
+    type: "open-frame",
+    gas_peak_w: 12000,
+    gas_running_w: 9500,
+    propane_peak_w: 12000, // Pulsar's spec table lists 9,500W running for BOTH fuels — quoted as listed
+    propane_running_w: 9500,
+    runtime_h: "up to 12 hours at 50% load",
+    noise_dba: 74,
+    weight_lb: 209,
+    specs: "12,000 peak / 9,500 running watts · dual fuel · up to 12 hours at 50% load · 74 dB · 14-50R transfer-switch outlet · 209 lb",
+    fit: "12,000 peak / 9,500 running watts for $899 (was $1,299) — the most watts per dollar in today's set, $300 below the Acme Tools seller on the same listing. Flags, stated plainly: NO carbon-monoxide auto-shutoff (Pulsar's own spec table says so), and a CARB conflict — the Walmart title says CARB Approved while Pulsar's spec sheet says CARB Certified: No. Not an inverter and not parallel capable. The weakest rating in today's set (3.9 stars from 169 ratings), with both poles quoted on the review page.",
+    status: "coming",
+    video: null,
+    link: "https://walmrt.us/4j7EvuI", // verified resolving to item 695477131
+    review_url: "/reviews/pulsar-pg12000b/",
+  },
+  {
+    id: "pulsar-pgx60bisrco",
+    name: "Pulsar PGX60BiSRCO — Dual Fuel Inverter Generator",
+    short: "PGX60BiSRCO",
+    price: 799,
+    price_display: "$799",
+    rating: "4.6 stars from 36 ratings",
+    rating_value: 4.6,
+    rating_count: 36,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 6000,
+    gas_running_w: 5400,
+    propane_peak_w: 5400,
+    propane_running_w: 4600,
+    runtime_h: "up to 6.5 hours at 50% load on gas",
+    noise_dba: 67,
+    weight_lb: 93.5,
+    specs: "6,000 peak / 5,400 running watts on gas · 5,400 peak / 4,600 running on propane · up to 6.5 hours at 50% load · 67 dB · remote start · CO detection with auto shutoff · 93.5 lb",
+    fit: "$799 — $200 less than the Champion 6500W, with dual fuel and a key-fob remote start. 5,400 running watts on gas, 4,600 on propane, with CO detection and auto shutoff and a 14-50R outlet. Other sellers on the same listing start at $919.97.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/17033002957",
+    review_url: "/reviews/pulsar-pgx60bisrco/",
+  },
+  {
+    id: "wen-df451i",
+    name: "WEN DF451i — Dual Fuel Inverter Generator",
+    short: "DF451i",
+    price: 879.99,
+    price_display: "$879.99",
+    rating: "4.6 stars from 23 ratings",
+    rating_value: 4.6,
+    rating_count: 23,
+    stock: "out",
+    stock_display: "Out of stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 4500,
+    gas_running_w: 3500,
+    propane_peak_w: 4500,
+    propane_running_w: 3150,
+    runtime_h: "up to 8.5 hours at 50% load on gas",
+    noise_dba: 58, // WEN's own 58 dBA at quarter load; one retailer table lists 63 dB — flagged on the review page
+    weight_lb: 100,
+    specs: "4,500 peak / 3,500 running watts on gas · 4,500 peak / 3,150 running on propane · up to 8.5 hours at 50% load · 58 dBA at quarter load · keyless electric start · 100 lb",
+    fit: "Out of stock on Walmart as of Nov 26, 2026 — no Add to cart, Notify-me only, so none is presented as buyable. At $879.99 it is the quietest dual-fuel inverter in today's set (58 dBA at quarter load, WEN's own figure — one retailer table lists 63 dB, flagged on the review page) with auto fuel selection and keyless electric start. The in-stock Pulsar PGX60BiSRCO at $799 covers the same job for less; the Champion 6500W at $999 is the gas-only step up. No CO sensor is listed in the published specifications — stated as not listed, not as a confirmed absence.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/1800120129",
+    review_url: "/reviews/wen-df451i/",
+  },
+  {
+    id: "champion-7250w-open-frame-inverter",
+    name: "Champion 7250W Open Frame Inverter Generator",
+    short: "7250W Open Frame",
+    price: 999,
+    price_display: "$999",
+    rating: "4.5 stars from 6 ratings",
+    rating_value: 4.5,
+    rating_count: 6,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "gas",
+    type: "open-frame", // open-frame inverter — the open-frame chassis is what the matcher's quiet penalty keys on
+    gas_peak_w: 7250,
+    gas_running_w: 5500,
+    propane_peak_w: null,
+    propane_running_w: null,
+    runtime_h: "up to 15 hours at 25% load",
+    noise_dba: 69,
+    weight_lb: 111.6,
+    specs: "7,250 peak / 5,500 running watts · gas-only open-frame inverter · up to 15 hours at 25% load · 69 dBA at 23 feet · CO Shield · TT-30R + L14-30R · 111.6 lb",
+    fit: "Gas-only — no propane option, and the sibling Champion 6500W page has a dual-fuel lookalike; do not confuse them. 5,500 running watts at $999 with CO Shield and a TT-30R + L14-30R outlet pair. Thin review base (4.5 stars from 6 ratings), so the rating is early, not proven.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/18037912019",
+    review_url: "/reviews/champion-7250w-open-frame-inverter/",
+  },
+  {
+    id: "pulsar-gd10kbn",
+    name: "Pulsar GD10KBN — Dual Fuel Inverter Generator",
+    short: "GD10KBN",
+    price: 779,
+    price_display: "$779",
+    rating: "4.3 stars from 602 ratings",
+    rating_value: 4.3,
+    rating_count: 602,
+    stock: "in",
+    stock_display: "In stock",
+    fuel: "dual-fuel",
+    type: "inverter",
+    gas_peak_w: 10500,
+    gas_running_w: 8000,
+    propane_peak_w: 9400,
+    propane_running_w: 7200,
+    runtime_h: "up to 10 hours at half load on gasoline",
+    noise_dba: 68, // spec-block figure; the listing copy claims 50 dB and one buyer measured ~72–75 dB — flagged on the review page
+    weight_lb: 125,
+    specs: "10,500 peak / 8,000 running watts on gas · 9,400 peak / 7,200 running on propane · up to 10 hours at half load · 68 dB · electric push-button start · 14-50R RV outlet · 125 lb",
+    fit: "$779 (was $999, Black Friday) — but read the rating honestly: the PDP's 4.3 stars from 602 ratings is a FAMILY FIGURE aggregating every wattage variant on the listing; the 10,500W variant's own base is 3.97 stars from 37 Bazaarvoice reviews. Noise is contested too — the spec block says 68 dB, the listing copy claims 50 dB, and one buyer measured roughly 72–75 dB; 68 dB is the figure used here. The 12,000W ($749) and 15,000W ($1,299) variants on the same listing are both out of stock and are never presented as buyable.",
+    status: "coming",
+    video: null,
+    link: "https://www.walmart.com/ip/12533757646",
+    review_url: "/reviews/pulsar-gd10kbn/",
   },
 ];
 
