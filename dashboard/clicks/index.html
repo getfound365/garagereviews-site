@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Click Dashboard — Garage Reviews (internal)</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#111;color:#f5f5f5}
+  header{background:#000;border-bottom:3px solid #FFD21F;padding:18px 22px}
+  header h1{margin:0;font-size:1.4rem} header p{margin:4px 0 0;color:#bbb;font-size:.9rem}
+  main{max-width:1100px;margin:0 auto;padding:20px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px}
+  .card{background:#1c1c1c;border:1px solid #333;border-radius:10px;padding:14px}
+  .card b{font-size:1.6rem;display:block;color:#FFD21F} .card span{color:#bbb;font-size:.85rem}
+  h2{margin:26px 0 8px;font-size:1.15rem} p.note{color:#bbb;font-size:.9rem}
+  table{width:100%;border-collapse:collapse;background:#1c1c1c;border-radius:10px;overflow:hidden;font-size:.92rem}
+  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid #2c2c2c}
+  th{background:#222;color:#FFD21F} td.num,th.num{text-align:right}
+  tr:last-child td{border-bottom:0}
+  a{color:#FFD21F;word-break:break-all}
+  .banner{background:#3a2a00;border:1px solid #FFD21F;border-radius:10px;padding:16px;margin-bottom:20px}
+  .banner code{background:#000;padding:2px 6px;border-radius:4px}
+  .empty{color:#bbb} .muted{color:#888;font-size:.85rem}
+  .bar{height:8px;background:#FFD21F;border-radius:4px}
+</style>
+</head>
+<body>
+<header><h1>Garage Reviews — Click Dashboard</h1><p>Internal only — buy-button clicks and views, counted on the site itself. Not linked from public navigation.</p></header>
+<main>
+  <div id="setup" class="banner" style="display:none"></div>
+  <div class="cards" id="cards"></div>
+
+  <h2>Clicks by retailer</h2>
+  <table><thead><tr><th>Retailer</th><th class="num">Clicks</th><th class="num">Commission (manual)</th></tr></thead><tbody id="retailerRows"><tr><td colspan="3" class="empty">Loading…</td></tr></tbody></table>
+
+  <h2>Clicks by page</h2>
+  <p class="note">CTR = clicks ÷ views on that page. Views come from a lightweight beacon fired once per page load.</p>
+  <table><thead><tr><th>Page</th><th class="num">Views</th><th class="num">Clicks</th><th class="num">CTR</th></tr></thead><tbody id="pageRows"><tr><td colspan="4" class="empty">Loading…</td></tr></tbody></table>
+
+  <h2>Clicks by link</h2>
+  <p class="note">Link CTR = the link's clicks ÷ views of the page(s) where the link was clicked (the "Views on pages" column is that denominator).</p>
+  <table><thead><tr><th>Retailer</th><th>Link</th><th>Page(s)</th><th class="num">Clicks</th><th class="num">Views on pages</th><th class="num">CTR</th></tr></thead><tbody id="linkRows"><tr><td colspan="6" class="empty">Loading…</td></tr></tbody></table>
+
+  <h2>Last 30 days</h2>
+  <table><thead><tr><th>Date</th><th class="num">Views</th><th class="num">Clicks</th></tr></thead><tbody id="dayRows"><tr><td colspan="3" class="empty">Loading…</td></tr></tbody></table>
+
+  <h2>Commissions</h2>
+  <p class="note" id="commNote">Manual entry — the affiliate platforms do not feed this dashboard automatically. Figures are $0 as of Nov 26, 2026 until a sale is confirmed and entered.</p>
+  <table><thead><tr><th>Retailer</th><th class="num">Sales</th><th class="num">Commission</th></tr></thead><tbody id="commRetailers"><tr><td colspan="3" class="empty">Loading…</td></tr></tbody></table>
+  <h2 style="font-size:1rem">Commission entries (per sale)</h2>
+  <table><thead><tr><th>Link</th><th>Retailer</th><th>Page</th><th class="num">Sales</th><th class="num">Commission</th></tr></thead><tbody id="commEntries"><tr><td colspan="5" class="empty">No sales recorded yet.</td></tr></tbody></table>
+  <p class="muted">To record a sale: edit <code>/data/commissions.json</code> in the site repo (add an entry, or update a retailer total) and push. Next step for live tie-back: Awin and Impact both have reporting APIs — wiring one in would replace manual entry for those programs; Walmart Creator has no reporting API and SaunaCloud / Sweaty Yeti are manual portal checks.</p>
+  <p class="muted" id="generated"></p>
+</main>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var fmtPct = function (x) { return x === null || x === undefined ? '—' : (x * 100).toFixed(2) + '%'; };
+  var fmtMoney = function (x) { return '$' + Number(x || 0).toFixed(2); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+
+  function setupBanner() {
+    var el = $('setup');
+    el.style.display = 'block';
+    el.innerHTML = '<b>Click storage is not connected yet.</b><br>One-time setup (about 2 minutes, in the Cloudflare dashboard): ' +
+      'Workers &amp; Pages → open the <b>garagereviews.us</b> Pages project → Settings → Functions → ' +
+      'KV namespace bindings → Add binding: variable name <code>CLICK_KV</code>, namespace <code>garage-clicks</code> ' +
+      '(create it if it does not exist) → redeploy the project. The collector is already live on every buy page; ' +
+      'events will start counting as soon as the binding is attached. Nothing shown below is real data until then.';
+  }
+
+  fetch('/api/clicks').then(function (r) { return r.json(); }).then(function (d) {
+    if (!d.ok) { setupBanner(); return; }
+    var t = d.totals;
+    $('cards').innerHTML =
+      card(t.clicks, 'Total clicks') + card(t.views, 'Total views') +
+      card(fmtPct(t.ctr), 'Overall CTR') + card(t.clicksToday, 'Clicks today') +
+      card(t.clicks7d, 'Clicks last 7 days') + card(t.clicks30d, 'Clicks last 30 days');
+    $('generated').textContent = 'Report generated ' + d.generatedAt + ' · ' + d.eventsRead + ' events read. KV is eventually consistent — counts can lag a minute behind clicks.';
+
+    var commByRetailer = {};
+    fetch('/data/commissions.json').then(function (r) { return r.json(); }).then(function (c) {
+      (c.retailers || []).forEach(function (x) { commByRetailer[x.retailer] = x; });
+      $('retailerRows').innerHTML = d.byRetailer.length ? d.byRetailer.map(function (r) {
+        var cm = commByRetailer[r.retailer] || { commission: 0 };
+        return '<tr><td>' + esc(r.retailer) + '</td><td class="num">' + r.clicks + '</td><td class="num">' + fmtMoney(cm.commission) + '</td></tr>';
+      }).join('') : '<tr><td colspan="3" class="empty">No clicks recorded yet.</td></tr>';
+      $('commRetailers').innerHTML = (c.retailers || []).map(function (x) {
+        return '<tr><td>' + esc(x.retailer) + '</td><td class="num">' + fmtMoney(x.sales) + '</td><td class="num">' + fmtMoney(x.commission) + '</td></tr>';
+      }).join('');
+      $('commNote').textContent = (c.note || '') + ' Last updated ' + (c.updated || '—') + '.';
+      $('commEntries').innerHTML = (c.entries || []).length ? c.entries.map(function (e) {
+        return '<tr><td><a href="' + esc(e.link) + '">' + esc(e.link) + '</a></td><td>' + esc(e.retailer) + '</td><td>' + esc(e.page || '') + '</td><td class="num">' + fmtMoney(e.sales) + '</td><td class="num">' + fmtMoney(e.commission) + '</td></tr>';
+      }).join('') : '<tr><td colspan="5" class="empty">No sales recorded yet.</td></tr>';
+    }).catch(function () { $('commRetailers').innerHTML = '<tr><td colspan="3" class="empty">Could not load commissions file.</td></tr>'; });
+
+    $('pageRows').innerHTML = d.byPage.length ? d.byPage.map(function (r) {
+      return '<tr><td><a href="' + esc(r.page) + '">' + esc(r.page) + '</a></td><td class="num">' + r.views + '</td><td class="num">' + r.clicks + '</td><td class="num">' + fmtPct(r.ctr) + '</td></tr>';
+    }).join('') : '<tr><td colspan="4" class="empty">No clicks or views recorded yet.</td></tr>';
+
+    $('linkRows').innerHTML = d.byLink.length ? d.byLink.map(function (r) {
+      return '<tr><td>' + esc(r.retailer) + '</td><td><a href="' + esc(r.url) + '">' + esc(r.url) + '</a></td><td>' + r.pages.map(esc).join('<br>') + '</td><td class="num">' + r.clicks + '</td><td class="num">' + r.viewsOnPages + '</td><td class="num">' + fmtPct(r.ctr) + '</td></tr>';
+    }).join('') : '<tr><td colspan="6" class="empty">No clicks recorded yet.</td></tr>';
+
+    $('dayRows').innerHTML = d.byDay.slice().reverse().map(function (r) {
+      return '<tr><td>' + r.date + '</td><td class="num">' + r.views + '</td><td class="num">' + r.clicks + '</td></tr>';
+    }).join('');
+  }).catch(function () { setupBanner(); });
+
+  function card(v, label) { return '<div class="card"><b>' + v + '</b><span>' + label + '</span></div>'; }
+})();
+</script>
+</body>
+</html>
